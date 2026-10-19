@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>iDevApp | ระบบงานสำหรับโรงพยาบาลและหน่วยงานของรัฐ</title>
-<meta name="description" content="iDevApp พัฒนาระบบงานสำหรับโรงพยาบาลและหน่วยบริการสุขภาพ: I-Office ทะเบียนครุภัณฑ์และงานซ่อม, I-Queue ระบบคิวรับบริการแสดงผลที่หน้าจอและผ่านมือถือ, I-Work ข้อมูลลงเวลาทำงานและรายงานผลการทำงาน และ I-Appointment ระบบนัดหมายล่วงหน้าและลงทะเบียนสมาชิก">
+<meta name="description" content="iDevApp พัฒนาระบบงานสำหรับโรงพยาบาลและหน่วยบริการสุขภาพ: I-Office ทะเบียนครุภัณฑ์และงานซ่อม, I-Queue ระบบคิวรับบริการแสดงผลที่หน้าจอและผ่านมือถือ, I-Work ข้อมูลลงเวลาทำงานและรายงานผลการทำงาน, I-Checkin ลงเวลาด้วย GPS, I-SOS ระบบแจ้งเหตุฉุกเฉิน และ I-Appointment ระบบนัดหมายล่วงหน้าและลงทะเบียนสมาชิก">
 <meta property="og:title" content="iDevApp ระบบงานสำหรับโรงพยาบาล">
-<meta property="og:description" content="I-Office · I-Queue · I-Work · I-Appointment ระบบงานสำหรับโรงพยาบาลและหน่วยบริการสุขภาพ">
+<meta property="og:description" content="I-Office · I-Checkin · I-SOS · I-Queue · I-Work · I-Appointment ระบบงานสำหรับโรงพยาบาลและหน่วยบริการสุขภาพ">
 <meta property="og:image" content="img/og.jpg">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#1d3f8b">
@@ -94,7 +94,7 @@ header.scrolled{border-color:var(--line)}
 .strip-item span{font-size:13.5px;color:var(--muted)}
 
 /* products */
-.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
 .prod{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px 24px 24px;display:flex;flex-direction:column;transition:.2s;overflow:hidden}
 .prod:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:#c9d3e6}
 .prod::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--pc)}
@@ -113,6 +113,29 @@ header.scrolled{border-color:var(--line)}
 .band img{height:64px;width:auto;margin:0 auto 18px}
 .band h2{margin-bottom:12px}
 .band .strip{margin-top:44px;text-align:left}
+
+/* spotlight: attendance / emergency */
+.spot-note{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:26px}
+.spot-note small{color:var(--muted);font-size:14px}
+.mini-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:44px 0 0}
+.mini-steps div{border-radius:16px;padding:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.mini-steps b{display:flex;align-items:center;gap:10px;font-size:17px;margin-bottom:6px;color:#fff}
+.mini-steps.sos{grid-template-columns:repeat(4,1fr)}
+.mini-steps b i{font-style:normal;display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:#e5484d;color:#fff;font-size:15px;flex:none}
+.mini-steps p{margin:0;font-size:15px;color:rgba(255,255,255,.75)}
+.emer{background:radial-gradient(800px 400px at 90% 0%,rgba(229,72,77,.28),transparent 60%),linear-gradient(160deg,#121a33,#1b2547 60%,#22213b);color:#fff}
+.emer h2,.emer h3{color:#fff}
+.emer .lead,.emer .row p{color:rgba(255,255,255,.78)}
+.emer .eyebrow{color:#ff8a8d}.emer .eyebrow::before{background:#e5484d}
+.emer .bul li{color:rgba(255,255,255,.9)}.emer .bul svg{color:#ff6b6f}
+.emer .spot-note small{color:rgba(255,255,255,.65)}
+.emer .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.emer .btn-ghost:hover{border-color:#fff;color:#fff}
+.emer .row{margin-top:56px}
+.emer .mock{padding-bottom:30px}
+.att-duo{display:flex;align-items:center;gap:22px}
+.att-duo .shot{flex:1;min-width:0}
+.att-duo .phone{position:static;width:30%;min-width:0;flex:none}
 
 /* features */
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
@@ -218,6 +241,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
   .nav ul.open a{display:block;padding:10px 0;font-size:16px}
   .menu-btn{display:block}
   .float-tag{left:8px}
+  .mini-steps,.mini-steps.sos{grid-template-columns:1fr 1fr}
   .phone{right:0}
   section{padding:72px 0}
   .row{gap:36px;margin-top:64px}
@@ -225,7 +249,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
 @media (max-width:640px){
   body{font-size:16px}
   .wrap{padding:0 16px}
-  .features,.ws,.steps,.plans,.strip-grid,.prods{grid-template-columns:1fr}
+  .features,.ws,.steps,.plans,.strip-grid,.prods,.mini-steps,.mini-steps.sos{grid-template-columns:1fr}
   .nav .btn{display:none}
   .hero{padding-top:36px}
   .cta-row .btn{flex:1}
@@ -243,9 +267,10 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
     <a class="brand" href="#top" aria-label="iDevApp หน้าแรก"><img src="img/idevapp-logo.png" alt="iDevApp" width="48" height="42"></a>
     <ul id="menu">
       <li><a href="#products">ผลิตภัณฑ์</a></li>
+      <li><a href="#attendance">I-Checkin</a></li>
+      <li><a href="#emergency">I-SOS</a></li>
       <li><a href="#ioffice">I-Office</a></li>
       <li><a href="#pricing">License</a></li>
-      <li><a href="#faq">คำถามที่พบบ่อย</a></li>
       <li><a href="#contact">ติดต่อ</a></li>
     </ul>
     <a class="btn btn-primary" href="#contact">ขอสาธิตระบบ</a>
@@ -298,9 +323,19 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
     <div class="prods">
       <div class="prod feat-p rv" style="--pc:#1d3f8b;--pb:#e8eefb"><span class="badge">ทดลองฟรี</span>
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div>
-        <div class="name">I-Office</div><div class="kind">ทะเบียนครุภัณฑ์และงานซ่อมบำรุง</div>
-        <p>ทะเบียนครุภัณฑ์ แจ้งซ่อม PM และสอบเทียบ ป้าย QR ตรวจนับประจำปีด้วยมือถือ และค่าเสื่อมราคา</p>
+        <div class="name">I-Office</div><div class="kind">ระบบบริหารงานองค์กร</div>
+        <p>ครุภัณฑ์และงานซ่อม พัสดุ คลัง จัดซื้อจัดจ้าง บุคลากร การลา ลงเวลาด้วย GPS สารบรรณ และระบบเหตุฉุกเฉิน รวมในระบบเดียว</p>
         <a href="#ioffice">ดูรายละเอียด <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="prod rv" style="--pc:#12936f;--pb:#e2f4ee"><span class="badge" style="background:#12936f">ใหม่</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><path d="m9.5 10 2 2 3.5-3.5"/></svg></div>
+        <div class="name">I-Checkin</div><div class="kind">ลงเวลาทำงานด้วย GPS</div>
+        <p>ลงเวลาเข้า-ออกงานจากมือถือ ตรวจพิกัดกับจุดลงเวลาและถ่ายรูปยืนยันตัวตน สรุปเวลาทำงาน สาย ขาด ลา ให้ฝ่ายบุคคลทันที</p>
+        <a href="#attendance">ดูรายละเอียด <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="prod rv" style="--pc:#d93a3f;--pb:#fdeaea"><span class="badge" style="background:#d93a3f">ใหม่</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 2.4 17.5A2 2 0 0 0 4.1 20.5h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+        <div class="name">I-SOS</div><div class="kind">ระบบแจ้งเหตุฉุกเฉิน</div>
+        <p>กดปุ่ม SOS จากมือถือพร้อมพิกัด GPS แจ้งเหตุในโรงพยาบาลถึงทีมที่เกี่ยวข้อง แจ้งเตือนเข้า LINE และติดตามเหตุจากศูนย์สั่งการ</p>
+        <a href="#emergency">ดูรายละเอียด <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       <div class="prod rv" style="--pc:#0b6e80;--pb:#e3f3f6">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 6v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-6z"/><path d="M10 9.5h4M10 12h4M10 14.5h2"/></svg></div>
         <div class="name">I-Queue</div><div class="kind">ระบบคิวรับบริการแสดงผลที่หน้าจอและผ่านมือถือผู้รับบริการ</div>
@@ -316,6 +351,77 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
         <div class="name">I-Appointment</div><div class="kind">ระบบนัดหมายล่วงหน้า</div>
         <p>จองนัดล่วงหน้าตามวันและช่วงเวลาที่ว่าง เจ้าหน้าที่จัดการตารางนัดและรายชื่อผู้มารับบริการได้ในที่เดียว</p>
         <a href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%20I-Appointment&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%3A%0A">สอบถาม / ขอสาธิต <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ATTENDANCE -->
+<section id="attendance">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">I-Checkin · ลงเวลาทำงานด้วย GPS</span>
+      <h2>ลงเวลาจากมือถือ เชื่อถือได้ ไม่ต้องรอคิวสแกน</h2>
+      <p class="lead">บุคลากรลงเวลาเข้า-ออกงานผ่านมือถือ ระบบตรวจตำแหน่งกับจุดลงเวลาและให้ถ่ายรูปยืนยันตัวตน ฝ่ายบุคคลได้สรุปเวลาทำงานทันทีโดยไม่ต้องรวบรวมเอง</p>
+    </div>
+    <div class="row rv">
+      <div class="txt">
+        <ul class="bul">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ตรวจพิกัด GPS กับจุดลงเวลาและรัศมีที่กำหนด ถ้าอยู่นอกพื้นที่ ตั้งได้ว่าจะให้ระบุเหตุผล (เช่น ออกหน่วย เยี่ยมบ้าน) หรือไม่ให้ลงเวลา</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ถ่ายรูปจากกล้องในหน้าลงเวลาเท่านั้น ใช้รูปเก่าหรือรูปซ้ำไม่ได้</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ตรวจจับแอปจำลองตำแหน่ง พิกัดกระโดด และเวลาในเครื่องที่ไม่ตรง</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ใช้ร่วมกับเครื่องสแกน ZKTeco ได้ ลงทะเบียนครั้งเดียว สแกนได้ทุกเครื่องทุกสาขา</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ตารางเวร กะข้ามวัน สรุปสาย ออกก่อน ขาด และคำขอแก้ไขเวลาผ่านสายอนุมัติ ส่งออก Excel ได้</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ตั้งระยะเก็บรูปและพิกัดตาม PDPA ได้ ครบกำหนดระบบลบให้อัตโนมัติ</li>
+        </ul>
+        <div class="spot-note">
+          <a class="btn btn-primary" href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%20I-Checkin&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%9A%E0%B8%B8%E0%B8%84%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%3A%0A">ขอสาธิต I-Checkin <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <small>ใช้เป็นระบบเดี่ยว หรือเป็นโมดูลใน I-Office รุ่นงานสำนักงาน / รุ่นเต็ม</small>
+        </div>
+      </div>
+      <div class="att-duo">
+        <div class="shot"><img src="img/attend-report.webp" alt="หน้าสรุปเวลาทำงานรายบุคคล" loading="lazy" width="1600" height="1000"></div>
+        <div class="phone"><img src="img/m-attend.webp" alt="หน้าลงเวลาทำงานบนมือถือ แสดงตำแหน่ง GPS อยู่ในพื้นที่ลงเวลา" loading="lazy" width="480" height="1039"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY -->
+<section id="emergency" class="emer">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">I-SOS · ระบบแจ้งเหตุฉุกเฉิน</span>
+      <h2>แจ้งเหตุได้ในปุ่มเดียว ทีมรู้ทันที ติดตามได้จนจบเหตุ</h2>
+      <p class="lead">ตั้งแต่บุคลากรกดขอความช่วยเหลือจากมือถือ การประกาศเหตุในโรงพยาบาล ไปจนถึงการสั่งการและติดตามรถจากศูนย์สั่งการ ทุกคนที่เกี่ยวข้องได้รับแจ้งพร้อมกัน และเห็นสถานะเดียวกัน</p>
+    </div>
+    <div class="mini-steps sos rv">
+      <div><b><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></i>ปุ่ม SOS บนมือถือ</b><p>กดครั้งเดียว ส่งชื่อ หน่วยงาน และพิกัด GPS ล่าสุดพร้อมลิงก์แผนที่ ให้ทีมรับแจ้งทันที</p></div>
+      <div><b><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M12 9v4M10 11h4"/></svg></i>เหตุในโรงพยาบาล</b><p>ประกาศ Code Blue เหตุรุนแรง ไฟไหม้ หรือการอพยพ แจ้งเตือนเฉพาะทีมที่เกี่ยวข้องพร้อมจุดเกิดเหตุ</p></div>
+      <div><b><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></i>ศูนย์สั่งการ</b><p>รับแจ้ง สั่งการรถพยาบาล และติดตามสถานะรถและเหตุการณ์บนแผนที่จากหน้าจอเดียว</p></div>
+      <div><b><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></i>แจ้งเตือนผ่าน LINE</b><p>ส่งข้อความเตือนเข้ากลุ่ม LINE ทันทีที่มีเหตุ พร้อมรายละเอียดและลิงก์เปิดดูในระบบ</p></div>
+    </div>
+    <div class="row rev rv">
+      <div class="txt">
+        <h3>ห้องควบคุมเหตุการณ์และการอพยพ</h3>
+        <p>เมื่อต้องอพยพ ระบบใช้ข้อมูลลงเวลาล่าสุดจาก I-Checkin หาว่าใครยังอยู่ในพื้นที่เกิดเหตุ ให้ทุกคนยืนยันความปลอดภัยจากมือถือ ผู้ควบคุมเห็นภาพรวมและรายชื่อที่เรียงตามความเร่งด่วน</p>
+        <ul class="bul">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>รองรับไฟไหม้ น้ำท่วม แผ่นดินไหว สารเคมีรั่ว เหตุรุนแรง และการอพยพ</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>คนที่ขอความช่วยเหลือขึ้นบนสุด พร้อมพิกัด GPS ล่าสุดและลิงก์แผนที่</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ผู้ควบคุมบันทึก "พบตัว / ปลอดภัย" แทนได้ หน้าจอรีเฟรชเองทุก 15 วินาที</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>พิมพ์รายชื่อได้ และเก็บประวัติทุกเหตุการณ์ไว้ทบทวนหลังซ้อมแผน</li>
+        </ul>
+        <div class="spot-note">
+          <a class="btn btn-primary" href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%20I-SOS&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%9A%E0%B8%B8%E0%B8%84%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%3A%0A">ขอสาธิต I-SOS <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <small>ใช้ร่วมกับ I-Checkin ได้ · มีเป็นโมดูลใน I-Office รุ่นงานสำนักงาน / รุ่นเต็ม</small>
+        </div>
+      </div>
+      <div class="mock">
+        <div class="browser">
+          <div class="bar"><i></i><i></i><i></i><span>I-Office · ห้องควบคุมเหตุการณ์</span></div>
+          <img src="img/emergency.webp" alt="ห้องควบคุมเหตุการณ์ แสดงจำนวนผู้ยืนยันความปลอดภัยและรายชื่อที่ยังอยู่ในพื้นที่" loading="lazy" width="1600" height="1000">
+        </div>
+        <div class="phone"><img src="img/m-emergency.webp" alt="แถบแจ้งเหตุฉุกเฉินบนมือถือของบุคลากร พร้อมปุ่มแจ้งปลอดภัยหรือขอความช่วยเหลือ" loading="lazy" width="480" height="1039"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -464,30 +570,32 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
     <div class="center">
       <span class="eyebrow">License ของ I-Office</span>
       <h2>เริ่มใช้ฟรี ขยายเมื่อพร้อม</h2>
-      <p class="lead">ทดลองได้ทุกเมนูโดยไม่จำกัดเวลา เมื่อครุภัณฑ์เกิน 300 รายการหรือต้องการอัปเดตรุ่นใหม่ จึงค่อยขอ license</p>
+      <p class="lead">ทดลองใช้ระบบหลักได้โดยไม่จำกัดเวลา เมื่อพร้อมใช้งานจริงเลือกรุ่นที่ตรงกับงานของหน่วยงาน หรือเพิ่มเฉพาะโมดูลที่ต้องการ</p>
     </div>
     <div class="plans">
       <div class="plan rv">
-        <h3>ทดลองใช้</h3>
+        <h3>รุ่นทดลองใช้</h3>
         <div class="price">ฟรี <small>ไม่จำกัดเวลา</small></div>
-        <p class="sub">เหมาะสำหรับทดลองระบบหรือหน่วยงานขนาดเล็ก</p>
+        <p class="sub">ทดลองระบบหลัก หรือใช้ในหน่วยงานขนาดเล็ก</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ใช้งานได้ทุกเมนู</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ครุภัณฑ์ไม่เกิน 300 รายการ</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ทะเบียนครุภัณฑ์ ป้าย QR งานซ่อม PM / สอบเทียบ สัญญา MA ตรวจนับ อะไหล่ คลัง ยืม-คืน จองห้องประชุม</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ครุภัณฑ์ไม่เกิน 300 รายการ · 1 สาขา · ผู้ใช้ 20 บัญชี</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>มีระบบสาธิตพร้อมข้อมูลตัวอย่าง</li>
-          <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>อัปเดตเป็นรุ่นใหม่ไม่ได้</li>
+          <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>ใช้ได้เฉพาะรุ่นโปรแกรมที่ติดตั้ง อัปเดตไม่ได้</li>
         </ul>
         <a class="btn btn-ghost" href="#contact">ขอไฟล์ติดตั้ง</a>
       </div>
       <div class="plan pro rv">
         <span class="tag">สำหรับใช้งานจริง</span>
-        <h3>License</h3>
+        <h3>License ตามรุ่น</h3>
         <div class="price">ติดต่อสอบถาม</div>
-        <p class="sub">สำหรับหน่วยงานที่ใช้งานจริง ติดต่อเพื่อรับใบเสนอราคา</p>
+        <p class="sub">เลือกรุ่นที่ตรงกับงาน แล้วเพิ่มโมดูลได้ภายหลัง</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ไม่จำกัดจำนวนครุภัณฑ์ (หรือตามที่ระบุใน license)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>รุ่นมาตรฐาน</b> งานพัสดุและซ่อมบำรุง ไม่จำกัดครุภัณฑ์ สาขา และผู้ใช้</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>รุ่นงานสำนักงาน</b> บุคลากร การลา ลงเวลาด้วย GPS เหตุฉุกเฉิน สารบรรณ ขอใช้รถ</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>รุ่นเต็ม</b> ทุกโมดูล หรือเลือกเพิ่มเฉพาะโมดูลที่ต้องการ</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>อัปเดตรุ่นใหม่ได้ตลอดอายุ license ผู้ดูแลกดอัปเดตหรือตั้งเวลาได้จากหน้าเว็บ</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ตรวจสอบ license แบบออฟไลน์</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>license หมดอายุแล้วยังใช้งานต่อได้ตามปกติ</li>
         </ul>
         <a class="btn btn-primary" href="#contact">ขอใบเสนอราคา</a>
       </div>
@@ -507,8 +615,9 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
       <details><summary>ต้องใช้ server แบบไหน?</summary><p>ใช้เครื่อง Windows 10/11, Windows Server 2016 ขึ้นไป หรือ Linux (AlmaLinux / Rocky / RHEL หรือใช้ Docker) ก็ได้ ระบบใช้ Node.js และ PostgreSQL ซึ่งสคริปต์ติดตั้งจะลงให้เอง</p></details>
       <details><summary>มีข้อมูลเดิมใน Excel หรือโปรแกรมเก่า ย้ายมาได้ไหม?</summary><p>ได้ครับ ใช้เมนูนำเข้าข้อมูล ดาวน์โหลดแม่แบบของหน่วยงาน ครุภัณฑ์ ผู้ใช้ และอะไหล่ กรอกแล้วอัปโหลด ระบบตรวจทุกแถวและให้ดูตัวอย่างก่อนบันทึกจริง</p></details>
       <details><summary>ใช้งานนอกโรงพยาบาลหรือบนมือถือได้ไหม?</summary><p>ใช้บนมือถือผ่าน browser ได้ทันที ถ้าต้องการเข้าจากภายนอก ตั้ง Cloudflare Tunnel ได้ด้วยสคริปต์ที่มีให้ ไม่ต้องเปิดพอร์ตบน firewall</p></details>
-      <details><summary>ถ้า license หมดอายุจะเป็นอย่างไร?</summary><p>หลังหมดอายุยังใช้งานต่อได้อีก 30 วัน จากนั้นระบบจะเปลี่ยนเป็นโหมดดูข้อมูลอย่างเดียวจนกว่าจะต่ออายุ ข้อมูลไม่หายไปไหน</p></details>
-      <details><summary>ระบบอื่นนอกจาก I-Office ขอดูได้ไหม?</summary><p>ได้ครับ I-Queue, I-Work และ I-Appointment ติดต่อขอรายละเอียดหรือนัดสาธิตได้ทางอีเมล ระบุระบบที่สนใจและลักษณะงานของหน่วยงานมาด้วย</p></details>
+      <details><summary>ถ้า license หมดอายุจะเป็นอย่างไร?</summary><p>ใช้งานต่อได้ตามปกติ ข้อมูลอยู่ครบ เพียงแต่อัปเดตเป็นรุ่นใหม่ไม่ได้จนกว่าจะต่ออายุ</p></details>
+      <details><summary>ลงเวลาด้วย GPS ป้องกันการลงเวลาแทนกันได้อย่างไร?</summary><p>ต้องถ่ายรูปจากกล้องในหน้าลงเวลาทุกครั้ง ใช้รูปเก่าหรือรูปซ้ำไม่ได้ ระบบตรวจตำแหน่งกับจุดลงเวลา และตรวจจับแอปจำลองตำแหน่ง พิกัดที่กระโดดผิดปกติ และเวลาในเครื่องที่ไม่ตรง รายการที่น่าสงสัยจะถูกทำเครื่องหมายให้หัวหน้าตรวจสอบ</p></details>
+      <details><summary>ระบบอื่นนอกจาก I-Office ขอดูได้ไหม?</summary><p>ได้ครับ I-Checkin, I-SOS, I-Queue, I-Work และ I-Appointment ติดต่อขอรายละเอียดหรือนัดสาธิตได้ทางอีเมล ระบุระบบที่สนใจและลักษณะงานของหน่วยงานมาด้วย</p></details>
       <details><summary>ทดลองใช้ I-Office ต้องทำอย่างไร?</summary><p>ส่งอีเมลขอไฟล์ติดตั้ง แล้วติดตั้งแบบระบบสาธิต (Demo) ได้เลย ระบบจะสร้างโรงพยาบาลตัวอย่างพร้อมข้อมูลสมมติและบัญชีทดลองครบทุกบทบาท</p></details>
     </div>
   </div>
@@ -525,7 +634,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
       <div class="contact-card">
         <small>อีเมลติดต่อ</small>
         <a class="mail" href="mailto:idevapp2023@gmail.com">idevapp2023@gmail.com</a>
-        <a class="btn btn-primary" href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%82%E0%B8%AD%E0%B8%87%20iDevApp&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AA%E0%B8%99%E0%B9%83%E0%B8%88%20%28I-Office%20/%20I-Queue%20/%20I-Work%20/%20I-Appointment%29%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%A1%3A%0A">
+        <a class="btn btn-primary" href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%82%E0%B8%AD%E0%B8%87%20iDevApp&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AA%E0%B8%99%E0%B9%83%E0%B8%88%20%28I-Office%20/%20I-Checkin%20/%20I-SOS%20/%20I-Queue%20/%20I-Work%20/%20I-Appointment%29%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%A1%3A%0A">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>ส่งอีเมลสอบถาม</a>
         <div class="row2"><button class="btn copy" style="width:100%" onclick="copyMail(this)">คัดลอกอีเมล</button></div>
       </div>
@@ -537,7 +646,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
 <footer>
   <div class="wrap foot">
     <a class="brand" href="#top"><img src="img/idevapp-logo.png" alt="iDevApp" width="41" height="36"></a>
-    <div>© <span id="yr">2026</span> iDevApp · I-Office · I-Queue · I-Work · I-Appointment</div>
+    <div>© <span id="yr">2026</span> iDevApp · I-Office · I-Checkin · I-SOS · I-Queue · I-Work · I-Appointment</div>
     <a href="mailto:idevapp2023@gmail.com">idevapp2023@gmail.com</a>
   </div>
 </footer>
