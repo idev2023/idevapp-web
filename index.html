@@ -304,6 +304,34 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
+
+/* WordPress plugins promo */
+.wp{background:linear-gradient(135deg,#10275c 0%,#1d3f8b 55%,#0b6e80 100%);color:#fff;position:relative;overflow:hidden}
+.wp::before{content:"";position:absolute;width:520px;height:520px;right:-160px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(244,123,32,.35),transparent 65%)}
+.wp .wrap{position:relative}
+.wp-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.wp .eyebrow{color:#ffb67a}.wp .eyebrow::before{background:#ffb67a}
+.wp h2{color:#fff}
+.wp .lead{color:#d6e2ff}
+.wp-list{list-style:none;padding:0;margin:26px 0 30px;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+.wp-list li{display:flex;gap:9px;align-items:flex-start;font-size:15.5px;color:#eef3ff;line-height:1.5}
+.wp-list svg{flex:none;width:19px;height:19px;color:#5fe0b9;margin-top:2px}
+.wp .cta-row{margin:0}
+.wp .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.wp .btn-ghost:hover{border-color:#fff;color:#fff}
+.wp-prices{display:grid;gap:14px}
+.wp-price{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:18px 20px;backdrop-filter:blur(6px)}
+.wp-price .amt{flex:none;min-width:112px;font-size:30px;font-weight:700;line-height:1;color:#fff}
+.wp-price .amt small{display:block;font-size:13px;font-weight:500;color:#b9c8ee;margin-top:6px}
+.wp-price b{display:block;font-size:17px}
+.wp-price span{display:block;font-size:14.5px;color:#cfdaf5;line-height:1.5}
+.wp-price.hot{background:#fff;border-color:#fff}
+.wp-price.hot .amt{color:var(--navy)}.wp-price.hot .amt small{color:var(--muted)}
+.wp-price.hot b{color:var(--ink)}.wp-price.hot span{color:var(--ink-2)}
+.wp-note{font-size:13.5px;color:#b9c8ee;margin:4px 2px 0}
+@media (max-width:980px){.wp-grid{grid-template-columns:1fr;gap:36px}}
+@media (max-width:640px){.wp-list{grid-template-columns:1fr}.wp-price{padding:16px}.wp-price .amt{min-width:92px;font-size:26px}}
+
 /* responsive */
 @media (max-width:980px){
   .hero-grid,.row,.row.rev,.cta-box{grid-template-columns:1fr}
@@ -425,6 +453,25 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
         <div class="name">I-Appointment</div><div class="kind">ระบบนัดหมายล่วงหน้า</div>
         <p>จองนัดล่วงหน้าตามวันและช่วงเวลาที่ว่าง เจ้าหน้าที่จัดการตารางนัดและรายชื่อผู้มารับบริการได้ในที่เดียว</p>
         <a href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%20I-Appointment&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%3A%0A">สอบถาม / ขอสาธิต <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORDPRESS PLUGINS -->
+<section id="wordpress" class="wp">
+  <div class="wrap wp-grid">
+    <div class="rv">
+      <span class="eyebrow">ใหม่ · ปลั๊กอิน WordPress</span>
+      <h2>ยกบริการผู้ป่วยขึ้นเว็บโรงพยาบาลของคุณ</h2>
+      <p class="lead">11 ปลั๊กอิน WordPress สำหรับโรงพยาบาลและคลินิก ติดตั้งกับเว็บเดิมได้ทุกธีม ใช้ฟรีเกือบทั้งชุด</p>
+      <ul class="wp-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>นัดหมายแพทย์ออนไลน์ แบ่ง slot แจ้งเตือนทางอีเมล</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ลงทะเบียนผู้ป่วยใหม่ อ่านบัตรประชาชน/พาสปอร์ตบนมือถือ</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>เชื่อม HOSxP ออก HN และบัตรคนไข้มี QR</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ตารางออกตรวจ ทีมแพทย์แยกตามสาขา</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>คุกกี้ PDPA / GDPR พร้อมบันทึกความยินยอม</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>เว็บสองภาษา TH/EN ไม่ต้องทำหน้าซ้ำ</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>แผนที่และปุ่มนำทาง ไม่ต้องใช้ API key</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ประกาศ Popup ไฟล์แนบ แผนผังองค์กร</li></ul>
+      <div class="cta-row"><a class="btn btn-primary" href="plugins/">ดูปลั๊กอินทั้งหมด</a><a class="btn btn-ghost" href="plugins/#pricing">ราคา License</a></div>
+    </div>
+    <div class="wp-prices rv">
+      <div class="wp-price"><div class="amt">ฟรี<small>ไม่จำกัดเวลา</small></div><div><b>9 ปลั๊กอิน</b><span>สองภาษา ตารางออกตรวจ คุกกี้ PDPA แผนที่ ประกาศ ฯลฯ และเริ่มใช้ลงทะเบียน/นัดหมายได้ฟรี</span></div></div>
+      <div class="wp-price hot"><div class="amt">1,000<small>บาท · ตลอดชีพ</small></div><div><b>ลงทะเบียนผู้ป่วยใหม่</b><span>ฟรี 100 รายการแรก · License: ไม่จำกัด + ตัวเชื่อม HOSxP</span></div></div>
+      <div class="wp-price hot"><div class="amt">2,000<small>บาท · ตลอดชีพ</small></div><div><b>นัดหมายออนไลน์</b><span>ฟรี 1 แพทย์/คลินิก · License: ทุกแพทย์ นัดไม่จำกัด 1 คลินิก</span></div></div>
+      <p class="wp-note">License ต่อ 1 เว็บไซต์ จ่ายครั้งเดียว · สิทธิ์เชื่อมต่อ HOSxP ติดต่อ BMS เอง</p>
     </div>
   </div>
 </section>
