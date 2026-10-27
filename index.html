@@ -156,7 +156,7 @@ header.scrolled{border-color:var(--line)}
 .sc h3{font-size:20px;line-height:1.35;margin-bottom:10px;color:#fff}
 .sc p{margin:0 0 22px;color:rgba(255,255,255,.75);font-size:15.5px;flex:1}
 .sc a{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:15px;color:#fff;text-decoration:none;padding:9px 16px;border-radius:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
-.sc a:hover{background:rgba(255,255,255,.18)}
+.sc a:hover{background:rgba(255,255,255,.18)}.sc .tag.ready{border-style:solid;background:rgba(18,163,127,.25);border-color:rgba(110,231,183,.6)}.sc .sc-price{margin:-8px 0 18px;font-size:15px;color:rgba(255,255,255,.85)}.sc .sc-price b{font-size:20px;color:#fff}
 .sc a svg{width:17px;height:17px}
 @media (max-width:980px){.soon-grid{grid-template-columns:1fr}}
 
@@ -373,7 +373,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
       <li><a href="#attendance">I-Work</a></li>
       <li><a href="#emergency">I-SOS</a></li>
       <li><a href="#queue">I-Queue</a></li>
-      <li><a href="#soon">เร็วๆ นี้</a></li>
+      <li><a href="#soon">คลินิก/ร้านยา</a></li>
       <li><a href="#ioffice">I-Office</a></li>
       <li><a href="#pricing">License</a></li>
       <li><a href="plugins/">ปลั๊กอิน WordPress</a></li>
@@ -468,10 +468,10 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
       <div class="cta-row"><a class="btn btn-primary" href="plugins/">ดูปลั๊กอินทั้งหมด</a><a class="btn btn-ghost" href="plugins/#packages">ดูแพ็กเกจและราคา</a></div>
     </div>
     <div class="wp-prices rv">
-      <div class="wp-price hot"><div class="amt">15,900<small>บาท · เฉพาะระบบ</small></div><div><b>แพ็กเกจคลินิกทั่วไป</b><span>นัดหมาย ทะเบียนคนไข้ สต็อกยา ขาย/จ่ายยา QR พร้อมเพย์ · รวมคอมและอุปกรณ์ 37,900</span></div></div>
-      <div class="wp-price hot"><div class="amt">24,900<small>บาท · เฉพาะระบบ</small></div><div><b>คลินิก + งานสั่งทำ / มัดจำ / นัดรับของ</b><span>คลินิกตา ร้านแว่น เครื่องช่วยฟัง · รวมคอมและอุปกรณ์ 51,900</span></div></div>
-      <div class="wp-price hot"><div class="amt">12,900<small>บาท · เฉพาะระบบ</small></div><div><b>แพ็กเกจร้านขายยา</b><span>สต็อก Lot/วันหมดอายุ ฉลากยา บัญชี ขย.9–13 QR พร้อมเพย์ · รวมคอมและอุปกรณ์ 37,900</span></div></div>
-      <p class="wp-note">จ่ายครั้งเดียว รวมติดตั้งและดูแลแก้ปัญหาฟรี 1 ปี · ไม่รวม Payment Gateway · ปลั๊กอินเว็บไซต์อีก 9 ตัวใช้ฟรี</div>
+      <div class="wp-price hot"><div class="amt">22,900<small>บาท · เฉพาะระบบ</small></div><div><b>I-Clinic</b><span>นัดหมาย ทะเบียนคนไข้ สต็อกยา จ่ายยา ฉลากยา QR พร้อมเพย์ · รวมคอมและอุปกรณ์ 47,900</span></div></div>
+      <div class="wp-price hot"><div class="amt">32,900<small>บาท · เฉพาะระบบ</small></div><div><b>I-Clinic Pro</b><span>+ งานสั่งทำ มัดจำ นัดรับของ: คลินิกตา ร้านแว่น เครื่องช่วยฟัง · รวมคอมและอุปกรณ์ 59,900</span></div></div>
+      <div class="wp-price hot"><div class="amt">19,900<small>บาท · เฉพาะระบบ</small></div><div><b>I-Drug</b><span>ร้านขายยา: สต็อก Lot/วันหมดอายุ ฉลากยา บัญชี ขย.9–13 QR พร้อมเพย์ · รวมคอมและอุปกรณ์ 44,900</span></div></div>
+      <p class="wp-note">I-Clinic / I-Drug คือชุดติดตั้ง WordPress พร้อมใช้ (แยกจากการซื้อปลั๊กอินรายตัว) จ่ายครั้งเดียว รวมติดตั้งและดูแลแก้ปัญหาฟรี 1 ปี · ไม่รวม Payment Gateway</div>
   </div>
 </section>
 
@@ -613,23 +613,23 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
 <section id="soon" class="soon">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">เร็วๆ นี้</span>
+      <span class="eyebrow">คลินิก · ร้านยา · ร้านอาหาร</span>
       <h2>จากโรงพยาบาล สู่ธุรกิจของคุณ</h2>
-      <p class="lead">ประสบการณ์ทำระบบงานให้โรงพยาบาลและองค์กร กำลังถูกย่อให้พอดีกับคลินิก ร้านยา และร้านอาหาร ใช้ง่าย เริ่มได้ไว ไม่ต้องมีทีม IT</p>
+      <p class="lead">ประสบการณ์ทำระบบงานให้โรงพยาบาลและองค์กร ย่อให้พอดีกับคลินิก ร้านยา และร้านอาหาร ใช้ง่าย เริ่มได้ไว ไม่ต้องมีทีม IT</p>
     </div>
     <div class="soon-grid">
-      <div class="sc rv" style="--sg:#12a37f"><span class="tag">COMING SOON</span>
+      <div class="sc rv" style="--sg:#12a37f"><span class="tag ready">พร้อมใช้ · WordPress</span>
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v6a4 4 0 0 0 8 0V3M9 13v2a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="2"/></svg></div>
         <div class="nm">I-Clinic</div><div class="for">ระบบงานสำหรับคลินิก</div>
         <h3>คลินิกเล็ก ระบบไม่เล็ก</h3>
-        <p>นัดหมาย คิวหน้าห้อง เวชระเบียน จนถึงจ่ายยาและออกใบเสร็จ จบในหน้าจอเดียว ให้หมอได้โฟกัสที่คนไข้</p>
-        <a href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%99%E0%B9%83%E0%B8%88%20I-Clinic%20%28%E0%B9%81%E0%B8%88%E0%B9%89%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B8%A7%29&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%20/%20%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%B4%E0%B8%81%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%AA%E0%B8%B2%E0%B8%82%E0%B8%B2%3A%0A%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%94%E0%B9%89%3A%0A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>แจ้งฉันเมื่อเปิดตัว</a></div>
-      <div class="sc rv" style="--sg:#3561c4"><span class="tag">COMING SOON</span>
+        <p>ชุดติดตั้ง WordPress พร้อมใช้: นัดหมายออนไลน์ ลงทะเบียนผู้ป่วยใหม่ สต็อกยาแยกล็อต จ่ายยา ฉลากยา ใบเสร็จ และ QR พร้อมเพย์ รุ่น <b>Pro</b> เพิ่มงานสั่งทำ มัดจำ และนัดรับของ สำหรับคลินิกตา ร้านแว่น</p><div class="sc-price">เริ่มต้น <b>22,900</b> บาท · Pro <b>32,900</b> บาท</div>
+        <a href="plugins/#packages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>ดูแพ็กเกจและราคา</a></div>
+      <div class="sc rv" style="--sg:#3561c4"><span class="tag ready">พร้อมใช้ · WordPress</span>
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7z"/><path d="m8.5 8.5 7 7"/></svg></div>
         <div class="nm">I-Drug</div><div class="for">ระบบงานสำหรับร้านขายยา</div>
         <h3>รู้ทุกเม็ด ทุกล็อต ทุกวันหมดอายุ</h3>
-        <p>ขายหน้าร้าน สต็อกยาแยกล็อต เตือนยาใกล้หมดอายุและของใกล้หมด ร้านยาเล็กก็บริหารสต็อกได้แบบมืออาชีพ</p>
-        <a href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%99%E0%B9%83%E0%B8%88%20I-Drug%20%28%E0%B9%81%E0%B8%88%E0%B9%89%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B8%A7%29&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%20/%20%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%B4%E0%B8%81%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%AA%E0%B8%B2%E0%B8%82%E0%B8%B2%3A%0A%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%94%E0%B9%89%3A%0A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>แจ้งฉันเมื่อเปิดตัว</a></div>
+        <p>ชุดติดตั้ง WordPress พร้อมใช้: ขายหน้าร้าน สต็อกยาแยกล็อต พิมพ์ฉลากยา บัญชี ขย.9–13 เตือนยาใกล้หมดและใกล้หมดอายุ รับเงิน QR พร้อมเพย์</p><div class="sc-price">เริ่มต้น <b>19,900</b> บาท</div>
+        <a href="plugins/#packages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>ดูแพ็กเกจและราคา</a></div>
       <div class="sc rv" style="--sg:#f47b20"><span class="tag">COMING SOON</span>
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0zM12 3v4M8 4.5 9 7M16 4.5 15 7"/><path d="M5 20h14"/></svg></div>
         <div class="nm">I-Order</div><div class="for">ระบบงานสำหรับร้านข้าว ร้านอาหาร</div>
