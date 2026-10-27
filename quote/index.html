@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ใบเสนอราคา iDevApp</title>
+<link rel="icon" type="image/png" href="../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Editor on the left, A4 sheet on the right; printing shows only the sheet. */
+:root{
+  --navy:#1d3f8b; --orange:#f47b20; --ink:#262b3a; --ink2:#4a5266; --muted:#6b7385; --line:#e3e7ef; --bg:#eef1f7; --panel:#fff; --field:#f7f9fc;
+  --ui:"Anuphan",system-ui,sans-serif; --doc:"Sarabun","Anuphan",Tahoma,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--ui)}
+.app{display:grid;grid-template-columns:400px minmax(0,1fr);min-height:100vh}
+.ed{background:var(--panel);border-right:1px solid var(--line);padding:18px 18px 40px;overflow:auto;max-height:100vh;position:sticky;top:0}
+.ed h1{font-size:18px;margin:0 0 2px;display:flex;align-items:center;gap:8px}
+.ed h1 img{height:28px}
+.ed .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.ed fieldset{border:1px solid var(--line);border-radius:12px;padding:10px 12px 12px;margin:0 0 12px}
+.ed legend{font-weight:700;font-size:13.5px;color:var(--navy);padding:0 6px}
+.ed label{display:block;font-size:12.5px;color:var(--ink2);margin:8px 0 3px}
+.ed input,.ed select,.ed textarea{width:100%;font:inherit;font-size:14px;padding:7px 9px;border:1px solid #d5dbe6;border-radius:8px;background:var(--field);color:var(--ink)}
+.ed textarea{resize:vertical}
+.ed input:focus,.ed select:focus,.ed textarea:focus{outline:2px solid #b9c8ee;border-color:var(--navy);background:#fff}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pk{display:grid;gap:6px}
+.pk label{display:flex;gap:8px;align-items:flex-start;margin:0;padding:8px 10px;border:1px solid var(--line);border-radius:10px;cursor:pointer;font-size:13.5px;color:var(--ink)}
+.pk label:has(input:checked){border-color:var(--navy);background:#eef2fb}
+.pk input{width:auto;margin-top:3px}
+.pk b{display:block}
+.seg{display:flex;border:1px solid #d5dbe6;border-radius:9px;overflow:hidden;margin-top:6px}
+.seg label{flex:1;margin:0;text-align:center;padding:7px 4px;cursor:pointer;font-size:13px;color:var(--ink)}
+.seg input{display:none}
+.seg label:has(input:checked){background:var(--navy);color:#fff}
+.opt{display:grid;grid-template-columns:1fr 64px;gap:8px;align-items:center;margin-top:6px;font-size:13.5px}
+.opt input{text-align:center;padding:5px}
+.lines .ln{display:grid;grid-template-columns:1fr 52px 86px 26px;gap:6px;margin-top:6px}
+.lines .ln input{padding:5px 7px;font-size:13px}
+.btn{display:inline-flex;align-items:center;gap:6px;font:600 14px var(--ui);border:0;border-radius:10px;padding:10px 16px;cursor:pointer}
+.btn.pri{background:var(--orange);color:#fff}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid #d5dbe6}
+.btn.x{background:none;color:#b42318;padding:0;font-size:16px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.hint{font-size:12px;color:var(--muted);margin:6px 0 0}
+.view{padding:24px;overflow:auto}
+/* sheet */
+.sheet{width:210mm;min-height:297mm;margin:0 auto;background:#fff;color:#111;font:13px/1.55 var(--doc);padding:14mm 15mm 16mm;box-shadow:0 10px 40px -12px rgba(20,35,80,.35)}
+.hd{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:3px solid var(--navy);padding-bottom:10px}
+.hd .logo{height:44px}
+.hd .seller{font-size:12px;color:#333;margin-top:4px;white-space:pre-line}
+.hd .ttl{text-align:right}
+.hd .ttl h2{margin:0;font-size:24px;color:var(--navy);letter-spacing:.02em}
+.hd .ttl small{display:block;color:#555;font-size:11.5px;letter-spacing:.12em}
+.meta{display:grid;grid-template-columns:1.35fr 1fr;gap:12px;margin:12px 0}
+.box{border:1px solid #cfd6e4;border-radius:6px;padding:8px 10px}
+.box h4{margin:0 0 4px;font-size:11.5px;color:var(--navy);letter-spacing:.06em}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:1px 10px}
+.kv span:nth-child(odd){color:#555}
+table.items{width:100%;border-collapse:collapse;margin-top:6px}
+.items th{background:var(--navy);color:#fff;font-weight:600;padding:6px 8px;font-size:12.5px;text-align:left}
+.items td{padding:7px 8px;border-bottom:1px solid #e1e6ef;vertical-align:top}
+.items .r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.items .c{text-align:center}
+.items .desc{font-size:11.5px;color:#444;margin-top:3px}
+.items .desc ul{margin:2px 0 0;padding-left:16px}
+.sum{display:grid;grid-template-columns:1fr 250px;gap:14px;margin-top:10px;align-items:start}
+.words{background:#f2f5fb;border-radius:6px;padding:8px 10px;font-weight:600}
+.sumt{width:100%;border-collapse:collapse}
+.sumt td{padding:3px 0;font-variant-numeric:tabular-nums}
+.sumt td:last-child{text-align:right}
+.sumt .tot td{border-top:2px solid var(--navy);font-weight:700;font-size:15px;color:var(--navy);padding-top:6px}
+.terms{margin-top:14px;font-size:11.8px;color:#222}
+.terms h4{margin:0 0 4px;font-size:12.5px;color:var(--navy)}
+.terms ol{margin:0;padding-left:18px}
+.terms li{margin:2px 0}
+.pay{margin-top:10px;font-size:12px;white-space:pre-line;border-left:3px solid var(--orange);padding:4px 10px;background:#fff8f1}
+.sig{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:30px;text-align:center;font-size:12px}
+.sig div{border-top:1px dotted #333;padding-top:5px}
+.sig small{display:block;color:#666}
+.foot{margin-top:16px;font-size:10.5px;color:#777;text-align:center}
+@media (max-width:900px){.app{grid-template-columns:1fr}.ed{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line)}.view{padding:12px}.sheet{transform-origin:top left}}
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff}
+  .ed{display:none}
+  .app{display:block}
+  .view{padding:0}
+  .sheet{box-shadow:none;margin:0;width:210mm;min-height:auto;padding:9mm 12mm 6mm;font-size:12.4px}
+  .sig{margin-top:22px}.terms{font-size:11.3px}.foot{margin-top:8px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<form class="ed" id="ed" autocomplete="off">
+  <h1><img src="../img/idevapp-logo.png" alt="iDevApp">ใบเสนอราคา</h1>
+  <p class="sub">กรอกด้านซ้าย ดูตัวอย่างด้านขวา แล้วกดพิมพ์ (เลือก "Save as PDF" เพื่อส่งเป็นไฟล์) · ข้อมูลเก็บในเบราว์เซอร์นี้เท่านั้น</p>
+  <div class="bar"><button type="button" class="btn pri" id="print">พิมพ์ / บันทึก PDF</button><button type="button" class="btn ghost" id="new">ใบใหม่</button></div>
+
+  <fieldset><legend>ใบเสนอราคา</legend>
+    <div class="row2"><div><label for="q_no">เลขที่</label><input id="q_no"></div><div><label for="q_date">วันที่</label><input id="q_date" type="date"></div></div>
+    <div class="row2"><div><label for="q_valid">ยืนราคา (วัน)</label><input id="q_valid" type="number" min="1" value="30"></div><div><label for="q_sales">ผู้เสนอราคา</label><input id="q_sales"></div></div>
+  </fieldset>
+
+  <fieldset><legend>ลูกค้า</legend>
+    <label for="c_name">ชื่อคลินิก / ร้าน / บริษัท</label><input id="c_name">
+    <label for="c_addr">ที่อยู่</label><textarea id="c_addr" rows="2"></textarea>
+    <div class="row2"><div><label for="c_contact">ผู้ติดต่อ</label><input id="c_contact"></div><div><label for="c_phone">โทร</label><input id="c_phone"></div></div>
+    <div class="row2"><div><label for="c_tax">เลขผู้เสียภาษี</label><input id="c_tax"></div><div><label for="c_web">เว็บไซต์ (โดเมน)</label><input id="c_web" placeholder="clinic.example.com"></div></div>
+  </fieldset>
+
+  <fieldset><legend>แพ็กเกจ</legend>
+    <div class="pk" id="pk"></div>
+    <div class="seg"><label><input type="radio" name="mode" value="sys" checked>เฉพาะระบบ</label><label><input type="radio" name="mode" value="all">รวมคอมพิวเตอร์และอุปกรณ์</label></div>
+  </fieldset>
+
+  <fieldset><legend>รายการเพิ่มเติม (จำนวน)</legend><div id="opts"></div></fieldset>
+
+  <fieldset><legend>รายการอื่น ๆ</legend>
+    <div class="lines" id="lines"></div>
+    <button type="button" class="btn ghost" id="addline" style="margin-top:8px;padding:6px 12px">＋ เพิ่มรายการ</button>
+  </fieldset>
+
+  <fieldset><legend>ส่วนลดและภาษี</legend>
+    <div class="row2"><div><label for="disc">ส่วนลด (บาท หรือ %)</label><input id="disc" placeholder="เช่น 2000 หรือ 10%"></div>
+    <div><label for="vat">ภาษีมูลค่าเพิ่ม</label><select id="vat"><option value="none">ไม่คิด VAT</option><option value="ex">บวก VAT 7%</option><option value="in">ราคารวม VAT 7% แล้ว</option></select></div></div>
+  </fieldset>
+
+  <fieldset><legend>เงื่อนไขการชำระเงิน</legend><textarea id="pay" rows="4"></textarea></fieldset>
+  <fieldset><legend>เงื่อนไข</legend><textarea id="terms" rows="9"></textarea><p class="hint">บรรทัดละ 1 ข้อ</p></fieldset>
+
+  <fieldset><legend>ผู้ขาย (จำไว้ในเบราว์เซอร์นี้)</legend>
+    <label for="s_name">ชื่อ</label><input id="s_name">
+    <label for="s_info">ที่อยู่ / โทร / อีเมล / เลขผู้เสียภาษี</label><textarea id="s_info" rows="4"></textarea>
+  </fieldset>
+</form>
+
+<div class="view"><div class="sheet" id="sheet"></div></div>
+</div>
+
+<script>
+'use strict';
+const PKG = {
+  clinic: { name: 'แพ็กเกจคลินิกทั่วไป', sys: 15900, all: 37900,
+    inc: ['นัดหมายออนไลน์ ทุกแพทย์ ไม่จำกัดนัด', 'ลงทะเบียนผู้ป่วยใหม่ออนไลน์ไม่จำกัด (อ่านบัตรประชาชน/พาสปอร์ต)', 'สต็อกยา/เวชภัณฑ์ แยก Lot และวันหมดอายุ', 'ขาย/จ่ายยา ใบเสร็จ รับเงินสด QR พร้อมเพย์ / โอน', 'ทะเบียนลูกค้า รายงานยอดขาย'] },
+  job: { name: 'แพ็กเกจคลินิก + งานสั่งทำ / มัดจำ / นัดรับของ', sys: 24900, all: 51900,
+    inc: ['ทุกอย่างในแพ็กเกจคลินิกทั่วไป', 'งานสั่งทำ ใบรับงาน ค่าสายตา/รายละเอียดงาน', 'มัดจำ และชำระส่วนที่เหลือวันรับของ', 'นัดรับของ: ลูกค้าสแกน QR ดูสถานะและเลือกเวลามารับ', 'แจ้งลูกค้าทาง LINE / SMS / อีเมล เมื่อพร้อมรับ'] },
+  pharmacy: { name: 'แพ็กเกจร้านขายยา', sys: 12900, all: 37900,
+    inc: ['สต็อกยา แยก Lot และวันหมดอายุ ตัดตัวหมดอายุก่อน', 'ขายหน้าร้าน สแกนบาร์โค้ด รับเงิน QR พร้อมเพย์', 'ข้อมูลยา ชื่อสามัญ ความแรง ประเภทยา อย.', 'นัดหมาย / ลงทะเบียนลูกค้าออนไลน์', 'เตือนยาใกล้หมด / ใกล้หมดอายุ'] },
+};
+const HW = {
+  base: ['คอมพิวเตอร์ Mini PC + Windows 11', 'จอ 22–24 นิ้ว + คีย์บอร์ด/เมาส์', 'เครื่องพิมพ์ใบเสร็จ 80 มม.', 'เครื่องสแกนบาร์โค้ด/QR', 'ลิ้นชักเก็บเงิน', 'เครื่องสำรองไฟ UPS 1000VA', 'โฮสติ้ง + โดเมน ปีแรก'],
+  job: ['เครื่องพิมพ์ A4/A5 แบบแท็งก์หมึก (ใบรับงาน)'], pharmacy: ['เครื่องพิมพ์สติกเกอร์ฉลาก/บาร์โค้ด'],
+};
+const OPTS = [
+  { id: 'point', name: 'จุดบริการเพิ่ม (คอม + จอ + เครื่องพิมพ์ใบเสร็จ + สแกนเนอร์)', price: 13900 },
+  { id: 'lq310', name: 'เปลี่ยนเป็นเครื่องพิมพ์ดอทเมทริกซ์ Epson LQ-310 (ส่วนต่าง)', price: 4500 },
+  { id: 'lq590', name: 'เปลี่ยนเป็นเครื่องพิมพ์ดอทเมทริกซ์ Epson LQ-590 (ส่วนต่าง)', price: 15500 },
+  { id: 'tablet', name: 'แท็บเล็ตสำหรับลงทะเบียน/จองที่เคาน์เตอร์', price: 6500 },
+  { id: 'host', name: 'โฮสติ้ง + โดเมน (ต่อปี)', price: 2500 },
+  { id: 'ma', name: 'บริการดูแลและอัปเดต ปีถัดไป (ต่อปี)', price: 3900 },
+];
+const DEF = {
+  seller: 'iDevApp', sellerInfo: 'idevapp.me · idevapp2023@gmail.com',
+  pay: 'ชำระ 50% เมื่อยืนยันสั่งซื้อ และ 50% เมื่อติดตั้งและส่งมอบระบบเรียบร้อย\nโอนเข้าบัญชี: (ธนาคาร / เลขบัญชี / ชื่อบัญชี)',
+  terms: ['ราคารวมค่าติดตั้ง ตั้งค่าระบบ และสอนการใช้งาน 1 ครั้ง',
+    'ดูแลแก้ปัญหาฟรี 1 ปี ทางออนไลน์ (LINE / รีโมต) ในเวลาทำการ ไม่รวมการพัฒนาฟีเจอร์เพิ่มเติม และการเดินทางไปหน้างานนอกพื้นที่',
+    'ปีถัดไป บริการดูแลและอัปเดต 2,900–3,900 บาท/ปี (ไม่บังคับ) · โฮสติ้งและโดเมนต่ออายุตามจริง',
+    'ไม่รวม Payment Gateway (รับบัตรเครดิตออนไลน์)',
+    'การเชื่อมต่อฐานข้อมูล HOSxP ต้องได้รับสิทธิ์จาก BMS ลูกค้าเป็นผู้ติดต่อเอง',
+    'อุปกรณ์ฮาร์ดแวร์รับประกันตามเงื่อนไขของผู้ผลิต iDevApp ช่วยประสานงานการเคลม',
+    'License ใช้กับ 1 เว็บไซต์ (1 โดเมน) ไม่มีวันหมดอายุ'].join('\n'),
+};
+const $ = (id) => document.getElementById(id);
+const fmt = (n) => (Math.round(n * 100) / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const store = { get(k, d) { try { const v = localStorage.getItem('idq_' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem('idq_' + k, JSON.stringify(v)); } catch (e) {} } };
+
+/** Thai baht text: 1234.5 → หนึ่งพันสองร้อยสามสิบสี่บาทห้าสิบสตางค์ */
+function bahtText(num) {
+  const d = ['', 'หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า'], u = ['', 'สิบ', 'ร้อย', 'พัน', 'หมื่น', 'แสน'];
+  function read(s, higher) {
+    if (s.length > 6) { const hi = read(s.slice(0, -6)); return hi + 'ล้าน' + read(s.slice(-6), !!hi); }
+    s = s.replace(/^0+/, ''); if (!s) return '';
+    let out = '';
+    for (let i = 0; i < s.length; i++) {
+      const n = +s[i], pos = s.length - i - 1;
+      if (!n) continue;
+      if (pos === 1 && n === 1) out += 'สิบ';
+      else if (pos === 1 && n === 2) out += 'ยี่สิบ';
+      else if (pos === 0 && n === 1 && (s.length > 1 || higher)) out += 'เอ็ด';
+      else out += d[n] + u[pos];
+    }
+    return out;
+  }
+  num = Math.round(num * 100) / 100;
+  const [b, st] = num.toFixed(2).split('.');
+  const bt = read(b), sat = read(st);
+  if (!bt && !sat) return 'ศูนย์บาทถ้วน';
+  return (bt ? bt + 'บาท' : '') + (sat ? sat + 'สตางค์' : 'ถ้วน');
+}
+
+function nextNo() {
+  const d = new Date(), ym = String(d.getFullYear() + 543).slice(-2) + String(d.getMonth() + 1).padStart(2, '0');
+  const c = store.get('counter', {}); c[ym] = (c[ym] || 0) + 1; store.set('counter', c);
+  return 'QT' + ym + '-' + String(c[ym]).padStart(3, '0');
+}
+function thaiDate(iso) {
+  if (!iso) return '';
+  const m = ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'];
+  const [y, mo, da] = iso.split('-').map(Number); return da + ' ' + m[mo - 1] + ' ' + (y + 543);
+}
+function addDays(iso, n) { const t = new Date(iso + 'T00:00:00'); t.setDate(t.getDate() + n); return t.toISOString().slice(0, 10); }
+
+// build editor parts
+$('pk').innerHTML = Object.entries(PKG).map(([k, p], i) => `<label><input type="radio" name="pkg" value="${k}"${i === 1 ? ' checked' : ''}><span><b>${esc(p.name)}</b>${fmt(p.sys).replace('.00', '')} / รวมอุปกรณ์ ${fmt(p.all).replace('.00', '')} บาท</span></label>`).join('');
+$('opts').innerHTML = OPTS.map((o) => `<div class="opt"><span>${esc(o.name)} <small>(${fmt(o.price).replace('.00', '')})</small></span><input type="number" min="0" id="o_${o.id}" value="0" aria-label="${esc(o.name)}"></div>`).join('');
+let lines = [];
+function drawLines() {
+  $('lines').innerHTML = lines.map((l, i) => `<div class="ln"><input data-i="${i}" data-k="name" value="${esc(l.name)}" placeholder="รายการ" aria-label="รายการ"><input data-i="${i}" data-k="qty" type="number" min="0" value="${l.qty}" aria-label="จำนวน"><input data-i="${i}" data-k="price" type="number" min="0" step="0.01" value="${l.price}" aria-label="ราคา"><button type="button" class="btn x" data-del="${i}" aria-label="ลบ">✕</button></div>`).join('');
+}
+$('lines').addEventListener('input', (e) => { const t = e.target; if (t.dataset.k) { lines[+t.dataset.i][t.dataset.k] = t.dataset.k === 'name' ? t.value : +t.value; render(); } });
+$('lines').addEventListener('click', (e) => { const i = e.target.dataset.del; if (i != null) { lines.splice(+i, 1); drawLines(); render(); } });
+$('addline').onclick = () => { lines.push({ name: '', qty: 1, price: 0 }); drawLines(); render(); };
+
+const FIELDS = ['q_no', 'q_date', 'q_valid', 'q_sales', 'c_name', 'c_addr', 'c_contact', 'c_phone', 'c_tax', 'c_web', 'disc', 'vat', 'pay', 'terms', 's_name', 's_info'];
+function state() {
+  const s = {}; FIELDS.forEach((f) => s[f] = $(f).value);
+  s.pkg = document.querySelector('input[name=pkg]:checked').value; s.mode = document.querySelector('input[name=mode]:checked').value;
+  s.opts = {}; OPTS.forEach((o) => s.opts[o.id] = +$('o_' + o.id).value || 0); s.lines = lines; return s;
+}
+function load(s) {
+  FIELDS.forEach((f) => { if (s[f] != null) $(f).value = s[f]; });
+  if (s.pkg) document.querySelector(`input[name=pkg][value="${s.pkg}"]`).checked = true;
+  if (s.mode) document.querySelector(`input[name=mode][value="${s.mode}"]`).checked = true;
+  OPTS.forEach((o) => $('o_' + o.id).value = (s.opts || {})[o.id] || 0);
+  lines = Array.isArray(s.lines) ? s.lines : []; drawLines();
+}
+function fresh() {
+  const today = new Date().toISOString().slice(0, 10);
+  load({ q_no: nextNo(), q_date: today, q_valid: 30, q_sales: store.get('sales', ''), c_name: '', c_addr: '', c_contact: '', c_phone: '', c_tax: '', c_web: '', disc: '', vat: 'none',
+    pay: store.get('pay', DEF.pay), terms: store.get('terms', DEF.terms), s_name: store.get('seller', DEF.seller), s_info: store.get('sellerInfo', DEF.sellerInfo), pkg: 'job', mode: 'sys', opts: {}, lines: [] });
+}
+
+function render() {
+  const s = state(); store.set('draft', s);
+  store.set('seller', s.s_name); store.set('sellerInfo', s.s_info); store.set('pay', s.pay); store.set('terms', s.terms); store.set('sales', s.q_sales);
+  const p = PKG[s.pkg], all = s.mode === 'all';
+  const rows = [];
+  const hw = HW.base.concat(HW[s.pkg] || []);
+  rows.push({ name: p.name + (all ? ' — รวมคอมพิวเตอร์และอุปกรณ์ 1 จุดบริการ' : ' — เฉพาะระบบ'), qty: 1, price: all ? p.all : p.sys,
+    desc: '<ul>' + p.inc.map((t) => `<li>${esc(t)}</li>`).join('') + '<li>รวมค่าติดตั้ง ตั้งค่า สอนการใช้งาน และดูแลแก้ปัญหา 1 ปี</li></ul>' + (all ? '<div style="margin-top:4px"><b>อุปกรณ์:</b> ' + hw.map(esc).join(' · ') + '</div>' : '') });
+  OPTS.forEach((o) => { if (s.opts[o.id] > 0) rows.push({ name: o.name, qty: s.opts[o.id], price: o.price }); });
+  lines.forEach((l) => { if (l.name && l.qty > 0) rows.push({ name: l.name, qty: l.qty, price: +l.price || 0 }); });
+  const sub = rows.reduce((t, r) => t + r.qty * r.price, 0);
+  let disc = 0; const dv = (s.disc || '').trim();
+  if (/%$/.test(dv)) disc = sub * (parseFloat(dv) || 0) / 100; else disc = parseFloat(dv.replace(/,/g, '')) || 0;
+  disc = Math.min(Math.max(0, disc), sub);
+  const net = sub - disc; let vat = 0, total = net;
+  if (s.vat === 'ex') { vat = Math.round(net * 7) / 100; total = net + vat; } else if (s.vat === 'in') vat = Math.round(net * 7 / 107 * 100) / 100;
+  const until = s.q_date ? addDays(s.q_date, +s.q_valid || 30) : '';
+  $('sheet').innerHTML = `
+  <div class="hd"><div><img class="logo" src="../img/idevapp-logo.png" alt=""><div class="seller"><b>${esc(s.s_name)}</b>\n${esc(s.s_info)}</div></div>
+    <div class="ttl"><h2>ใบเสนอราคา</h2><small>QUOTATION</small></div></div>
+  <div class="meta">
+    <div class="box"><h4>ลูกค้า</h4><div style="font-weight:700">${esc(s.c_name) || '—'}</div><div style="white-space:pre-line">${esc(s.c_addr)}</div>
+      <div class="kv">${s.c_contact ? `<span>ผู้ติดต่อ</span><span>${esc(s.c_contact)}</span>` : ''}${s.c_phone ? `<span>โทร</span><span>${esc(s.c_phone)}</span>` : ''}${s.c_tax ? `<span>เลขผู้เสียภาษี</span><span>${esc(s.c_tax)}</span>` : ''}${s.c_web ? `<span>เว็บไซต์</span><span>${esc(s.c_web)}</span>` : ''}</div></div>
+    <div class="box"><div class="kv"><span>เลขที่</span><span><b>${esc(s.q_no)}</b></span><span>วันที่</span><span>${thaiDate(s.q_date)}</span><span>ยืนราคาถึง</span><span>${thaiDate(until)}</span>${s.q_sales ? `<span>ผู้เสนอราคา</span><span>${esc(s.q_sales)}</span>` : ''}</div></div>
+  </div>
+  <table class="items"><thead><tr><th style="width:34px" class="c">#</th><th>รายการ</th><th class="c" style="width:56px">จำนวน</th><th class="r" style="width:100px">ราคาต่อหน่วย</th><th class="r" style="width:110px">จำนวนเงิน</th></tr></thead><tbody>
+    ${rows.map((r, i) => `<tr><td class="c">${i + 1}</td><td><b>${esc(r.name)}</b>${r.desc ? `<div class="desc">${r.desc}</div>` : ''}</td><td class="c">${r.qty}</td><td class="r">${fmt(r.price)}</td><td class="r">${fmt(r.qty * r.price)}</td></tr>`).join('')}
+  </tbody></table>
+  <div class="sum"><div class="words">(${bahtText(total)})</div>
+    <table class="sumt"><tr><td>รวมเป็นเงิน</td><td>${fmt(sub)}</td></tr>${disc ? `<tr><td>ส่วนลด</td><td>-${fmt(disc)}</td></tr><tr><td>ยอดหลังหักส่วนลด</td><td>${fmt(net)}</td></tr>` : ''}
+    ${s.vat === 'ex' ? `<tr><td>ภาษีมูลค่าเพิ่ม 7%</td><td>${fmt(vat)}</td></tr>` : ''}<tr class="tot"><td>ยอดรวมทั้งสิ้น</td><td>${fmt(total)}</td></tr>
+    ${s.vat === 'in' ? `<tr><td style="font-size:11px;color:#555">รวมภาษีมูลค่าเพิ่ม 7% แล้ว</td><td style="font-size:11px;color:#555">${fmt(vat)}</td></tr>` : ''}</table></div>
+  ${s.pay.trim() ? `<div class="pay"><b>การชำระเงิน</b>\n${esc(s.pay)}</div>` : ''}
+  <div class="terms"><h4>เงื่อนไข</h4><ol>${s.terms.split('\n').filter((t) => t.trim()).map((t) => `<li>${esc(t)}</li>`).join('')}</ol></div>
+  <div class="sig"><div>ผู้อนุมัติสั่งซื้อ (ลูกค้า)<small>วันที่ ____/____/______</small></div><div>ผู้เสนอราคา ${esc(s.q_sales || s.s_name)}<small>วันที่ ${thaiDate(s.q_date)}</small></div></div>
+  <div class="foot">${esc(s.s_name)} · ใบเสนอราคา ${esc(s.q_no)}</div>`;
+}
+
+$('ed').addEventListener('input', render);
+$('ed').addEventListener('change', render);
+$('ed').addEventListener('submit', (e) => e.preventDefault());
+$('print').onclick = () => { render(); document.title = $('q_no').value + ' ' + ($('c_name').value || ''); window.print(); };
+$('new').onclick = () => { fresh(); render(); $('c_name').focus(); };
+const draft = store.get('draft', null);
+if (draft && draft.q_no) load(draft); else {
+  fresh();
+  // example so the first view shows a real quote; clear with "ใบใหม่"
+  load(Object.assign(state(), { c_name: 'คลินิกตาตัวอย่าง', c_addr: '99/9 ถนนตัวอย่าง อำเภอเมือง จังหวัดตัวอย่าง 10000', c_contact: 'คุณตัวอย่าง', c_phone: '02-000-0000', c_web: 'eye.example.com', opts: { point: 1 } }));
+}
+render();
+</script>
+</body>
+</html>
