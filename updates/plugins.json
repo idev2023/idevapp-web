@@ -1,0 +1,251 @@
+{
+ "generated": "2026-10-29",
+ "tag": "v2026.10.29",
+ "plugins": {
+  "idev-appointments": {
+   "name": "iDev Appointments",
+   "version": "1.2.1",
+   "package": "https://idevapp.me/updates/files/idev-appointments-1.2.1.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Online appointments with doctors and clinics: a link per doctor or clinic, time slots with a limit per slot, patients identified by HN (new patients register first), PDPA/GDPR consent, automatic or staff confirmation, e-mail confirmation and reminders, cancel or reschedule by patient or staff, and a portal where doctors see and confirm their own appointments.",
+   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+  },
+  "idev-bilingual": {
+   "name": "iDev Bilingual – Thai / English",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/idev-bilingual-1.0.1.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Switch the whole site between Thai and English: English title, excerpt and content for posts and pages, English menu labels, category names and site name, plus a TH/EN switcher. Works with any theme.",
+   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+  },
+  "idev-clinic-schedule": {
+   "name": "iDev Clinic Schedule",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/idev-clinic-schedule-1.0.1.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Doctor and clinic schedules (weekly, monthly, yearly or one-off times) shown as month, week or day, with booking links, holidays, opening hours with a live \"open now\" status, and a doctor team grid with specialty tabs.",
+   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+  },
+  "idev-cookie-consent": {
+   "name": "iDev Cookie Consent (PDPA / GDPR)",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/idev-cookie-consent-1.0.1.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Cookie banner for Thai PDPA and GDPR: Accept / Reject / choose categories, asked again on every page until the visitor answers, consent log with CSV export, scripts and embeds that wait for consent, and Google Consent Mode v2. Thai / English.",
+   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+  },
+  "idev-maps": {
+   "name": "iDev Maps & Directions",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/idev-maps-1.0.1.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Google Maps without an API key: paste the \"Embed a map\" code, a maps link or an address. Several locations, a \"Directions\" button that opens the Google Maps app on phones, call button, and maps that wait for cookie consent.",
+   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+  },
+  "idev-news-ticker": {
+   "name": "iDev News Ticker",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/idev-news-ticker-1.0.1.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Announcement bars at the top of the site: static or scrolling (slow / normal / fast), with start/end time, link and your colours. Pauses on hover and respects \"reduce motion\". Thai / English.",
+   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+  },
+  "idev-org-chart": {
+   "name": "iDev Org Chart",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/idev-org-chart-1.0.1.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Organisation charts for executives, departments and committees: photos, positions, colours, collapsible branches, top-down tree on computers and a clean list on phones. Thai / English.",
+   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+  },
+  "idev-patient-registration": {
+   "name": "iDev Patient Registration",
+   "version": "1.2.1",
+   "package": "https://idevapp.me/updates/files/idev-patient-registration-1.2.1.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Online new-patient registration for hospitals and clinics: PDPA/GDPR consent, photo of the Thai ID card or passport (or typed in), LINE and WhatsApp, staff review, HN and a designable patient card with QR code sent by e-mail. Personal data is encrypted.",
+   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+  },
+  "idev-popup-notice": {
+   "name": "iDev Popup Notice",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/idev-popup-notice-1.0.1.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Important-notice popups: as many as you need, each with start/end time, image, button and order. Shown one at a time; visitors who close one don't see it again for a few hours. Thai / English.",
+   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+  },
+  "idev-post-attachments": {
+   "name": "iDev Post Attachments",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/idev-post-attachments-1.0.1.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Attach PDF, Word, Excel, PowerPoint and other files to any post or page. Drag to order, give each file a friendly name, show a tidy download list with file type and size, and count downloads.",
+   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+  },
+  "idev-store": {
+   "name": "iDev Store",
+   "version": "1.2.0",
+   "package": "https://idevapp.me/updates/files/idev-store-1.2.0.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Back office for clinics, eye clinics / optical shops and pharmacies: stock with lots and expiry dates, point of sale and dispensing, drug labels and ขย. books, job orders (e.g. glasses) with prescriptions, pick-up appointments, receipts for 80 mm, A4/A5 or continuous-form printers, and PromptPay QR.",
+   "changelog": "<ul><li>ออกแบบใบเสร็จ ใบรับเงิน รายงาน (คลาสสิก ทันสมัย ทางการ)</li><li>พิมพ์รายงานยอดขาย สินค้าขายดี มูลค่าสต็อก</li><li>แถบเมนูใหม่ในทุกหน้า</li></ul>"
+  },
+  "idev-thai-holidays": {
+   "name": "iDev Thai Holidays",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/idev-thai-holidays-1.0.1.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Annual public holidays for Thailand, filled in automatically every year (fixed days + Google Calendar for lunar and substitution days), editable, with a \"closes the clinic\" flag used by iDev Clinic Schedule.",
+   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+  },
+  "idev-appointments-pro": {
+   "name": "iDev Appointments Pro",
+   "version": "1.1.0",
+   "package": "https://idevapp.me/updates/files/idev-appointments-pro-1.1.0.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Add-on for iDev Appointments: LINE and SMS reminders, waiting list that tells people when a time becomes free, branches, reports with no-show rates and export, and a connector that can send appointments to HOSxP.",
+   "changelog": "<ul><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>WhatsApp: ปุ่มแชตสำหรับเจ้าหน้าที่ และส่งอัตโนมัติผ่าน Cloud API</li><li>ออกแบบอีเมลทั้ง 6 แบบ พร้อมแม่แบบ 3 แบบ ตัวอย่างสด และส่งทดสอบ</li><li>ออกแบบรายงานที่พิมพ์ หน้าภาพรวม และหน้าช่องทาง LINE · WhatsApp · SMS ใหม่</li></ul>"
+  },
+  "idev-patient-registration-pro": {
+   "name": "iDev Patient Registration Pro",
+   "version": "1.1.0",
+   "package": "https://idevapp.me/updates/files/idev-patient-registration-pro-1.1.0.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Add-on for iDev Patient Registration: HOSxP connector (find or create the HN automatically and send the patient card) and automatic reading of Thai ID cards and passports on the patient's phone.",
+   "changelog": "<ul><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>บัตรคนไข้: แบบใหม่ 4 แบบ และแบบสำเร็จรูป 9 แบบ</li><li>ออกแบบอีเมล \"ได้รับข้อมูล\" และ \"บัตรคนไข้\" พร้อมแม่แบบ</li></ul>"
+  },
+  "idev-cookie-consent-pro": {
+   "name": "iDev Cookie Consent Pro",
+   "version": "1.1.0",
+   "package": "https://idevapp.me/updates/files/idev-cookie-consent-pro-1.1.0.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Add-on for iDev Cookie Consent (PDPA / GDPR): privacy request form and register with 30-day deadlines, consent receipts and evidence reports, policy version archive, cookie and script scanner, log retention.",
+   "changelog": "<ul><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>ออกแบบใบยืนยันความยินยอมและรายงาน (3 แบบ)</li></ul>"
+  },
+  "i-clinic": {
+   "name": "I-Clinic",
+   "version": "1.0.0",
+   "package": "https://idevapp.me/updates/files/i-clinic-1.0.0.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Clinic system by iDevApp: online patient registration with ID card / passport and patient cards, online appointments with LINE / WhatsApp / SMS reminders, doctors' schedule, dispensing, stock by lot and expiry, receipts and PromptPay.",
+   "changelog": "<ul><li>ชุด I-Clinic เป็นปลั๊กอินเดียว: ลงทะเบียน นัดหมาย ตารางแพทย์ ขาย/จ่ายยา สต็อก</li><li>หน้าแรกของระบบ ตัวเลขวันนี้ และรายการตั้งค่า</li></ul>"
+  },
+  "i-clinic-pro": {
+   "name": "I-Clinic Pro",
+   "version": "1.0.0",
+   "package": "https://idevapp.me/updates/files/i-clinic-pro-1.0.0.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Clinic and shop system by iDevApp with job orders (glasses, lenses, hearing aids, dental work): everything in I-Clinic plus job tickets with prescriptions, deposits and pick-up appointments.",
+   "changelog": "<ul><li>ชุด I-Clinic Pro เป็นปลั๊กอินเดียว รวมงานสั่งทำ มัดจำ และนัดรับของ</li></ul>"
+  },
+  "i-drug": {
+   "name": "I-Drug",
+   "version": "1.0.0",
+   "package": "https://idevapp.me/updates/files/i-drug-1.0.0.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "7.1",
+   "homepage": "https://idevapp.me/plugins/",
+   "date": "2026-10-29",
+   "description": "Pharmacy system by iDevApp: point of sale with barcode, stock by lot and expiry, drug labels, ขย. 9–13 books, customer registration, appointments and receipts with PromptPay.",
+   "changelog": "<ul><li>ชุด I-Drug เป็นปลั๊กอินเดียว: ขายหน้าร้าน สต็อกแยกล็อต ฉลากยา ขย.9–13</li></ul>"
+  }
+ },
+ "themes": {
+  "idev-gov": {
+   "name": "iDev Gov",
+   "version": "1.0.0",
+   "package": "https://idevapp.me/updates/files/idev-gov-1.0.0.zip",
+   "requires": "6.6",
+   "requires_php": "7.4",
+   "homepage": "https://idevapp.me/themes/",
+   "date": "2026-10-29"
+  },
+  "idev-clinic": {
+   "name": "iDev Clinic",
+   "version": "1.0.0",
+   "package": "https://idevapp.me/updates/files/idev-clinic-1.0.0.zip",
+   "requires": "6.6",
+   "requires_php": "7.4",
+   "homepage": "https://idevapp.me/themes/",
+   "date": "2026-10-29"
+  },
+  "idev-pharmacy": {
+   "name": "iDev Pharmacy",
+   "version": "1.0.0",
+   "package": "https://idevapp.me/updates/files/idev-pharmacy-1.0.0.zip",
+   "requires": "6.6",
+   "requires_php": "7.4",
+   "homepage": "https://idevapp.me/themes/",
+   "date": "2026-10-29"
+  }
+ }
+}
