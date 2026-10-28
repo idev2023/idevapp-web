@@ -291,6 +291,10 @@ details p{margin:0 0 18px;color:var(--ink-2);font-size:16px}
 .contact-card small{opacity:.75;font-size:14px}
 .contact-card a.mail{display:block;color:#fff;font-size:20px;font-weight:600;margin:4px 0 18px;text-decoration:none;word-break:break-all}
 .contact-card .btn{width:100%}
+.contact-card .row2 .btn{flex:1}
+.btn-line{background:#06c755;color:#fff;border:0;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn-line:hover{background:#05b04b;color:#fff}.btn-line svg{width:20px;height:20px}
+.btn-ghost-w{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}.btn-ghost-w:hover{background:rgba(255,255,255,.12);color:#fff}
+.line-qr{display:flex;align-items:center;gap:16px;margin-top:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:12px;max-width:380px}.line-qr img{width:120px;height:120px;border-radius:10px;background:#fff;padding:4px}.line-qr div{display:flex;flex-direction:column;gap:2px}.line-qr span{opacity:.8;font-size:14px}
 .contact-card .row2{display:flex;gap:10px;margin-top:10px}
 .copy{background:transparent;border:1.5px solid rgba(255,255,255,.35);color:#fff;cursor:pointer;font-family:inherit}
 .copy:hover{background:rgba(255,255,255,.08)}
@@ -837,7 +841,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
       <details><summary>ใช้งานนอกสำนักงานหรือบนมือถือได้ไหม?</summary><p>ใช้บนมือถือผ่าน browser ได้ทันที ถ้าต้องการเข้าจากภายนอก ตั้ง Cloudflare Tunnel ได้ด้วยสคริปต์ที่มีให้ ไม่ต้องเปิดพอร์ตบน firewall</p></details>
       <details><summary>ถ้า license หมดอายุจะเป็นอย่างไร?</summary><p>ใช้งานต่อได้ตามปกติ ข้อมูลอยู่ครบ เพียงแต่อัปเดตเป็นรุ่นใหม่ไม่ได้จนกว่าจะต่ออายุ</p></details>
       <details><summary>ลงเวลาด้วย GPS ป้องกันการลงเวลาแทนกันได้อย่างไร?</summary><p>ต้องถ่ายรูปจากกล้องในหน้าลงเวลาทุกครั้ง ใช้รูปเก่าหรือรูปซ้ำไม่ได้ ระบบตรวจตำแหน่งกับจุดลงเวลา และตรวจจับแอปจำลองตำแหน่ง พิกัดที่กระโดดผิดปกติ และเวลาในเครื่องที่ไม่ตรง รายการที่น่าสงสัยจะถูกทำเครื่องหมายให้หัวหน้าตรวจสอบ</p></details>
-      <details><summary>ระบบอื่นนอกจาก I-Office ขอดูได้ไหม?</summary><p>ได้ครับ I-Work, I-SOS, I-Queue และ I-Appointment ติดต่อขอรายละเอียดหรือนัดสาธิตได้ทางอีเมล ระบุระบบที่สนใจและลักษณะงานของหน่วยงานมาด้วย</p></details>
+      <details><summary>ระบบอื่นนอกจาก I-Office ขอดูได้ไหม?</summary><p>ได้ครับ I-Work, I-SOS, I-Queue และ I-Appointment ติดต่อขอรายละเอียดหรือนัดสาธิตได้ทางโทรศัพท์ 095-638-0007 LINE หรืออีเมล ระบุระบบที่สนใจและลักษณะงานของหน่วยงานมาด้วย</p></details>
       <details><summary>ทดลองใช้ I-Office ต้องทำอย่างไร?</summary><p>ส่งอีเมลขอไฟล์ติดตั้ง แล้วติดตั้งแบบระบบสาธิต (Demo) ได้เลย ระบบจะสร้างโรงพยาบาลตัวอย่างพร้อมข้อมูลสมมติและบัญชีทดลองครบทุกบทบาท</p></details>
     </div>
   </div>
@@ -849,9 +853,13 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
     <div class="cta-box rv">
       <div>
         <h2>อยากเห็นระบบทำงานจริง?</h2>
-        <p>ขอไฟล์ติดตั้ง I-Office ขอใบเสนอราคา หรือนัดสาธิตระบบใดก็ได้ ส่งอีเมลมาได้เลย ระบุชื่อหน่วยงานหรือบริษัท และระบบที่สนใจ</p>
+        <p>ขอไฟล์ติดตั้ง I-Office ขอใบเสนอราคา หรือนัดสาธิตระบบใดก็ได้ โทร แอดไลน์ หรือส่งอีเมลมาได้เลย ระบุชื่อหน่วยงานหรือบริษัท และระบบที่สนใจ</p>
+        <div class="line-qr"><img src="img/line-qr.png" alt="QR code แอดไลน์ iDevApp" width="150" height="150" loading="lazy"><div><b>สแกนเพื่อแอดไลน์</b><span>หรือกดปุ่ม "แอดไลน์" บนมือถือ</span></div></div>
       </div>
       <div class="contact-card">
+        <small>โทร</small>
+        <a class="mail" href="tel:0956380007">095-638-0007</a>
+        <div class="row2" style="margin:0 0 18px"><a class="btn btn-line" href="https://line.me/ti/p/gq9me8enag" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.4-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3Z"/></svg>แอดไลน์</a><a class="btn btn-ghost-w" href="tel:0956380007">โทรเลย</a></div>
         <small>อีเมลติดต่อ</small>
         <a class="mail" href="mailto:idevapp2023@gmail.com">idevapp2023@gmail.com</a>
         <a class="btn btn-primary" href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%82%E0%B8%AD%E0%B8%87%20iDevApp&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AA%E0%B8%99%E0%B9%83%E0%B8%88%20%28I-Office%20/%20I-Work%20/%20I-SOS%20/%20I-Queue%20/%20I-Appointment%29%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%A1%3A%0A">
@@ -867,7 +875,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
   <div class="wrap foot">
     <a class="brand" href="#top"><img src="img/idevapp-logo.png" alt="iDevApp" width="41" height="36"></a>
     <div>© <span id="yr">2026</span> iDevApp · I-Office · I-Work · I-SOS · I-Queue · I-Appointment · เร็วๆ นี้: I-Clinic · I-Drug · I-Order</div>
-    <a href="plugins/">ปลั๊กอิน WordPress</a> · <a href="mailto:idevapp2023@gmail.com">idevapp2023@gmail.com</a>
+    <a href="plugins/">ปลั๊กอิน WordPress</a> · <a href="tel:0956380007">โทร 095-638-0007</a> · <a href="https://line.me/ti/p/gq9me8enag" target="_blank" rel="noopener">LINE</a> · <a href="mailto:idevapp2023@gmail.com">idevapp2023@gmail.com</a>
   </div>
 </footer>
 

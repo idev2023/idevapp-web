@@ -225,3 +225,4 @@ table.ref.hw td:not(:first-child),table.ref.hw th:not(:first-child){text-align:c
 .tc-body h3{margin:0}.tc-body .who{margin:0;color:var(--muted,#5b6875);font-weight:600}.tc-body p{margin:0 0 8px}
 .tc-body .btn{margin-top:auto;align-self:flex-start}
 @media (max-width:980px){.theme-grid{grid-template-columns:1fr}}
+.foot-c a{color:inherit}
