@@ -124,15 +124,15 @@
   },
   "idev-store": {
    "name": "iDev Store",
-   "version": "1.2.1",
-   "package": "https://idevapp.me/updates/files/idev-store-1.2.1.zip",
+   "version": "1.3.0",
+   "package": "https://idevapp.me/updates/files/idev-store-1.3.0.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-10-29",
    "description": "Back office for clinics, eye clinics / optical shops and pharmacies: stock with lots and expiry dates, point of sale and dispensing, drug labels and ขย. books, job orders (e.g. glasses) with prescriptions, pick-up appointments, receipts for 80 mm, A4/A5 or continuous-form printers, and PromptPay QR.",
-   "changelog": "<ul><li>ออกแบบใบเสร็จ ใบรับเงิน รายงาน (คลาสสิก ทันสมัย ทางการ)</li><li>พิมพ์รายงานยอดขาย สินค้าขายดี มูลค่าสต็อก</li><li>แถบเมนูใหม่ในทุกหน้า</li></ul>"
+   "changelog": "<ul><li><b>1.3.0:</b> หน่วยรับเข้า (กล่อง) / หน่วยขาย (เม็ด) ต้นทุน 4 ตำแหน่ง พิมพ์บาร์โค้ด/QR กด Enter ไปช่องถัดไป</li><li>ออกแบบใบเสร็จ ใบรับเงิน รายงาน (คลาสสิก ทันสมัย ทางการ)</li><li>พิมพ์รายงานยอดขาย สินค้าขายดี มูลค่าสต็อก</li><li>แถบเมนูใหม่ในทุกหน้า</li></ul>"
   },
   "idev-thai-holidays": {
    "name": "iDev Thai Holidays",
@@ -184,39 +184,39 @@
   },
   "i-clinic": {
    "name": "I-Clinic",
-   "version": "1.1.0",
-   "package": "https://idevapp.me/updates/files/i-clinic-1.1.0.zip",
+   "version": "1.2.0",
+   "package": "https://idevapp.me/updates/files/i-clinic-1.2.0.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-10-29",
    "description": "Clinic system by iDevApp: examination room with queue, vital signs, doctor's notes, ICD-10 diagnosis, prescriptions, re-med, drug allergy alerts and patient history, online patient registration with ID card / passport and patient cards, online appointments with LINE / WhatsApp / SMS reminders, doctors' schedule, dispensing, stock by lot and expiry, receipts and PromptPay.",
-   "changelog": "<ul><li><b>ใหม่: ห้องตรวจและเวชระเบียน</b> คิววันนี้ ซักประวัติ/สัญญาณชีพ บันทึกการตรวจ วินิจฉัย ICD-10 สั่งยาจากสต็อก Re-med เตือนแพ้ยา ประวัติย้อนหลัง นัดติดตาม ใบรับรองแพทย์ รายงาน</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Clinic เป็นปลั๊กอินเดียว: ลงทะเบียน นัดหมาย ตารางแพทย์ ขาย/จ่ายยา สต็อก</li><li>หน้าแรกของระบบ ตัวเลขวันนี้ และรายการตั้งค่า</li></ul>"
+   "changelog": "<ul><li><b>1.2.0:</b> ห้องแพทย์ (เรียกคิวถัดไป) ปุ่มตามขั้นตอน ใบรับรองแพทย์แบบทางการ + แบบตรวจสุขภาพ 2 ส่วน รับยาเข้าเป็นกล่อง ขายเป็นเม็ด พิมพ์บาร์โค้ด/QR รายการยาและค่าบริการ กด Enter ไปช่องถัดไป</li><li><b>ใหม่: ห้องตรวจและเวชระเบียน</b> คิววันนี้ ซักประวัติ/สัญญาณชีพ บันทึกการตรวจ วินิจฉัย ICD-10 สั่งยาจากสต็อก Re-med เตือนแพ้ยา ประวัติย้อนหลัง นัดติดตาม ใบรับรองแพทย์ รายงาน</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Clinic เป็นปลั๊กอินเดียว: ลงทะเบียน นัดหมาย ตารางแพทย์ ขาย/จ่ายยา สต็อก</li><li>หน้าแรกของระบบ ตัวเลขวันนี้ และรายการตั้งค่า</li></ul>"
   },
   "i-clinic-pro": {
    "name": "I-Clinic Pro",
-   "version": "1.1.0",
-   "package": "https://idevapp.me/updates/files/i-clinic-pro-1.1.0.zip",
+   "version": "1.2.0",
+   "package": "https://idevapp.me/updates/files/i-clinic-pro-1.2.0.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-10-29",
    "description": "Clinic and shop system by iDevApp with job orders (glasses, lenses, hearing aids, dental work): everything in I-Clinic plus job tickets with prescriptions, deposits and pick-up appointments, plus the examination room (queue, treatment records, re-med, drug allergies).",
-   "changelog": "<ul><li><b>ใหม่: ห้องตรวจและเวชระเบียน</b> (คิว บันทึกการตรวจ สั่งยา Re-med เตือนแพ้ยา ใบรับรองแพทย์)</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Clinic Pro เป็นปลั๊กอินเดียว รวมงานสั่งทำ มัดจำ และนัดรับของ</li></ul>"
+   "changelog": "<ul><li><b>1.2.0:</b> ห้องแพทย์ ใบรับรองแพทย์แบบทางการ รับของเป็นกล่อง ขายเป็นชิ้น พิมพ์บาร์โค้ด/QR กด Enter ไปช่องถัดไป</li><li><b>ใหม่: ห้องตรวจและเวชระเบียน</b> (คิว บันทึกการตรวจ สั่งยา Re-med เตือนแพ้ยา ใบรับรองแพทย์)</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Clinic Pro เป็นปลั๊กอินเดียว รวมงานสั่งทำ มัดจำ และนัดรับของ</li></ul>"
   },
   "i-drug": {
    "name": "I-Drug",
-   "version": "1.1.0",
-   "package": "https://idevapp.me/updates/files/i-drug-1.1.0.zip",
+   "version": "1.2.0",
+   "package": "https://idevapp.me/updates/files/i-drug-1.2.0.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-10-29",
    "description": "Pharmacy system by iDevApp: point of sale with barcode, stock by lot and expiry, drug labels, ขย. 9–13 books, customer registration, appointments and receipts with PromptPay.",
-   "changelog": "<ul><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Drug เป็นปลั๊กอินเดียว: ขายหน้าร้าน สต็อกแยกล็อต ฉลากยา ขย.9–13</li></ul>"
+   "changelog": "<ul><li><b>1.2.0:</b> รับยาเข้าเป็นกล่อง ขายเป็นเม็ด (ต้นทุนต่อเม็ดคำนวณให้) ราคาใส่สตางค์ได้ พิมพ์บาร์โค้ด/QR รายการยา กด Enter ไปช่องถัดไป</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Drug เป็นปลั๊กอินเดียว: ขายหน้าร้าน สต็อกแยกล็อต ฉลากยา ขย.9–13</li></ul>"
   }
  },
  "themes": {
