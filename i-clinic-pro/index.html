@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I-Clinic Pro | ระบบคลินิกครบวงจร ห้องตรวจ เวชระเบียน จ่ายยา งานสั่งทำ · iDevApp</title>
+<meta name="description" content="I-Clinic Pro ระบบคลินิกบน WordPress ติดตั้งพร้อมใช้: คิวและห้องแพทย์ เวชระเบียน ICD-10 สั่งยา Re-med เตือนแพ้ยา ใบรับรองแพทย์ สต็อกยารับเป็นกล่องขายเป็นเม็ด ฉลากยา บาร์โค้ด QR พร้อมเพย์ งานสั่งทำ มัดจำ นัดรับของ จ่ายครั้งเดียว ไม่มีรายเดือน">
+<meta property="og:title" content="I-Clinic Pro ระบบคลินิกครบวงจร จ่ายครั้งเดียว">
+<meta property="og:description" content="ห้องตรวจ เวชระเบียน สั่งยา Re-med เตือนแพ้ยา จ่ายยา ฉลากยา งานสั่งทำ นัดรับของ ในระบบเดียว">
+<meta property="og:image" content="https://idevapp.me/i-clinic-pro/img/doctor.webp">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f3a46">
+<link rel="icon" type="image/png" href="../img/favicon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1d3f8b; --ink:#1f2633; --ink-2:#4a5266; --muted:#6b7385;
+  --orange:#f47b20; --orange-d:#d9660f; --teal:#0f766e; --teal-2:#12a37f; --teal-l:#e7f6f3; --deep:#0f2f3a;
+  --bg-2:#f5f8f9; --line:#e3e8ec; --r:18px; --shadow:0 1px 2px rgba(15,47,58,.06),0 18px 40px -16px rgba(15,47,58,.28);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Anuphan",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--teal)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.22;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(28px,3.6vw,40px);font-weight:700}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--orange-d);margin-bottom:12px}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:var(--orange)}
+.lead{color:var(--ink-2);font-size:18px;max-width:660px}
+section{padding:88px 0}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none;transition:.18s;border:1.5px solid transparent;cursor:pointer}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 10px 24px -10px rgba(244,123,32,.75)}
+.btn-primary:hover{background:var(--orange-d);transform:translateY(-1px)}
+.btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-line{background:#06c755;color:#fff}.btn-line:hover{background:#05b04b}
+.btn svg{width:19px;height:19px}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(1.6) blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700}
+.brand img{height:38px;width:auto}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--ink-2);font-weight:500;font-size:15px}
+.nav ul a:hover{color:var(--teal)}
+.nav .btn{padding:10px 18px;font-size:15px}
+@media (max-width:900px){.nav ul{display:none}}
+/* hero */
+.hero{background:radial-gradient(1200px 600px at 85% -10%,#1f8a7f55,transparent 60%),linear-gradient(160deg,#0b2730 0%,#0f3a46 45%,#0f766e 100%);color:#fff;padding:72px 0 0;overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:60px;background:linear-gradient(transparent,#fff)}
+.hero-txt{padding-bottom:100px;position:relative;z-index:1}@media (max-width:960px){.hero-txt{padding-bottom:10px}}
+.hero-grid{display:grid;grid-template-columns:1.02fr 1fr;gap:48px;align-items:center}
+.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:6px 14px;font-size:14px;font-weight:600}
+.badge b{background:var(--orange);border-radius:99px;padding:1px 9px;font-size:12px}
+.hero h1{font-size:clamp(34px,4.6vw,56px);font-weight:700;margin:18px 0 16px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#7ff0d6,#ffd29e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{color:#d3ecea;font-size:19px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 18px}
+.hero .note{color:#a9d6d1;font-size:14.5px}
+.price-pill{display:inline-flex;align-items:baseline;gap:10px;margin-top:6px;background:rgba(255,255,255,.08);border-radius:14px;padding:10px 16px;border:1px solid rgba(255,255,255,.16)}
+.price-pill b{font-size:28px}.price-pill span{color:#cde8e4;font-size:14.5px}
+.shots{position:relative;padding-bottom:70px}
+.browser{background:#fff;border-radius:14px;box-shadow:0 40px 80px -30px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.1);overflow:hidden;transform:perspective(1600px) rotateY(-7deg) rotateX(2deg);transform-origin:left center}
+.browser .bar{height:30px;background:#eef2f4;display:flex;align-items:center;gap:6px;padding:0 12px}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.browser .bar i:nth-child(2){background:#febc2e}.browser .bar i:nth-child(3){background:#28c840}
+.browser .bar span{margin-left:10px;background:#fff;border-radius:6px;font-size:11px;color:#6b7385;padding:2px 10px}
+.phone{position:absolute;right:-8px;bottom:0;width:31%;border-radius:26px;border:7px solid #0b1215;background:#0b1215;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);overflow:hidden}
+.phone img{border-radius:18px}
+@media (max-width:960px){.hero-grid{grid-template-columns:1fr}.browser{transform:none}.phone{width:34%}}
+/* strip */
+.strip{margin-top:-30px;position:relative;z-index:2}
+.strip .in{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.strip .it{padding:22px 24px;display:flex;gap:14px;align-items:center}
+.strip .it+.it{border-left:1px solid var(--line)}
+.strip svg{width:42px;height:42px;padding:9px;border-radius:12px;background:var(--teal-l);color:var(--teal);flex:none}
+.strip b{display:block;font-size:16.5px}.strip span{color:var(--muted);font-size:14px;line-height:1.4}
+@media (max-width:900px){.strip .in{grid-template-columns:1fr 1fr}.strip .it:nth-child(3){border-left:0}.strip .it:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:520px){.strip .in{grid-template-columns:1fr}.strip .it+.it{border-left:0;border-top:1px solid var(--line)}}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px;counter-reset:s}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 18px;position:relative;counter-increment:s}
+.step::before{content:counter(s);position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+.step svg{width:30px;height:30px;color:var(--teal);margin:6px 0 10px}
+.step b{display:block;font-size:17px;margin-bottom:4px}.step span{color:var(--ink-2);font-size:14.5px;line-height:1.5}
+.step.pro{border-color:#f7c9a3;background:#fff8f2}.step.pro::before{background:var(--orange)}.step.pro svg{color:var(--orange-d)}
+@media (max-width:980px){.flow{grid-template-columns:1fr 1fr}}@media (max-width:520px){.flow{grid-template-columns:1fr}}
+.bg2{background:var(--bg-2)}
+/* feature rows */
+.feat{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;margin-top:84px}
+.feat:first-of-type{margin-top:48px}
+.feat.rev .txt{order:2}
+.feat h3{font-size:clamp(24px,2.6vw,31px);margin:6px 0 12px}
+.feat .tag{display:inline-block;font-size:13px;font-weight:700;color:var(--teal);background:var(--teal-l);border-radius:99px;padding:3px 12px}
+.feat .tag.o{color:var(--orange-d);background:#fff1e6}
+.feat p{color:var(--ink-2);margin:0 0 14px}
+.ticks{list-style:none;padding:0;margin:0}
+.ticks li{position:relative;padding:6px 0 6px 32px;color:var(--ink)}
+.ticks li::before{content:"";position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--teal-l) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f766e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat}
+.shot{border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:#fff}
+.shot.stack{position:relative}
+.shot-sm{position:absolute;width:46%;right:-18px;bottom:-34px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line);overflow:hidden;background:#fff}
+@media (max-width:900px){.feat,.feat.rev{grid-template-columns:1fr;gap:26px}.feat.rev .txt{order:0}.shot-sm{right:8px}}
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.card svg{width:40px;height:40px;padding:9px;border-radius:12px;background:var(--teal-l);color:var(--teal)}
+.card b{display:block;margin:12px 0 4px;font-size:17px}.card span{color:var(--ink-2);font-size:15px;line-height:1.55}
+.card.o svg{background:#fff1e6;color:var(--orange-d)}
+@media (max-width:900px){.grid{grid-template-columns:1fr 1fr}}@media (max-width:560px){.grid{grid-template-columns:1fr}}
+/* who */
+.who{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+.who span{background:#fff;border:1px solid var(--line);border-radius:99px;padding:9px 18px;font-weight:600}
+/* price */
+.price{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:stretch;margin-top:40px}
+.pcard{background:linear-gradient(160deg,#0f2f3a,#0f766e);color:#fff;border-radius:24px;padding:34px;position:relative;overflow:hidden}
+.pcard::after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(#ffffff22,transparent 70%)}
+.pcard h3{font-size:26px}.pcard .who2{color:#bfe4df;margin:4px 0 20px}
+.amt{display:flex;flex-wrap:wrap;gap:22px;margin:0 0 22px}
+.amt div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:14px 18px;min-width:200px;flex:1}
+.amt b{font-size:38px;display:block;line-height:1.1}.amt small{color:#cde8e4;font-size:14px}
+.pcard ul{list-style:none;padding:0;margin:0 0 24px;columns:2;column-gap:20px}
+.pcard li{padding:4px 0 4px 26px;position:relative;break-inside:avoid;font-size:15.5px}
+.pcard li::before{content:"✓";position:absolute;left:0;color:#7ff0d6;font-weight:700}
+@media (max-width:600px){.pcard ul{columns:1}}
+.incl{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px}
+.incl h3{font-size:19px;margin-bottom:10px}
+.incl table{width:100%;border-collapse:collapse;font-size:15px}.incl td{padding:7px 4px;border-bottom:1px solid var(--line)}.incl td:last-child{text-align:right;color:var(--teal);font-weight:700}
+.incl p{color:var(--muted);font-size:14px;margin:12px 0 0}
+@media (max-width:900px){.price{grid-template-columns:1fr}}
+/* faq */
+.faq{max-width:820px;margin:36px auto 0}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:4px 20px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary::after{content:"+";color:var(--teal);font-size:22px;line-height:1}.faq details[open] summary::after{content:"–"}
+.faq p{margin:0 0 16px;color:var(--ink-2)}
+/* cta */
+.cta{background:linear-gradient(120deg,#0b2730,#0f766e);color:#fff;border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.cta h2{font-size:clamp(26px,3vw,36px)}.cta p{color:#cde8e4;margin:10px 0 22px}
+.cta .row{display:flex;gap:12px;flex-wrap:wrap}
+.cta .qr{background:#fff;border-radius:18px;padding:12px;text-align:center;color:var(--ink);font-size:13px;font-weight:600}
+.cta .qr img{width:150px}
+@media (max-width:760px){.cta{grid-template-columns:1fr;padding:30px}.cta .qr{justify-self:start}}
+footer{padding:36px 0;color:var(--muted);font-size:14.5px;border-top:1px solid var(--line);margin-top:80px}
+footer .foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../"><img src="../img/idevapp-logo.png" alt="iDevApp" width="44" height="38"></a>
+    <ul>
+      <li><a href="#flow">ทำงานอย่างไร</a></li>
+      <li><a href="#features">ฟีเจอร์</a></li>
+      <li><a href="#pro">งานสั่งทำ</a></li>
+      <li><a href="#price">ราคา</a></li>
+      <li><a href="#faq">คำถาม</a></li>
+    </ul>
+    <a class="btn btn-primary" href="#contact">ขอสาธิตระบบ</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <span class="badge"><b>ใหม่</b> ห้องตรวจ · เวชระเบียน · ห้องแพทย์</span>
+      <h1>คลินิกทั้งร้าน<br><em>จบในระบบเดียว</em></h1>
+      <p class="lead">I-Clinic Pro ดูแลตั้งแต่ผู้ป่วยลงทะเบียน จองนัด ซักประวัติ แพทย์ตรวจ สั่งยา จ่ายยา รับเงิน ไปจนถึงงานสั่งทำและนัดรับของ ใช้งานผ่านเว็บเบราว์เซอร์ ทุกเครื่องในคลินิก</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>ขอสาธิตระบบฟรี</a>
+        <a class="btn btn-ghost" href="#price">ดูราคา</a>
+      </div>
+      <div class="price-pill"><b>32,900</b><span>บาท · จ่ายครั้งเดียว ไม่มีรายเดือน · รวมติดตั้งและดูแล 1 ปี</span></div>
+    </div>
+    <div class="shots">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>clinic.example / ห้องแพทย์</span></div><img src="img/doctor.webp" alt="หน้าห้องแพทย์ เรียกคิวถัดไป เห็นอาการและสัญญาณชีพ" width="1600" height="1025"></div>
+      <div class="phone"><img src="img/m-doctor.webp" alt="ห้องแพทย์บนมือถือ" width="780" height="1600"></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap strip">
+  <div class="in">
+    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg><div><b>จ่ายครั้งเดียว</b><span>ไม่มีค่ารายเดือน ไม่จำกัดผู้ป่วย</span></div></div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><div><b>ใช้ได้ทุกเครื่อง</b><span>คอม แท็บเล็ต มือถือ ไม่คิดเพิ่ม</span></div></div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div><b>ข้อมูลเข้ารหัส</b><span>ประวัติการรักษาเก็บแบบเข้ารหัส</span></div></div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><div><b>อัปเดตอัตโนมัติ</b><span>ได้ฟีเจอร์ใหม่ทันที ข้อมูลอยู่ครบ</span></div></div>
+  </div>
+</div>
+
+<section id="flow">
+  <div class="wrap center">
+    <span class="eyebrow">ทำงานอย่างไร</span>
+    <h2>ผู้ป่วยหนึ่งคน ไหลผ่านคลินิกแบบไม่สะดุด</h2>
+    <p class="lead">ทุกคนในคลินิกเห็นงานของตัวเอง ไม่ต้องเดินถาม ไม่ต้องจดซ้ำ</p>
+    <div class="flow" style="text-align:left">
+      <div class="step rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg><b>จองนัด / ลงทะเบียน</b><span>ผู้ป่วยจองนัดและลงทะเบียนเองออนไลน์ ได้ HN อัตโนมัติ</span></div>
+      <div class="step rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.6-7 11-7 11z"/><path d="M8 11h2l1-2 2 4 1-2h2"/></svg><b>ซักประวัติ</b><span>รับเข้าคิว วัดสัญญาณชีพ ค่าผิดปกติขึ้นสีแดง ส่งพบแพทย์</span></div>
+      <div class="step rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v6a4 4 0 0 0 8 0V3M9 13v2a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="2"/></svg><b>แพทย์ตรวจ</b><span>เรียกคิว บันทึกตรวจ ICD-10 สั่งยา Re-med เตือนแพ้ยา</span></div>
+      <div class="step rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7z"/><path d="m8.5 8.5 7 7"/></svg><b>จ่ายยา / ชำระเงิน</b><span>บิลขึ้นเอง ตัดสต็อก พิมพ์ฉลากยา ใบเสร็จ QR พร้อมเพย์</span></div>
+      <div class="step pro rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="14" r="3.5"/><circle cx="17.5" cy="14" r="3.5"/><path d="M10 14h4M3 14V9l2-3M21 14V9l-2-3"/></svg><b>งานสั่งทำ + นัดติดตาม</b><span>สั่งแว่น/เลนส์ รับมัดจำ ลูกค้าเลือกเวลามารับเอง แจ้ง LINE/SMS</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg2" id="features">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">ฟีเจอร์เด่น</span><h2>ออกแบบให้คนหน้างานใช้ได้จริง</h2><p class="lead">ปุ่มใหญ่ ชัด เป็นขั้นตอน กด Enter ไปช่องถัดไป ยิงบาร์โค้ดได้ทุกหน้า</p></div>
+
+    <div class="feat rv">
+      <div class="txt"><span class="tag">ห้องแพทย์</span><h3>หมอเห็นเฉพาะงานของหมอ<br>กดเดียว เรียกคิวถัดไป</h3>
+        <p>ผู้ป่วยคนถัดไปพร้อมอาการ สัญญาณชีพ และประวัติแพ้ยา โชว์ตั้งแต่ก่อนเรียกเข้าห้อง หน้าจอรีเฟรชเอง</p>
+        <ul class="ticks"><li>คิวรอพบ กำลังตรวจ และตรวจแล้ววันนี้ ในหน้าเดียว</li><li>แถบขั้นตอน ① ซักประวัติ → ② พบแพทย์ → ③ ชำระเงิน → ④ เสร็จ</li><li>ตรวจเสร็จกดปุ่มเดียว ส่งต่อจุดจ่ายยาและการเงินทันที</li></ul></div>
+      <div class="shot"><img src="img/queue.webp" alt="คิววันนี้ แบ่งตามขั้นตอน" loading="lazy" width="1600" height="1025"></div>
+    </div>
+
+    <div class="feat rev rv">
+      <div class="txt"><span class="tag">ตรวจและสั่งยา</span><h3>สั่งยาจากสต็อก Re-med คลิกเดียว<br>ระบบเตือนก่อนสั่งยาที่แพ้</h3>
+        <p>พิมพ์หรือยิงบาร์โค้ด ยาเข้าบิลพร้อมวิธีใช้สำหรับฉลาก ถ้าผู้ป่วยแพ้ Penicillin แล้วสั่ง Amoxicillin ระบบเตือนสีแดงและต้องยืนยันก่อน</p>
+        <ul class="ticks"><li>วินิจฉัย ICD-10 ค้นได้ทั้งไทยและอังกฤษ</li><li>Re-med จากครั้งก่อน เหมาะกับผู้ป่วยโรคเรื้อรัง</li><li>ตัวช่วยเติมวิธีใช้ "ครั้งละ 1 เม็ด วันละ 3 ครั้ง หลังอาหาร"</li><li>เตือนกลุ่มยา Penicillin, Sulfa, NSAIDs, Cephalosporin และอื่น ๆ</li></ul></div>
+      <div class="shot"><img src="img/orders.webp" alt="สั่งยา เตือนแพ้ยา Re-med" loading="lazy" width="1600" height="1025"></div>
+    </div>
+
+    <div class="feat rv">
+      <div class="txt"><span class="tag">เวชระเบียน</span><h3>ประวัติการรักษาย้อนหลังทุกครั้ง<br>พร้อมกราฟน้ำหนักและความดัน</h3>
+        <p>เปิดแฟ้มผู้ป่วยแล้วเห็นทุกอย่าง: การวินิจฉัย ยาที่ได้ สัญญาณชีพ โรคประจำตัว ข้อควรระวัง และบิลย้อนหลัง</p>
+        <ul class="ticks"><li>HN อัตโนมัติ (69-00001) หรือใช้เลขเดิมของคลินิก</li><li>แถบแพ้ยาสีแดงขึ้นทุกหน้าจอ</li><li>ใบรับรองแพทย์ทางการ และแบบตรวจสุขภาพ 2 ส่วน</li><li>นัดติดตามอาการจากหน้าตรวจ แจ้งเตือนผู้ป่วยให้เอง</li></ul></div>
+      <div class="shot stack"><img src="img/chart.webp" alt="เวชระเบียน ประวัติการรักษา กราฟ" loading="lazy" width="1600" height="1025"><div class="shot-sm"><img src="img/cert.webp" alt="ใบรับรองแพทย์" loading="lazy" width="794" height="1124"></div></div>
+    </div>
+
+    <div class="feat rev rv" id="pro" style="scroll-margin-top:90px">
+      <div class="txt"><span class="tag o">เฉพาะรุ่น Pro</span><h3>งานสั่งทำ มัดจำ นัดรับของ<br>สำหรับคลินิกตา ร้านแว่น เครื่องช่วยฟัง</h3>
+        <p>เปิดใบรับงานพร้อมค่าสายตาหรือรายละเอียดงาน รับมัดจำ ติดตามสถานะ เมื่อพร้อมรับ ลูกค้าได้รับแจ้งและสแกน QR เลือกเวลามารับเอง</p>
+        <ul class="ticks"><li>สถานะ รับงาน → สั่งของ → กำลังทำ → พร้อมรับ → รับแล้ว</li><li>รับเงินมัดจำ และเก็บส่วนที่เหลือวันรับ ใบเสร็จแยกทุกงวด</li><li>ใบรับงาน A5 / กระดาษต่อเนื่อง พร้อม QR ติดตามงาน</li><li>แจ้งลูกค้าทาง LINE / SMS / อีเมล</li></ul></div>
+      <div class="shot"><img src="img/job.webp" alt="งานสั่งทำ มัดจำ นัดรับของ" loading="lazy" width="1600" height="1025"></div>
+    </div>
+
+    <div class="feat rv">
+      <div class="txt"><span class="tag">ขาย จ่ายยา สต็อก</span><h3>รับยาเป็นกล่อง ขายเป็นเม็ด<br>ยิงบาร์โค้ด รับเงิน พร้อมเพย์</h3>
+        <p>รับของเข้าเป็นกล่องในราคากล่อง ระบบคิดต้นทุนต่อเม็ดให้ สต็อกแยกล็อตและวันหมดอายุ ตัดล็อตที่ใกล้หมดอายุก่อน</p>
+        <ul class="ticks"><li>พิมพ์แผ่นบาร์โค้ด/QR รายการยาและค่าบริการ วางที่เคาน์เตอร์ ยิงแล้วเข้าบิลทันที</li><li>ฉลากยาตามประกาศ สธ. ใบเสร็จ 80 มม. / A5 / ดอทเมทริกซ์</li><li>QR พร้อมเพย์บนจอและบนใบเสร็จ</li><li>เตือนยาใกล้หมดและใกล้หมดอายุ</li></ul></div>
+      <div class="shot stack"><img src="img/pos.webp" alt="ขาย จ่ายยา สแกนบาร์โค้ด" loading="lazy" width="1600" height="1025"><div class="shot-sm"><img src="img/codes.webp" alt="แผ่นบาร์โค้ดรายการยา" loading="lazy" width="794" height="569"></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center">
+    <span class="eyebrow">ครบในชุดเดียว</span>
+    <h2>ทุกอย่างที่คลินิกต้องใช้</h2>
+    <div class="grid" style="text-align:left">
+      <div class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="m9 15 2 2 4-4"/></svg><b>นัดหมายออนไลน์</b><span>ผู้ป่วยจองเองตามตารางแพทย์ เตือนก่อนนัดทาง LINE · WhatsApp · SMS · อีเมล</span></div>
+      <div class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="11" r="2.5"/><path d="M5.5 17c.6-1.9 2-3 3.5-3s2.9 1.1 3.5 3M15 9.5h3.5M15 13h3.5"/></svg><b>ลงทะเบียนผู้ป่วยใหม่</b><span>อ่านบัตรประชาชน/พาสปอร์ตบนมือถือ ออก HN และบัตรคนไข้มี QR</span></div>
+      <div class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b>ตารางออกตรวจแพทย์</b><span>หลายแพทย์ หลายห้อง แสดงบนเว็บคลินิก เวลาเปิด-ปิดอัตโนมัติ</span></div>
+      <div class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l1 4H7z"/><rect x="4" y="7" width="16" height="14" rx="2"/><path d="M9 14h6M12 11v6"/></svg><b>ห้องตรวจและเวชระเบียน</b><span>คิว ซักประวัติ บันทึกการตรวจ ICD-10 ประวัติแพ้ยา โรคประจำตัว</span></div>
+      <div class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h7M9 17h5"/></svg><b>ใบรับรองแพทย์</b><span>แบบทางการ ลาป่วย และแบบตรวจสุขภาพ 2 ส่วน พิมพ์ A4 / A5</span></div>
+      <div class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><b>สต็อกยาและเวชภัณฑ์</b><span>ล็อต วันหมดอายุ หน่วยกล่อง/เม็ด นำเข้า Excel นับสต็อก</span></div>
+      <div class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8v8M11 8v8M14 8v8M17 8v8"/></svg><b>บาร์โค้ด / QR</b><span>พิมพ์แผ่นรายการและสติกเกอร์ ยิงที่หน้าขายและห้องตรวจ</span></div>
+      <div class="card rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V3h16v18l-3-2-2 2-3-2-3 2-2-2z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><b>ใบเสร็จและรายงาน</b><span>ออกแบบได้ 3 แม่แบบ รายงานยอดเงิน โรคที่พบบ่อย สินค้าขายดี</span></div>
+      <div class="card o rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="14" r="3.5"/><circle cx="17.5" cy="14" r="3.5"/><path d="M10 14h4M3 14V9l2-3M21 14V9l-2-3"/></svg><b>งานสั่งทำ (Pro)</b><span>ใบรับงาน ค่าสายตา มัดจำ นัดรับของ ลูกค้าดูสถานะเองผ่าน QR</span></div>
+    </div>
+    <p class="lead" style="margin-top:36px">เหมาะกับ</p>
+    <div class="who"><span>คลินิกตา</span><span>ร้านแว่นตา</span><span>เครื่องช่วยฟัง</span><span>ทันตกรรมที่สั่งแล็บ</span><span>คลินิกเวชกรรมทั่วไป</span><span>คลินิกเฉพาะทาง</span></div>
+  </div>
+</section>
+
+<section class="bg2" id="price">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">ราคา</span><h2>จ่ายครั้งเดียว ใช้ได้ตลอด</h2><p class="lead">รวมติดตั้ง ตั้งค่า สอนใช้งาน และดูแลแก้ปัญหาฟรี 1 ปี ไม่มีค่ารายเดือน ไม่จำกัดจำนวนผู้ป่วยและผู้ใช้</p></div>
+    <div class="price">
+      <div class="pcard rv">
+        <h3>I-Clinic Pro</h3><p class="who2">คลินิกตา ร้านแว่น เครื่องช่วยฟัง ทันตกรรมที่สั่งแล็บ และคลินิกทั่วไป</p>
+        <div class="amt"><div><b>32,900</b><small>บาท · เฉพาะระบบ (มีคอมอยู่แล้ว)</small></div><div><b>67,200</b><small>บาท · รวมคอมพิวเตอร์และอุปกรณ์ 1 จุดบริการ</small></div></div>
+        <ul><li>ห้องตรวจ ห้องแพทย์ เวชระเบียน</li><li>สั่งยา Re-med เตือนแพ้ยา</li><li>ใบรับรองแพทย์ 2 แบบ</li><li>นัดหมายออนไลน์ เตือนอัตโนมัติ</li><li>ลงทะเบียนผู้ป่วยใหม่ออนไลน์</li><li>สต็อกล็อต/หมดอายุ กล่อง/เม็ด</li><li>ขาย จ่ายยา ฉลากยา QR พร้อมเพย์</li><li>บาร์โค้ด / QR รายการยา</li><li><b>งานสั่งทำ มัดจำ นัดรับของ</b></li><li>อัปเดตฟีเจอร์ใหม่อัตโนมัติ</li></ul>
+        <a class="btn btn-primary" href="#contact">ขอใบเสนอราคา</a>
+      </div>
+      <div class="incl rv">
+        <h3>ชุด "รวมอุปกรณ์" ได้อะไรบ้าง</h3>
+        <table><tbody>
+          <tr><td>คอมพิวเตอร์ Mini PC + Windows 11</td><td>✓</td></tr>
+          <tr><td>จอ 22–24 นิ้ว + คีย์บอร์ด/เมาส์</td><td>✓</td></tr>
+          <tr><td>เครื่องพิมพ์ใบเสร็จ 80 มม.</td><td>✓</td></tr>
+          <tr><td>เครื่องพิมพ์ A4/A5 (ใบรับงาน ใบรับรองแพทย์)</td><td>✓</td></tr>
+          <tr><td>เครื่องสแกนบาร์โค้ด/QR</td><td>✓</td></tr>
+          <tr><td>ลิ้นชักเก็บเงิน + UPS</td><td>✓</td></tr>
+          <tr><td>โฮสติ้ง + โดเมน ปีแรก</td><td>✓</td></tr>
+        </tbody></table>
+        <p>จุดบริการเพิ่ม ประมาณ 22,000 บาท · ราคาอุปกรณ์อ้างอิงราคาตลาด ต.ค. 2569 · ไม่รวม Payment Gateway · การเชื่อม HOSxP ต้องได้รับสิทธิ์จาก BMS</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">คำถามที่พบบ่อย</span><h2>ก่อนตัดสินใจ</h2></div>
+    <div class="faq">
+      <details><summary>ต้องมีอินเทอร์เน็ตตลอดไหม</summary><p>ระบบเป็นเว็บ ใช้ผ่านเบราว์เซอร์ ติดตั้งบนโฮสติ้งที่เราจัดให้ (ใช้ได้ทุกที่) ถ้าอยากติดตั้งบนเครื่องในคลินิกให้ทำงานในวงแลน สอบถามได้</p></details>
+      <details><summary>ใช้กี่เครื่อง กี่ผู้ใช้ก็ได้ใช่ไหม</summary><p>ใช่ครับ ไม่คิดค่าต่อเครื่องหรือต่อผู้ใช้ แพทย์ พยาบาล และการเงิน แยกสิทธิ์กันได้ แพทย์ใช้แท็บเล็ตหรือมือถือในห้องตรวจได้</p></details>
+      <details><summary>มีข้อมูลยาและผู้ป่วยใน Excel อยู่แล้ว ย้ายได้ไหม</summary><p>ได้ นำเข้ารายการยาจากไฟล์ CSV/Excel ได้ทันที และเราช่วยจัดรูปแบบไฟล์ให้ตอนติดตั้ง</p></details>
+      <details><summary>ข้อมูลผู้ป่วยปลอดภัยไหม</summary><p>ข้อมูลการรักษา ที่อยู่ และเลขบัตรเก็บแบบเข้ารหัส แยกสิทธิ์ผู้ใช้ มีบันทึกว่าใครทำอะไรในแต่ละการตรวจ และตั้งการสำรองข้อมูลให้ตอนติดตั้ง</p></details>
+      <details><summary>หลังหมด 1 ปี ต้องจ่ายอะไรเพิ่มไหม</summary><p>ระบบใช้ได้ต่อตลอด ไม่ต้องจ่ายเพิ่ม ค่าโฮสติ้ง/โดเมนปีถัดไปจ่ายตามจริง ถ้าต้องการให้ดูแลต่อสามารถต่อสัญญาดูแลรายปีได้</p></details>
+      <details><summary>I-Clinic กับ I-Clinic Pro ต่างกันอย่างไร</summary><p>I-Clinic (22,900 บาท) มีทุกอย่างยกเว้นงานสั่งทำ · I-Clinic Pro เพิ่มใบรับงาน ค่าสายตา/รายละเอียดงาน มัดจำ และนัดรับของ เหมาะกับคลินิกที่ขายแว่น เลนส์ เครื่องช่วยฟัง หรือสั่งแล็บ</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="contact" style="scroll-margin-top:90px">
+  <div class="cta rv">
+    <div>
+      <h2>ดูระบบจริงก่อนตัดสินใจ</h2>
+      <p>นัดสาธิตออนไลน์ ไม่มีค่าใช้จ่าย พร้อมใบเสนอราคาตามจุดบริการของคุณ</p>
+      <div class="row">
+        <a class="btn btn-line" href="https://line.me/ti/p/gq9me8enag" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.4-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3Z"/></svg>แอดไลน์</a>
+        <a class="btn btn-primary" href="tel:0956380007">โทร 095-638-0007</a>
+        <a class="btn btn-ghost" href="mailto:idevapp2023@gmail.com?subject=%E0%B8%82%E0%B8%AD%E0%B8%AA%E0%B8%B2%E0%B8%98%E0%B8%B4%E0%B8%95%20I-Clinic%20Pro">อีเมล</a>
+      </div>
+    </div>
+    <div class="qr"><img src="../img/line-qr.png" alt="LINE QR iDevApp" width="150" height="150">สแกนแอดไลน์</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="../"><img src="../img/idevapp-logo.png" alt="iDevApp" width="41" height="36"></a>
+    <div>© 2026 iDevApp · <a href="../#soon">I-Clinic · I-Drug</a> · <a href="../plugins/#packages">แพ็กเกจทั้งหมด</a></div>
+    <div><a href="tel:0956380007">โทร 095-638-0007</a> · <a href="https://line.me/ti/p/gq9me8enag" target="_blank" rel="noopener">LINE</a> · <a href="mailto:idevapp2023@gmail.com">idevapp2023@gmail.com</a></div>
+  </div>
+</footer>
+<script>
+(function(){var els=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})})();
+</script>
+</body>
+</html>
