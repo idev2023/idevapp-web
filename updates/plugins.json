@@ -148,75 +148,75 @@
   },
   "idev-appointments-pro": {
    "name": "iDev Appointments Pro",
-   "version": "1.1.0",
-   "package": "https://idevapp.me/updates/files/idev-appointments-pro-1.1.0.zip",
+   "version": "1.1.1",
+   "package": "https://idevapp.me/updates/files/idev-appointments-pro-1.1.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-10-29",
    "description": "Add-on for iDev Appointments: LINE and SMS reminders, waiting list that tells people when a time becomes free, branches, reports with no-show rates and export, and a connector that can send appointments to HOSxP.",
-   "changelog": "<ul><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>WhatsApp: ปุ่มแชตสำหรับเจ้าหน้าที่ และส่งอัตโนมัติผ่าน Cloud API</li><li>ออกแบบอีเมลทั้ง 6 แบบ พร้อมแม่แบบ 3 แบบ ตัวอย่างสด และส่งทดสอบ</li><li>ออกแบบรายงานที่พิมพ์ หน้าภาพรวม และหน้าช่องทาง LINE · WhatsApp · SMS ใหม่</li></ul>"
+   "changelog": "<ul><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>WhatsApp: ปุ่มแชตสำหรับเจ้าหน้าที่ และส่งอัตโนมัติผ่าน Cloud API</li><li>ออกแบบอีเมลทั้ง 6 แบบ พร้อมแม่แบบ 3 แบบ ตัวอย่างสด และส่งทดสอบ</li><li>ออกแบบรายงานที่พิมพ์ หน้าภาพรวม และหน้าช่องทาง LINE · WhatsApp · SMS ใหม่</li></ul>"
   },
   "idev-patient-registration-pro": {
    "name": "iDev Patient Registration Pro",
-   "version": "1.1.0",
-   "package": "https://idevapp.me/updates/files/idev-patient-registration-pro-1.1.0.zip",
+   "version": "1.1.1",
+   "package": "https://idevapp.me/updates/files/idev-patient-registration-pro-1.1.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-10-29",
    "description": "Add-on for iDev Patient Registration: HOSxP connector (find or create the HN automatically and send the patient card) and automatic reading of Thai ID cards and passports on the patient's phone.",
-   "changelog": "<ul><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>บัตรคนไข้: แบบใหม่ 4 แบบ และแบบสำเร็จรูป 9 แบบ</li><li>ออกแบบอีเมล \"ได้รับข้อมูล\" และ \"บัตรคนไข้\" พร้อมแม่แบบ</li></ul>"
+   "changelog": "<ul><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>บัตรคนไข้: แบบใหม่ 4 แบบ และแบบสำเร็จรูป 9 แบบ</li><li>ออกแบบอีเมล \"ได้รับข้อมูล\" และ \"บัตรคนไข้\" พร้อมแม่แบบ</li></ul>"
   },
   "idev-cookie-consent-pro": {
    "name": "iDev Cookie Consent Pro",
-   "version": "1.1.0",
-   "package": "https://idevapp.me/updates/files/idev-cookie-consent-pro-1.1.0.zip",
+   "version": "1.1.1",
+   "package": "https://idevapp.me/updates/files/idev-cookie-consent-pro-1.1.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-10-29",
    "description": "Add-on for iDev Cookie Consent (PDPA / GDPR): privacy request form and register with 30-day deadlines, consent receipts and evidence reports, policy version archive, cookie and script scanner, log retention.",
-   "changelog": "<ul><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>ออกแบบใบยืนยันความยินยอมและรายงาน (3 แบบ)</li></ul>"
+   "changelog": "<ul><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>ออกแบบใบยืนยันความยินยอมและรายงาน (3 แบบ)</li></ul>"
   },
   "i-clinic": {
    "name": "I-Clinic",
-   "version": "1.0.0",
-   "package": "https://idevapp.me/updates/files/i-clinic-1.0.0.zip",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/i-clinic-1.0.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-10-29",
    "description": "Clinic system by iDevApp: online patient registration with ID card / passport and patient cards, online appointments with LINE / WhatsApp / SMS reminders, doctors' schedule, dispensing, stock by lot and expiry, receipts and PromptPay.",
-   "changelog": "<ul><li>ชุด I-Clinic เป็นปลั๊กอินเดียว: ลงทะเบียน นัดหมาย ตารางแพทย์ ขาย/จ่ายยา สต็อก</li><li>หน้าแรกของระบบ ตัวเลขวันนี้ และรายการตั้งค่า</li></ul>"
+   "changelog": "<ul><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Clinic เป็นปลั๊กอินเดียว: ลงทะเบียน นัดหมาย ตารางแพทย์ ขาย/จ่ายยา สต็อก</li><li>หน้าแรกของระบบ ตัวเลขวันนี้ และรายการตั้งค่า</li></ul>"
   },
   "i-clinic-pro": {
    "name": "I-Clinic Pro",
-   "version": "1.0.0",
-   "package": "https://idevapp.me/updates/files/i-clinic-pro-1.0.0.zip",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/i-clinic-pro-1.0.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-10-29",
    "description": "Clinic and shop system by iDevApp with job orders (glasses, lenses, hearing aids, dental work): everything in I-Clinic plus job tickets with prescriptions, deposits and pick-up appointments.",
-   "changelog": "<ul><li>ชุด I-Clinic Pro เป็นปลั๊กอินเดียว รวมงานสั่งทำ มัดจำ และนัดรับของ</li></ul>"
+   "changelog": "<ul><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Clinic Pro เป็นปลั๊กอินเดียว รวมงานสั่งทำ มัดจำ และนัดรับของ</li></ul>"
   },
   "i-drug": {
    "name": "I-Drug",
-   "version": "1.0.0",
-   "package": "https://idevapp.me/updates/files/i-drug-1.0.0.zip",
+   "version": "1.0.1",
+   "package": "https://idevapp.me/updates/files/i-drug-1.0.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-10-29",
    "description": "Pharmacy system by iDevApp: point of sale with barcode, stock by lot and expiry, drug labels, ขย. 9–13 books, customer registration, appointments and receipts with PromptPay.",
-   "changelog": "<ul><li>ชุด I-Drug เป็นปลั๊กอินเดียว: ขายหน้าร้าน สต็อกแยกล็อต ฉลากยา ขย.9–13</li></ul>"
+   "changelog": "<ul><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Drug เป็นปลั๊กอินเดียว: ขายหน้าร้าน สต็อกแยกล็อต ฉลากยา ขย.9–13</li></ul>"
   }
  },
  "themes": {
