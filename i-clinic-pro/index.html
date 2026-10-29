@@ -133,6 +133,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .incl table{width:100%;border-collapse:collapse;font-size:15px}.incl td{padding:7px 4px;border-bottom:1px solid var(--line)}.incl td:last-child{text-align:right;color:var(--teal);font-weight:700}
 .incl p{color:var(--muted);font-size:14px;margin:12px 0 0}
 @media (max-width:900px){.price{grid-template-columns:1fr}}
+/* demo */
+.demo{margin:0 auto 88px;background:linear-gradient(120deg,#3a1f0b,#c2410c 60%,#f47b20);color:#fff;border-radius:28px;padding:40px 44px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.demo h2{font-size:clamp(26px,3vw,36px)}.demo p{color:#ffe9d6;margin:10px 0 16px}
+.demo .roles{display:flex;flex-wrap:wrap;gap:8px}.demo .roles span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:6px 14px;font-size:14.5px}
+.demo .go{display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}.demo .go .btn{background:#fff;color:#c2410c;box-shadow:none;font-size:18px;padding:16px 30px}.demo .go .btn:hover{background:#fff4ea}
+.demo .lnk{color:#fff;font-size:14.5px}.demo small{color:#ffe0c4}
+@media (max-width:820px){.demo{grid-template-columns:1fr;padding:28px}.demo .go{align-items:flex-start;text-align:left}}
 /* faq */
 .faq{max-width:820px;margin:36px auto 0}
 .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:4px 20px;margin-bottom:10px}
@@ -157,13 +164,14 @@ footer .foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-con
   <div class="wrap nav">
     <a class="brand" href="../"><img src="../img/idevapp-logo.png" alt="iDevApp" width="44" height="38"></a>
     <ul>
+      <li><a href="#demo">ทดลองใช้</a></li>
       <li><a href="#flow">ทำงานอย่างไร</a></li>
       <li><a href="#features">ฟีเจอร์</a></li>
       <li><a href="#pro">งานสั่งทำ</a></li>
       <li><a href="#price">ราคา</a></li>
       <li><a href="#faq">คำถาม</a></li>
     </ul>
-    <a class="btn btn-primary" href="#contact">ขอสาธิตระบบ</a>
+    <a class="btn btn-primary" href="https://iclinic.idevapp.me/wp-login.php" target="_blank" rel="noopener">ทดลองใช้</a>
   </div>
 </header>
 
@@ -174,8 +182,8 @@ footer .foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-con
       <h1>คลินิกทั้งร้าน<br><em>จบในระบบเดียว</em></h1>
       <p class="lead">I-Clinic Pro ดูแลตั้งแต่ผู้ป่วยลงทะเบียน จองนัด ซักประวัติ แพทย์ตรวจ สั่งยา จ่ายยา รับเงิน ไปจนถึงงานสั่งทำและนัดรับของ ใช้งานผ่านเว็บเบราว์เซอร์ ทุกเครื่องในคลินิก</p>
       <div class="ctas">
-        <a class="btn btn-primary" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>ขอสาธิตระบบฟรี</a>
-        <a class="btn btn-ghost" href="#price">ดูราคา</a>
+        <a class="btn btn-primary" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>ขอใบเสนอราคา</a>
+        <a class="btn btn-ghost" href="https://iclinic.idevapp.me/wp-login.php" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></svg>ทดลองใช้ระบบจริง</a>
       </div>
       <div class="price-pill"><b>32,900</b><span>บาท · จ่ายครั้งเดียว ไม่มีรายเดือน · รวมติดตั้งและดูแล 1 ปี</span></div>
     </div>
@@ -271,6 +279,8 @@ footer .foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-con
   </div>
 </section>
 
+<div class="wrap" id="demo" style="scroll-margin-top:90px"><div class="demo rv"><div><span class="eyebrow" style="color:#ffd29e">ลองก่อนซื้อ</span><h2>ทดลองใช้ I-Clinic Pro ได้ทันที</h2><p>เว็บสาธิตพร้อมข้อมูลตัวอย่าง (ชื่อสมมติทั้งหมด) เลือกบทบาทที่หน้าเข้าสู่ระบบ แล้วลองใช้งานได้ทุกอย่าง ข้อมูลรีเซ็ตทุกคืน</p><div class="roles"><span>👨‍⚕️ แพทย์ · ห้องแพทย์ สั่งยา Re-med</span><span>👩‍⚕️ พยาบาล · รับคิว ซักประวัติ</span><span>💊 การเงิน/ห้องยา · ขาย จ่ายยา ใบเสร็จ</span></div></div><div class="go"><a class="btn btn-primary" href="https://iclinic.idevapp.me/wp-login.php" target="_blank" rel="noopener">เข้าทดลองใช้ →</a><a class="lnk" href="https://iclinic.idevapp.me/" target="_blank" rel="noopener">ดูหน้าเว็บคลินิกฝั่งคนไข้ ↗</a><small>iclinic.idevapp.me</small></div></div></div>
+
 <section class="bg2" id="price">
   <div class="wrap">
     <div class="center"><span class="eyebrow">ราคา</span><h2>จ่ายครั้งเดียว ใช้ได้ตลอด</h2><p class="lead">รวมติดตั้ง ตั้งค่า สอนใช้งาน และดูแลแก้ปัญหาฟรี 1 ปี ไม่มีค่ารายเดือน ไม่จำกัดจำนวนผู้ป่วยและผู้ใช้</p></div>
@@ -316,7 +326,7 @@ footer .foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-con
   <div class="cta rv">
     <div>
       <h2>ดูระบบจริงก่อนตัดสินใจ</h2>
-      <p>นัดสาธิตออนไลน์ ไม่มีค่าใช้จ่าย พร้อมใบเสนอราคาตามจุดบริการของคุณ</p>
+      <p>ลองเองได้ที่ <a href="https://iclinic.idevapp.me/wp-login.php" target="_blank" rel="noopener" style="color:#fff">iclinic.idevapp.me</a> หรือนัดสาธิตออนไลน์ ไม่มีค่าใช้จ่าย พร้อมใบเสนอราคาตามจุดบริการของคุณ</p>
       <div class="row">
         <a class="btn btn-line" href="https://line.me/ti/p/gq9me8enag" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.4-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3Z"/></svg>แอดไลน์</a>
         <a class="btn btn-primary" href="tel:0956380007">โทร 095-638-0007</a>
