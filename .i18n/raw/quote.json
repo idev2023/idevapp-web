@@ -1,0 +1,154 @@
+[
+[
+"/** Thai baht text: 1234.5 → หนึ่งพันสองร้อยสามสิบสี่บาทห้าสิบสตางค์ */\n",
+""
+],
+[
+"/ รวมอุปกรณ์ ${fmt(p.all).replace('.00', '')} บาท</span>",
+"/ with equipment ${fmt(p.all).replace('.00', '')} THB</span>"
+],
+[
+"placeholder=\"รายการ\" aria-label=\"รายการ\"",
+"placeholder=\"Item\" aria-label=\"Item\""
+],
+[
+"aria-label=\"จำนวน\"",
+"aria-label=\"Quantity\""
+],
+[
+"aria-label=\"ราคา\"",
+"aria-label=\"Price\""
+],
+[
+"aria-label=\"ลบ\"",
+"aria-label=\"Remove\""
+],
+[
+"<li>รวมค่าติดตั้ง ตั้งค่า สอนการใช้งาน และดูแลแก้ปัญหา 1 ปี</li></ul>",
+"<li>Installation, setup, training and 1 year of support included</li></ul>"
+],
+[
+"<b>อุปกรณ์:</b>",
+"<b>Equipment:</b>"
+],
+[
+"<h4>ลูกค้า</h4>",
+"<h4>Customer</h4>"
+],
+[
+"<span>ผู้ติดต่อ</span>",
+"<span>Contact</span>"
+],
+[
+"<span>โทร</span>",
+"<span>Tel.</span>"
+],
+[
+"<span>เลขผู้เสียภาษี</span>",
+"<span>Tax ID</span>"
+],
+[
+"<span>เว็บไซต์</span>",
+"<span>Website</span>"
+],
+[
+"<span>เลขที่</span>",
+"<span>No.</span>"
+],
+[
+"<span>วันที่</span>",
+"<span>Date</span>"
+],
+[
+"<span>ยืนราคาถึง</span>",
+"<span>Valid until</span>"
+],
+[
+"<span>ผู้เสนอราคา</span>",
+"<span>Prepared by</span>"
+],
+[
+"<th>รายการ</th>",
+"<th>Item</th>"
+],
+[
+">จำนวน</th>",
+">Qty</th>"
+],
+[
+">ราคาต่อหน่วย</th>",
+">Unit price</th>"
+],
+[
+">จำนวนเงิน</th>",
+">Amount</th>"
+],
+[
+"<td>รวมเป็นเงิน</td>",
+"<td>Subtotal</td>"
+],
+[
+"<td>ส่วนลด</td>",
+"<td>Discount</td>"
+],
+[
+"<td>ยอดหลังหักส่วนลด</td>",
+"<td>After discount</td>"
+],
+[
+"<td>ภาษีมูลค่าเพิ่ม 7%</td>",
+"<td>VAT 7%</td>"
+],
+[
+"<td>ยอดรวมทั้งสิ้น</td>",
+"<td>Total</td>"
+],
+[
+"รวมภาษีมูลค่าเพิ่ม 7% แล้ว</td>",
+"Includes VAT 7%</td>"
+],
+[
+"<b>การชำระเงิน</b>",
+"<b>Payment</b>"
+],
+[
+"<h4>เงื่อนไข</h4>",
+"<h4>Terms</h4>"
+],
+[
+"ผู้อนุมัติสั่งซื้อ (ลูกค้า)<small>วันที่ ____/____/______</small>",
+"Approved by (customer)<small>Date ____/____/______</small>"
+],
+[
+"<div>ผู้เสนอราคา ${esc(s.q_sales || s.s_name)}<small>วันที่ ${thaiDate(s.q_date)}</small></div>",
+"<div>Prepared by ${esc(s.q_sales || s.s_name)}<small>Date ${thaiDate(s.q_date)}</small></div>"
+],
+[
+" · ใบเสนอราคา ${esc(s.q_no)}",
+" · Quotation ${esc(s.q_no)}"
+],
+[
+"<div class=\"ttl\"><h2>ใบเสนอราคา</h2><small>QUOTATION</small></div>",
+"<div class=\"ttl\"><h2>QUOTATION</h2></div>"
+],
+[
+"localStorage.getItem('idq_' + k)",
+"localStorage.getItem('idqen_' + k)"
+],
+[
+"localStorage.setItem('idq_' + k",
+"localStorage.setItem('idqen_' + k"
+],
+[
+"@@FUNC bahtText",
+"function bahtText(num) {\n  // amount in English words: 1234.5 → One thousand two hundred thirty-four baht and fifty satang\n  const a = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];\n  const t = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];\n  const h = (n) => { let o = ''; if (n >= 100) { o += a[Math.floor(n / 100)] + ' hundred'; n %= 100; if (n) o += ' '; } if (n >= 20) { o += t[Math.floor(n / 10)] + (n % 10 ? '-' + a[n % 10] : ''); } else if (n) o += a[n]; return o; };\n  const words = (n) => { if (!n) return ''; const parts = []; [[1e9, 'billion'], [1e6, 'million'], [1e3, 'thousand'], [1, '']].forEach(([v, w]) => { const q = Math.floor(n / v); if (q) { parts.push(h(q) + (w ? ' ' + w : '')); n -= q * v; } }); return parts.join(' '); };\n  num = Math.round(num * 100) / 100;\n  const [b, st] = num.toFixed(2).split('.');\n  const bt = words(+b), sat = words(+st);\n  if (!bt && !sat) return 'Zero baht';\n  const s = (bt ? bt + ' baht' : '') + (sat ? (bt ? ' and ' : '') + sat + ' satang' : ' only');\n  return s.charAt(0).toUpperCase() + s.slice(1);\n}"
+],
+[
+"@@FUNC thaiDate",
+"function thaiDate(iso) {\n  if (!iso) return '';\n  const m = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];\n  const [y, mo, da] = iso.split('-').map(Number); return da + ' ' + m[mo - 1] + ' ' + y;\n}"
+],
+[
+"<img class=\"logo\" src=\"../img/idevapp-logo.png\"",
+"<img class=\"logo\" src=\"/img/idevapp-logo.png\""
+]
+]

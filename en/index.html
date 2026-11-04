@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iDevApp | Work systems for hospitals, government and business</title>
+<meta name="description" content="iDevApp builds work systems for hospitals, government agencies and companies: I-Office asset register and repairs, I-Queue service queues on screens and phones, I-Work GPS time attendance and work reports, I-SOS emergency alerts and I-Appointment advance booking and member registration.">
+<meta property="og:title" content="iDevApp: work systems for every organisation">
+<meta property="og:description" content="I-Office · I-Work · I-SOS · I-Queue · I-Appointment: work systems for hospitals, government agencies and companies">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1d3f8b">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1d3f8b; --navy-d:#152f6b; --ink:#262b3a; --ink-2:#4a5266; --muted:#6b7385;
+  --orange:#f47b20; --orange-d:#d9660f; --teal:#0b6e80; --teal-2:#12a37f;
+  --bg:#ffffff; --bg-2:#f5f7fb; --line:#e3e7ef; --card:#ffffff;
+  --r:18px; --shadow:0 1px 2px rgba(20,30,60,.06),0 12px 32px -12px rgba(20,30,60,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Anuphan",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--navy)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.25;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(28px,3.6vw,40px);font-weight:700}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--orange-d);letter-spacing:.02em;margin-bottom:12px}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:var(--orange)}
+.lead{color:var(--ink-2);font-size:18px;max-width:640px}
+section{padding:96px 0}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none;transition:.18s;border:1.5px solid transparent;white-space:nowrap}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 20px -8px rgba(244,123,32,.7)}
+.btn-primary:hover{background:var(--orange-d);transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:#fff}
+.btn-ghost:hover{border-color:var(--navy);color:var(--navy)}
+.btn svg{width:18px;height:18px}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(12px);border-bottom:1px solid transparent;transition:.2s}
+header.scrolled{border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:20px}
+.brand img{height:42px;width:auto}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--ink-2);font-weight:500;font-size:15px}
+.nav ul a:hover{color:var(--navy)}
+.nav .btn{padding:10px 18px;font-size:15px}
+.menu-btn{display:none;background:none;border:0;padding:8px;cursor:pointer;color:var(--ink)}
+
+/* hero */
+.hero{padding:64px 0 40px;background:
+  radial-gradient(900px 500px at 85% -10%,rgba(29,63,139,.10),transparent 60%),
+  radial-gradient(700px 400px at -10% 30%,rgba(244,123,32,.08),transparent 60%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px 6px 6px;font-size:14px;color:var(--ink-2);box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.pill b{background:var(--navy);color:#fff;border-radius:99px;padding:2px 10px;font-weight:600;font-size:13px}
+.hero h1{font-size:clamp(34px,4.6vw,54px);font-weight:700;margin:20px 0 18px}
+.hero h1 .hl{color:var(--navy);position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;background:rgba(244,123,32,.28);z-index:-1;border-radius:4px}
+.hero .lead{font-size:19px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 26px}
+.checks{display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;padding:0;margin:0;color:var(--ink-2);font-size:15px}
+.checks li{display:flex;align-items:center;gap:7px}
+.checks svg{width:18px;height:18px;color:var(--teal-2);flex:none}
+
+.mock{position:relative;padding:0 0 40px 0}
+.browser{background:#fff;border-radius:14px;box-shadow:0 30px 70px -20px rgba(20,35,80,.35),0 0 0 1px rgba(20,35,80,.08);overflow:hidden}
+.browser .bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#eef1f6;border-bottom:1px solid var(--line)}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:#d5dae3}
+.browser .bar i:nth-child(1){background:#ff6058}.browser .bar i:nth-child(2){background:#ffbd2e}.browser .bar i:nth-child(3){background:#28c941}
+.browser .bar span{margin-left:12px;flex:1;background:#fff;border-radius:6px;font-size:12px;color:var(--muted);padding:3px 10px;max-width:260px}
+.phone{position:absolute;width:30%;min-width:150px;right:-18px;bottom:0;border-radius:28px;background:#11151f;padding:8px;box-shadow:0 30px 60px -18px rgba(10,20,50,.5)}
+.phone img{border-radius:21px}
+.float-tag{position:absolute;left:-22px;bottom:70px;background:#fff;border-radius:14px;padding:12px 16px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center;font-size:14px}
+.float-tag .ic{width:38px;height:38px;border-radius:10px;background:#fff3e8;color:var(--orange);display:grid;place-items:center}
+.float-tag b{display:block;font-size:15px}
+.float-tag small{color:var(--muted)}
+
+/* trust strip */
+.strip{padding:28px 0;border-block:1px solid var(--line);background:var(--bg-2)}
+.strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.strip-item{display:flex;gap:12px;align-items:center}
+.strip-item .ic{width:42px;height:42px;border-radius:12px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--navy);flex:none}
+.strip-item b{display:block;font-size:15px}
+.strip-item span{font-size:13.5px;color:var(--muted)}
+
+/* products */
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.prod{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px 24px 24px;display:flex;flex-direction:column;transition:.2s;overflow:hidden}
+.prod:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:#c9d3e6}
+.prod::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--pc)}
+.prod .ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:var(--pb);color:var(--pc);margin-bottom:18px}
+.prod .ic svg{width:28px;height:28px}
+.prod .name{font-size:24px;font-weight:700;letter-spacing:-.01em}
+.prod .name b{color:var(--navy)}
+.prod .kind{font-size:14px;font-weight:600;color:var(--pc);margin:2px 0 12px}
+.prod p{margin:0 0 20px;color:var(--ink-2);font-size:15.5px;flex:1}
+.prod a{font-weight:600;font-size:15px;text-decoration:none;color:var(--pc);display:inline-flex;gap:6px;align-items:center}
+.prod a:hover{gap:10px}
+.prod a svg{width:16px;height:16px;transition:.2s}
+.prods .feat-p{grid-row:span 2}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;flex:1;align-content:flex-start}
+.chips span{font-size:13.5px;font-weight:500;color:var(--navy);background:#fff;border:1px solid #d6dff2;border-radius:99px;padding:4px 11px}
+.prod.feat-p{background:linear-gradient(180deg,#f3f6fd,#fff 60%)}
+.badge{position:absolute;top:18px;right:18px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--orange);color:#fff}
+.band{padding:88px 0 0;text-align:center;border-top:1px solid var(--line);background:linear-gradient(180deg,#f3f6fd,#fff 70%)}
+.band img{height:64px;width:auto;margin:0 auto 18px}
+.band h2{margin-bottom:12px}
+.band .strip{margin-top:44px;text-align:left}
+
+/* spotlight: attendance / emergency */
+.spot-note{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:26px}
+.spot-note small{color:var(--muted);font-size:14px}
+.mini-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:44px 0 0}
+.mini-steps div{border-radius:16px;padding:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.mini-steps b{display:flex;align-items:center;gap:10px;font-size:17px;margin-bottom:6px;color:#fff}
+.mini-steps.sos{grid-template-columns:repeat(4,1fr)}
+.mini-steps b i{font-style:normal;display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:#e5484d;color:#fff;font-size:15px;flex:none}
+.mini-steps p{margin:0;font-size:15px;color:rgba(255,255,255,.75)}
+.emer{background:radial-gradient(800px 400px at 90% 0%,rgba(229,72,77,.28),transparent 60%),linear-gradient(160deg,#121a33,#1b2547 60%,#22213b);color:#fff}
+.emer h2,.emer h3{color:#fff}
+.emer .lead,.emer .row p{color:rgba(255,255,255,.78)}
+.emer .eyebrow{color:#ff8a8d}.emer .eyebrow::before{background:#e5484d}
+.emer .bul li{color:rgba(255,255,255,.9)}.emer .bul svg{color:#ff6b6f}
+.emer .spot-note small{color:rgba(255,255,255,.65)}
+.emer .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.emer .btn-ghost:hover{border-color:#fff;color:#fff}
+.emer .row{margin-top:56px}
+.emer .mock{padding-bottom:30px}
+.att-duo{display:flex;align-items:center;gap:22px}
+.att-duo .shot{flex:1;min-width:0}
+.att-duo .phone{position:static;width:30%;min-width:0;flex:none}
+
+/* coming soon */
+.soon{background:radial-gradient(700px 360px at 10% 0%,rgba(244,123,32,.22),transparent 60%),radial-gradient(700px 360px at 95% 100%,rgba(53,97,196,.35),transparent 60%),linear-gradient(160deg,#141c36,#1b2a55 55%,#20254a);color:#fff;overflow:hidden}
+.soon h2{color:#fff}.soon .lead{color:rgba(255,255,255,.78)}
+.soon .eyebrow{color:#ffb27a}.soon .eyebrow::before{background:var(--orange)}
+.soon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.sc{position:relative;border-radius:22px;padding:28px 26px 26px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;transition:.25s;overflow:hidden}
+.sc:hover{transform:translateY(-4px);background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.28)}
+.sc::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-60px;top:-60px;background:var(--sg);opacity:.35;filter:blur(8px)}
+.sc .tag{align-self:flex-start;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:4px 12px;border-radius:99px;border:1px dashed rgba(255,255,255,.45);color:#fff;margin-bottom:18px}
+.sc .ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--sg);color:#fff;margin-bottom:16px;box-shadow:0 10px 24px -10px var(--sg)}
+.sc .ic svg{width:27px;height:27px}
+.sc .nm{font-size:26px;font-weight:700;letter-spacing:-.01em}
+.sc .for{font-size:14.5px;color:rgba(255,255,255,.7);margin-bottom:14px}
+.sc h3{font-size:20px;line-height:1.35;margin-bottom:10px;color:#fff}
+.sc p{margin:0 0 22px;color:rgba(255,255,255,.75);font-size:15.5px;flex:1}
+.sc a{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:15px;color:#fff;text-decoration:none;padding:9px 16px;border-radius:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
+.sc a:hover{background:rgba(255,255,255,.18)}.sc .tag.ready{border-style:solid;background:rgba(18,163,127,.25);border-color:rgba(110,231,183,.6)}.sc .sc-price{margin:-8px 0 18px;font-size:15px;color:rgba(255,255,255,.85)}.sc .sc-price b{font-size:20px;color:#fff}
+.sc a svg{width:17px;height:17px}
+@media (max-width:980px){.soon-grid{grid-template-columns:1fr}}
+
+/* queue */
+.queue{background:linear-gradient(180deg,#eef8f9,#fff 75%)}
+.queue .eyebrow{color:#0b6e80}.queue .eyebrow::before{background:#0b6e80}
+.queue .bul svg{color:#0b6e80}
+.qmock{position:relative;padding:0 0 30px}
+.tv{background:#0c2f3a;border-radius:16px;padding:14px;box-shadow:0 30px 60px -22px rgba(8,40,50,.55)}
+.tv-in{background:linear-gradient(160deg,#0b4f5c,#0a3a47);border-radius:10px;color:#fff;display:grid;grid-template-columns:1.25fr 1fr;overflow:hidden}
+.tv-now{padding:22px 24px;border-right:1px solid rgba(255,255,255,.12)}
+.tv-now small{display:block;font-size:13px;opacity:.75;letter-spacing:.03em}
+.tv-num{font-size:clamp(46px,6vw,76px);font-weight:700;line-height:1.05;margin:6px 0 4px;color:#7ff0d4}
+.tv-ch{display:inline-block;background:#f47b20;border-radius:8px;padding:3px 12px;font-weight:600;font-size:15px}
+.tv-sub{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tv-sub div{background:rgba(255,255,255,.08);border-radius:8px;padding:8px 10px;font-size:13px}
+.tv-sub b{display:block;font-size:20px}
+.tv-next{padding:18px 18px}
+.tv-next small{display:block;font-size:13px;opacity:.75;margin-bottom:8px}
+.tv-next li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.14);font-size:15px}
+.tv-next ul{list-style:none;margin:0;padding:0}
+.tv-next li span{opacity:.7;font-size:13px}
+.tv-foot{display:flex;justify-content:space-between;font-size:12px;opacity:.6;padding:8px 6px 0;color:#fff}
+.qphone{position:absolute;right:-14px;bottom:0;width:32%;min-width:150px;border-radius:26px;background:#11151f;padding:8px;box-shadow:0 30px 60px -18px rgba(10,20,50,.5)}
+.qphone-in{background:#f4f8f9;border-radius:19px;padding:16px 12px;text-align:center;font-size:12px;color:var(--ink-2)}
+.qphone-in .t{font-weight:600;color:var(--ink);font-size:13px}
+.qphone-in .n{font-size:38px;font-weight:700;color:#0b6e80;line-height:1.1;margin:8px 0 2px}
+.qphone-in .bar{height:6px;border-radius:4px;background:#dbe8eb;margin:12px 4px 6px;overflow:hidden}
+.qphone-in .bar i{display:block;height:100%;width:70%;background:#12a37f}
+.qphone-in .al{margin-top:10px;background:#fff3e8;color:#b55410;border-radius:8px;padding:6px;font-weight:600}
+.qmock{display:flex;align-items:flex-end;gap:0}
+.qmock .tv{flex:1;min-width:0;margin-bottom:60px}
+.chat{flex:none;width:300px;margin-left:-70px;position:relative;z-index:2;border-radius:30px;background:#11151f;padding:9px;box-shadow:0 30px 60px -18px rgba(10,20,50,.55)}
+.chat-in{background:#dfe6ee;border-radius:22px;overflow:hidden;font-size:12px;color:#333}
+.chat-hd{background:#fff;padding:10px 14px;font-weight:600;font-size:13px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #e3e7ef}
+.chat-hd i{width:22px;height:22px;border-radius:50%;background:#0b6e80;display:grid;place-items:center;color:#fff;font-style:normal;font-size:11px;font-weight:700}
+.chat-body{padding:10px;display:grid;gap:8px}
+.bub{background:#fff;border-radius:12px;padding:8px 10px;line-height:1.5;max-width:92%}
+.bub.me{justify-self:end;background:#b9f0b4}
+.qc{background:#fff;border-radius:12px;overflow:hidden;width:88%;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.qc .h{color:#fff;text-align:center;padding:6px 8px;font-weight:600;font-size:12px}
+.qc .b{text-align:center;padding:7px 8px 8px}
+.qc .no{font-size:20px;font-weight:700;color:#333;line-height:1.2}
+.qc .st{font-weight:600;font-size:12px}
+.qc .pt{font-size:11px;color:#666;border-top:1px solid #eee;margin-top:5px;padding-top:4px;text-align:left}
+.qjourney{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.qjourney div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;border-top:4px solid var(--qc)}
+.qjourney b{display:block;font-size:17px;margin-bottom:4px}
+.qjourney p{margin:0;font-size:15px;color:var(--ink-2)}
+@media (max-width:980px){.qjourney{grid-template-columns:1fr}}
+@media (max-width:640px){.qmock{flex-direction:column;align-items:stretch}.qmock .tv{margin-bottom:0}.chat{width:auto;max-width:300px;margin:18px auto 0}}
+.qcap{font-size:13px;color:var(--muted);margin-top:8px}
+@media (max-width:640px){.tv-in{grid-template-columns:1fr}.tv-now{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.qphone{display:none}.qmock{padding-bottom:0}}
+
+/* features */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:.2s}
+.feat:hover{border-color:#c9d3e6;box-shadow:var(--shadow);transform:translateY(-2px)}
+.feat .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px}
+.feat h3{font-size:19px;margin-bottom:8px}
+.feat p{margin:0;color:var(--ink-2);font-size:15.5px}
+.c1{background:#e8eefb;color:var(--navy)}.c2{background:#fff1e6;color:var(--orange-d)}.c3{background:#e2f4f1;color:#0e8a6c}
+.c4{background:#efeafd;color:#6a4ad6}.c5{background:#e5f3f6;color:var(--teal)}.c6{background:#fdeaea;color:#c4372f}
+.ic svg{width:24px;height:24px}
+
+/* showcase */
+.show{background:var(--bg-2)}
+.row{display:grid;grid-template-columns:1fr 1.25fr;gap:64px;align-items:center;margin-top:80px}
+.row.rev{grid-template-columns:1.25fr 1fr}
+.row.rev .txt{order:2}
+.row h3{font-size:clamp(24px,2.6vw,30px);margin-bottom:14px}
+.row p{color:var(--ink-2);margin:0 0 18px}
+.bul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.bul li{display:flex;gap:10px;align-items:flex-start;font-size:16px}
+.bul svg{width:20px;height:20px;color:var(--orange);flex:none;margin-top:3px}
+.shot{border-radius:14px;overflow:hidden;box-shadow:0 24px 60px -20px rgba(20,35,80,.3),0 0 0 1px rgba(20,35,80,.08);background:#fff}
+.duo{display:flex;align-items:center;gap:22px}
+.duo .labels{flex:1;min-width:0}
+.duo .phone{position:static;width:28%;min-width:0;flex:none}
+.labels{background:#fff;border-radius:14px;padding:18px;box-shadow:0 24px 60px -20px rgba(20,35,80,.3),0 0 0 1px rgba(20,35,80,.08)}
+
+/* workspaces */
+.ws{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.ws div{border-radius:var(--r);padding:24px;color:#fff;position:relative;overflow:hidden;min-height:170px}
+.ws div::after{content:"";position:absolute;right:-30px;bottom:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.12)}
+.ws h3{font-size:19px;margin:14px 0 6px}
+.ws p{margin:0;font-size:14.5px;opacity:.9}
+.ws svg{width:28px;height:28px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;counter-reset:s}
+.step{position:relative;padding:26px 22px;border-radius:var(--r);background:#fff;border:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--navy);color:#fff;font-weight:700;margin-bottom:16px}
+.step h3{font-size:18px;margin-bottom:6px}
+.step p{margin:0;font-size:15px;color:var(--ink-2)}
+.platforms{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:32px}
+.platforms span{border:1px solid var(--line);background:#fff;border-radius:99px;padding:7px 16px;font-size:14.5px;font-weight:500;color:var(--ink-2)}
+
+/* pricing */
+.pricing{background:linear-gradient(180deg,var(--bg-2),#fff)}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:48px auto 0}
+.plan{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px;display:flex;flex-direction:column}
+.plan.pro{border:2px solid var(--navy);box-shadow:0 30px 60px -28px rgba(29,63,139,.45);position:relative}
+.plan.pro .tag{position:absolute;top:-14px;left:34px;background:var(--orange);color:#fff;font-size:13px;font-weight:600;padding:4px 12px;border-radius:99px}
+.plan h3{font-size:22px}
+.plan .price{font-size:34px;font-weight:700;margin:12px 0 4px;color:var(--navy)}
+.plan .price small{font-size:16px;color:var(--muted);font-weight:500}
+.plan .sub{color:var(--muted);font-size:15px;margin:0 0 22px}
+.plan ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:12px;flex:1}
+.plan li{display:flex;gap:10px;font-size:15.5px}
+.plan li svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--teal-2)}
+.plan li.no{color:var(--muted)}.plan li.no svg{color:#b8bfcc}
+.plan .btn{width:100%}
+
+/* faq */
+.faq{max-width:820px;margin:44px auto 0;display:grid;gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 22px;transition:.2s}
+details[open]{border-color:#c9d3e6;box-shadow:var(--shadow)}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;font-size:17px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;font-weight:400;color:var(--navy);transition:.2s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 18px;color:var(--ink-2);font-size:16px}
+
+/* cta */
+.cta{padding:0 0 96px}
+.cta-box{border-radius:28px;padding:56px;background:linear-gradient(135deg,var(--navy) 0%,#24479a 55%,#2d3a63 100%);color:#fff;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.cta-box::before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:rgba(244,123,32,.22);right:-120px;top:-160px}
+.cta-box h2{color:#fff}
+.cta-box p{color:rgba(255,255,255,.82);margin:14px 0 0;font-size:17px}
+.contact-card{position:relative;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:26px}
+.contact-card small{opacity:.75;font-size:14px}
+.contact-card a.mail{display:block;color:#fff;font-size:20px;font-weight:600;margin:4px 0 18px;text-decoration:none;word-break:break-all}
+.contact-card .btn{width:100%}
+.contact-card .row2 .btn{flex:1}
+.btn-line{background:#06c755;color:#fff;border:0;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn-line:hover{background:#05b04b;color:#fff}.btn-line svg{width:20px;height:20px}
+.btn-ghost-w{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}.btn-ghost-w:hover{background:rgba(255,255,255,.12);color:#fff}
+.line-qr{display:flex;align-items:center;gap:16px;margin-top:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:12px;max-width:380px}.line-qr img{width:120px;height:120px;border-radius:10px;background:#fff;padding:4px}.line-qr div{display:flex;flex-direction:column;gap:2px}.line-qr span{opacity:.8;font-size:14px}
+.contact-card .row2{display:flex;gap:10px;margin-top:10px}
+.copy{background:transparent;border:1.5px solid rgba(255,255,255,.35);color:#fff;cursor:pointer;font-family:inherit}
+.copy:hover{background:rgba(255,255,255,.08)}
+
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:14.5px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot .brand img{height:36px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+
+/* WordPress plugins promo */
+.wp{background:linear-gradient(135deg,#10275c 0%,#1d3f8b 55%,#0b6e80 100%);color:#fff;position:relative;overflow:hidden}
+.wp::before{content:"";position:absolute;width:520px;height:520px;right:-160px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(244,123,32,.35),transparent 65%)}
+.wp .wrap{position:relative}
+.wp-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.wp .eyebrow{color:#ffb67a}.wp .eyebrow::before{background:#ffb67a}
+.wp h2{color:#fff}
+.wp .lead{color:#d6e2ff}
+.wp-list{list-style:none;padding:0;margin:26px 0 30px;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+.wp-list li{display:flex;gap:9px;align-items:flex-start;font-size:15.5px;color:#eef3ff;line-height:1.5}
+.wp-list svg{flex:none;width:19px;height:19px;color:#5fe0b9;margin-top:2px}
+.wp .cta-row{margin:0}
+.wp .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.wp .btn-ghost:hover{border-color:#fff;color:#fff}
+.wp-prices{display:grid;gap:14px}
+.wp-price{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:18px 20px;backdrop-filter:blur(6px)}
+.wp-price .amt{flex:none;min-width:112px;font-size:30px;font-weight:700;line-height:1;color:#fff}
+.wp-price .amt small{display:block;font-size:13px;font-weight:500;color:#b9c8ee;margin-top:6px}
+.wp-price b{display:block;font-size:17px}
+.wp-price span{display:block;font-size:14.5px;color:#cfdaf5;line-height:1.5}
+.wp-price.hot{background:#fff;border-color:#fff}
+.wp-price.hot .amt{color:var(--navy)}.wp-price.hot .amt small{color:var(--muted)}
+.wp-price.hot b{color:var(--ink)}.wp-price.hot span{color:var(--ink-2)}
+.wp-note{font-size:13.5px;color:#b9c8ee;margin:4px 2px 0}
+@media (max-width:980px){.wp-grid{grid-template-columns:1fr;gap:36px}}
+@media (max-width:640px){.wp-list{grid-template-columns:1fr}.wp-price{padding:16px}.wp-price .amt{min-width:92px;font-size:26px}}
+
+/* responsive */
+@media (max-width:980px){
+  .hero-grid,.row,.row.rev,.cta-box{grid-template-columns:1fr}
+  .row.rev .txt{order:0}
+  .features,.prods{grid-template-columns:1fr 1fr}
+  .ws,.steps,.strip-grid{grid-template-columns:1fr 1fr}
+  .nav ul{display:none}
+  .nav ul.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#fff;padding:12px 20px 20px;gap:4px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  .nav ul.open a{display:block;padding:10px 0;font-size:16px}
+  .menu-btn{display:block}
+  .float-tag{left:8px}
+  .mini-steps,.mini-steps.sos{grid-template-columns:1fr 1fr}
+  .phone{right:0}
+  section{padding:72px 0}
+  .row{gap:36px;margin-top:64px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .features,.ws,.steps,.plans,.strip-grid,.prods,.mini-steps,.mini-steps.sos{grid-template-columns:1fr}
+  .prods .feat-p{grid-row:auto}
+  .nav .btn{display:none}
+  .hero{padding-top:36px}
+  .cta-row .btn{flex:1}
+  .float-tag{display:none}
+  .cta-box{padding:32px 22px;border-radius:22px}
+  .plan{padding:26px}
+  .duo{gap:12px}.duo .labels{padding:8px}
+}
+</style>
+
+<link rel="alternate" hreflang="th" href="https://idevapp.me/">
+<link rel="alternate" hreflang="en" href="https://idevapp.me/en/">
+<link rel="alternate" hreflang="x-default" href="https://idevapp.me/">
+<style id="lang-sw-css">.lang-sw{display:inline-flex;border:1px solid #d6dce6;border-radius:999px;overflow:hidden;font:700 13px/1 inherit;margin:0 10px;flex:none}.lang-sw a{padding:7px 11px;color:#4b5563;text-decoration:none}.lang-sw a[aria-current]{background:#1d3f8b;color:#fff}.nav ul a{white-space:nowrap}.nav .brand{flex:none}html[lang=en] .nav ul{gap:20px}@media (max-width:1240px){.nav ul{gap:14px!important}.nav ul a{font-size:14px!important}}@media (max-width:640px){.lang-sw{margin:0 6px}.lang-sw a{padding:6px 9px}}</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="iDevApp home"><img src="/img/idevapp-logo.png" alt="iDevApp" width="48" height="42"></a>
+    <ul id="menu">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#attendance">I-Work</a></li>
+      <li><a href="#emergency">I-SOS</a></li>
+      <li><a href="#queue">I-Queue</a></li>
+      <li><a href="#soon">Clinics & pharmacies</a></li>
+      <li><a href="#ioffice">I-Office</a></li>
+      <li><a href="#pricing">License</a></li>
+      <li><a href="plugins/">WordPress plugins</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <nav class="lang-sw" aria-label="Language / ภาษา"><a href="/" hreflang="th" lang="th">TH</a><a href="/en/" hreflang="en" lang="en" aria-current="true">EN</a></nav><a class="btn btn-primary" href="#contact">Request a demo</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><b>iDevApp</b> Work systems for hospitals, government and business</span>
+      <h1>Organisation systems <span class="hl">easy for every team</span></h1>
+      <p class="lead"><strong>iDevApp</strong> Web systems for the everyday work of hospitals, government agencies and companies: asset registers and repairs, service queues on screens and phones, time attendance and work reports, and advance booking.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#products">See our products
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#contact">Ask for a demo</a>
+      </div>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>For hospitals, government and business</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free I-Office trial, no time limit</li>
+      </ul>
+    </div>
+    <div class="mock rv">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span>I-Office · Overview</span></div>
+        <img src="/img/dashboard.webp" alt="I-Office overview showing open repairs, assets and a monthly repair chart" width="1600" height="1000" fetchpriority="high">
+      </div>
+      <div class="phone"><img src="/img/m-quick.webp" alt="Scan the QR code on an asset tag with a phone to report a repair or see its details" width="480" height="1039"></div>
+      <div class="float-tag">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></div>
+        <div><b>Scan a QR code to report a repair</b><small>No asset numbers to remember</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Products</span>
+      <h2>iDevApp systems</h2>
+      <p class="lead">Every system works for hospitals, government agencies and companies. Use one on its own or several together.</p>
+    </div>
+    <div class="prods">
+      <div class="prod feat-p rv" style="--pc:#1d3f8b;--pb:#e8eefb"><span class="badge">Free trial</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div>
+        <div class="name">I-Office</div><div class="kind">Organisation management system</div>
+        <p style="flex:none">Assets and repairs, supplies, stores, procurement, staff, leave, GPS and face-scan attendance, document registry and emergencies in one system. Staff get their attendance summary by email and LINE OA.</p>
+        <div class="chips"><span>Asset register</span><span>QR tags</span><span>Repairs</span><span>PM / calibration</span><span>Annual stock-take</span><span>Supplies / stores</span><span>Procurement</span><span>Loans</span><span>Staff</span><span>Leave</span><span>GPS / face-scan attendance</span><span>LINE OA / email alerts</span><span>Emergencies</span><span>Document registry</span><span>Vehicle requests</span><span>Meeting room booking</span></div>
+        <a href="#ioffice">Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="prod rv" style="--pc:#d9660f;--pb:#fff1e6"><span class="badge">New</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><path d="M12 6.5v3l2 1.5"/></svg></div>
+        <div class="name">I-Work</div><div class="kind">GPS time attendance and work reports</div>
+        <p>Clock in and out from a phone with GPS and a photo, combined with ZKTeco face scanners. HR gets hours, late arrivals, absences and leave, and each person gets a summary by email and LINE OA.</p>
+        <a href="#attendance">Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="prod rv" style="--pc:#d93a3f;--pb:#fdeaea"><span class="badge" style="background:#d93a3f">New</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 2.4 17.5A2 2 0 0 0 4.1 20.5h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+        <div class="name">I-SOS</div><div class="kind">Emergency alert system</div>
+        <p>Press SOS on a phone to send your GPS location, alert the right teams inside the organisation, notify LINE groups and follow each incident from the command centre.</p>
+        <a href="#emergency">Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="prod rv" style="--pc:#0b6e80;--pb:#e3f3f6">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 6v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-6z"/><path d="M10 9.5h4M10 12h4M10 14.5h2"/></svg></div>
+        <div class="name">I-Queue</div><div class="kind">Service queues on screens and on patients’ phones</div>
+        <p>Automatic LINE alerts for screening, the doctor and the pharmacy. Patients know how many are ahead of them and don’t have to wait outside the room.</p>
+        <a href="#queue">Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="prod rv" style="--pc:#6a4ad6;--pb:#efeafd">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01"/></svg></div>
+        <div class="name">I-Appointment</div><div class="kind">Advance booking system</div>
+        <p>Book ahead on free days and times. Staff manage the schedule and the list of visitors in one place.</p>
+        <a href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%20I-Appointment&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%3A%0A">Ask / request a demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORDPRESS PLUGINS -->
+<section id="wordpress" class="wp">
+  <div class="wrap wp-grid">
+    <div class="rv">
+      <span class="eyebrow">New · WordPress plugins</span>
+      <h2>All you need is a computer and WordPress </h2>
+      <p class="lead">12 WordPress plugins for clinics, optical shops and pharmacies. They work with your existing site and any theme, and almost all are free.</p>
+      <ul class="wp-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Online doctor appointments with time slots and email reminders</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>New patient registration that reads ID cards and passports on a phone</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Patient numbers and patient cards with a QR code</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Clinic schedules and doctors by speciality</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>PDPA / GDPR cookie banner with a consent log</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Thai / English site without duplicate pages</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Maps and directions buttons, no API key needed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></li></ul>
+      <div class="cta-row"><a class="btn btn-primary" href="plugins/">See all plugins</a><a class="btn btn-ghost" href="plugins/#packages">See packages and prices</a></div>
+    </div>
+    <div class="wp-prices rv">
+      <div class="wp-price hot"><div class="amt">22,900<small>THB · system only</small></div><div><b>I-Clinic</b><span>Exam room / medical records, re-med, allergy alerts, appointments, patient register, drug stock, dispensing, drug labels, PromptPay QR · with computer and equipment 52,400</span></div></div>
+      <div class="wp-price hot"><div class="amt">32,900<small>THB · system only</small></div><div><b>I-Clinic Pro</b><span>+ custom orders, deposits and pick-up appointments for eye clinics, optical shops and hearing aids · with computer and equipment 67,200</span></div></div>
+      <div class="wp-price hot"><div class="amt">19,900<small>THB · system only</small></div><div><b>I-Drug</b><span>Pharmacies: stock by lot and expiry date, drug labels, Kor.Yor. 9–13 registers, PromptPay QR · with computer and equipment 51,900</span></div></div>
+      <p class="wp-note">I-Clinic / I-Drug are ready-to-use WordPress packages (separate from the individual plugins). One payment, including installation and 1 year of free support · payment gateway not included</div>
+  </div>
+</section>
+
+<!-- ATTENDANCE -->
+<section id="attendance">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">I-Work · GPS time attendance and work reports</span>
+      <h2>Reliable clock-in from a phone, no queue at the scanner</h2>
+      <p class="lead">Staff clock in and out on their phones. The system checks their location against the clock-in point and asks for a photo. HR gets the hours straight away, with nothing to collect by hand.</p>
+    </div>
+    <div class="row rv">
+      <div class="txt">
+        <ul class="bul">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>GPS is checked against each clock-in point and its radius. Outside the area you choose whether staff give a reason (field work, home visits) or cannot clock in.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Photos come only from the camera on the clock-in page; old or repeated photos are rejected</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Detects fake-location apps, jumping coordinates and wrong device clocks</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Works with ZKTeco face scanners: enrol once, scan on any device at any branch, all in the same report as GPS clock-ins</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Each person gets their attendance summary by email and LINE OA and can check their own hours without asking HR</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Rosters, overnight shifts, late / early / absent summaries and time corrections through an approval chain, with Excel export</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Set how long photos and locations are kept under the PDPA; they are deleted automatically</li>
+        </ul>
+        <div class="spot-note">
+          <a class="btn btn-primary" href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%20I-Work&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%9A%E0%B8%B8%E0%B8%84%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%3A%0A">Request an I-Work demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <small>Use it on its own or as a module of I-Office Office / Full edition</small>
+        </div>
+      </div>
+      <div class="att-duo">
+        <div class="shot"><img src="/img/attend-report.webp" alt="Individual attendance summary" loading="lazy" width="1600" height="1000"></div>
+        <div class="phone"><img src="/img/m-attend.webp" alt="Clock-in screen on a phone showing the GPS position inside the clock-in area" loading="lazy" width="480" height="1039"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY -->
+<section id="emergency" class="emer">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">I-SOS · Emergency alert system</span>
+      <h2>One button to raise an alert, teams know at once, follow it to the end</h2>
+      <p class="lead">From a staff member asking for help on their phone, to announcing an incident across the organisation, to dispatching and tracking vehicles from the command centre: everyone involved is alerted at the same time and sees the same status.</p>
+    </div>
+    <div class="mini-steps sos rv">
+      <div><b><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></i>SOS button on the phone</b><p>One press sends your name, department and latest GPS location with a map link to the response team</p></div>
+      <div><b><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M12 9v4M10 11h4"/></svg></i>Incidents in the organisation</b><p>Announce a fire, violence, an evacuation or a hospital Code Blue, alerting only the teams involved, with the location</p></div>
+      <div><b><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></i>Command centre</b><p>Take calls, dispatch ambulances or response teams and track vehicles and incidents on a map from one screen</p></div>
+      <div><b><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></i>LINE alerts</b><p>An alert goes to the LINE group as soon as something happens, with details and a link into the system</p></div>
+    </div>
+    <div class="row rev rv">
+      <div class="txt">
+        <h3>Incident and evacuation control room</h3>
+        <p>During an evacuation the system uses the latest I-Work clock-ins to find who may still be in the area. Everyone confirms they are safe on their phone, and the controller sees the overview and a list sorted by urgency.</p>
+        <ul class="bul">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fire, flood, earthquake, chemical leak, violence and evacuation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>People asking for help appear at the top with their latest GPS location and a map link</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>The controller can mark people "found / safe"; the screen refreshes every 15 seconds</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Print the list, and keep a record of every incident to review after drills</li>
+        </ul>
+        <div class="spot-note">
+          <a class="btn btn-primary" href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%20I-SOS&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%9A%E0%B8%B8%E0%B8%84%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%3A%0A">Request an I-SOS demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <small>Works with I-Work · also a module of I-Office Office / Full edition</small>
+        </div>
+      </div>
+      <div class="mock">
+        <div class="browser">
+          <div class="bar"><i></i><i></i><i></i><span>I-Office · Incident control room</span></div>
+          <img src="/img/emergency.webp" alt="Incident control room showing how many people are confirmed safe and who is still in the area" loading="lazy" width="1600" height="1000">
+        </div>
+        <div class="phone"><img src="/img/m-emergency.webp" alt="Emergency banner on a staff phone with &quot;I’m safe&quot; and &quot;I need help&quot; buttons" loading="lazy" width="480" height="1039"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEUE -->
+<section id="queue" class="queue">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">I-Queue · Service queue system</span>
+      <h2>Follow every queue on LINE instead of waiting outside the room</h2>
+      <p class="lead">Patients type their queue number into your LINE account once. The system follows them from screening to the doctor to the pharmacy and alerts them as their turn approaches, so there are fewer crowds outside the exam rooms and pharmacy.</p>
+    </div>
+    <div class="row rv">
+      <div class="txt">
+        <ul class="bul">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Runs on your LINE Official Account; patients don’t install anything</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Register once with the 13-digit ID number; after that just type the queue number</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>One message follows every step: screening, the doctor and the pharmacy</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Automatic alerts at 10 and 5 people ahead and when it’s your turn, saying where to go</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Colour-coded alert cards that are easy to read, even for older patients</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Queues on screens at each service point, and a dashboard for administrators</li>
+        </ul>
+        <div class="spot-note">
+          <a class="btn btn-primary" href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%20I-Queue&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%88%E0%B8%B8%E0%B8%94%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3%20/%20%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%3A%0A">Request an I-Queue demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <small>Works with your LINE OA and the screens you already have</small>
+        </div>
+      </div>
+      <div>
+        <div class="qmock" aria-label="Illustration of a queue screen and LINE queue alerts">
+          <div class="tv">
+            <div class="tv-in">
+              <div class="tv-now">
+                <small>Now calling · Internal medicine</small>
+                <div class="tv-num">M024</div>
+                <span class="tv-ch">Room 6</span>
+                <div class="tv-sub"><div>Room 5<b>M021</b></div><div>Room 7<b>M023</b></div></div>
+              </div>
+              <div class="tv-next">
+                <small>Next</small>
+                <ul><li>M025 <span>Wait</span></li><li>M026 <span>Wait</span></li><li>M027 <span>Wait</span></li><li>M028 <span>Wait</span></li></ul>
+              </div>
+            </div>
+            <div class="tv-foot"><span>I-Queue</span><span>09:35</span></div>
+          </div>
+          <div class="chat"><div class="chat-in">
+            <div class="chat-hd"><i>Q</i>Sample Hospital Queue</div>
+            <div class="chat-body">
+              <div class="bub me">200</div>
+              <div class="bub">✅ We are now following your queue<br>Doctor · Internal medicine room 6<br>Queue M024 · 2 ahead of you</div>
+              <div class="qc"><div class="h" style="background:#0a85d1">Screening queue alert</div><div class="b"><div class="no">MW048</div><div class="st" style="color:#e07a12">5 ahead of you</div></div></div>
+              <div class="qc"><div class="h" style="background:#2e7d32">Doctor queue alert</div><div class="b"><div class="no">M024</div><div class="st" style="color:#c62828">It’s your turn to see the doctor</div><div class="pt">Internal medicine room 6</div></div></div>
+              <div class="qc"><div class="h" style="background:#0397a7">Pharmacy queue alert</div><div class="b"><div class="no">R087</div><div class="st" style="color:#1e6fd0">10 ahead of you</div></div></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="qcap">Illustration, fictional data</div>
+      </div>
+    </div>
+    <div class="qjourney">
+      <div class="rv" style="--qc:#0a85d1"><b>1. Screening</b><p>Alerts at 5 ahead and when it’s your turn, with the screening desk</p></div>
+      <div class="rv" style="--qc:#2e7d32"><b>2. Doctor</b><p>Alerts at 10 and 5 ahead and when it’s your turn, with the exam room</p></div>
+      <div class="rv" style="--qc:#0397a7"><b>3. Pharmacy</b><p>Alerts at 5 ahead and when it’s your turn, with the dispensing counter</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section id="soon" class="soon">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Clinics · Pharmacies · Restaurants</span>
+      <h2>From hospitals to your business</h2>
+      <p class="lead">Our experience building systems for hospitals and organisations, scaled down for clinics, pharmacies and restaurants. Easy to use, quick to start, no IT team needed.</p>
+    </div>
+    <div class="soon-grid">
+      <div class="sc rv" style="--sg:#12a37f"><span class="tag ready">Ready to use · WordPress</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v6a4 4 0 0 0 8 0V3M9 13v2a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="2"/></svg></div>
+        <div class="nm">I-Clinic</div><div class="for">System for clinics</div>
+        <h3>A small clinic, a complete system</h3>
+        <p>A ready-to-use WordPress package: <b>exam room and medical records</b> (queue, screening, visit notes, ICD-10, prescriptions, re-med, allergy alerts, medical certificates), online appointments, new patient registration, drug stock by lot, dispensing, drug labels, receipts and PromptPay QR. The <b>Pro</b> edition adds custom orders, deposits and pick-up appointments for eye clinics and optical shops.</p><div class="sc-price">From <b>22,900</b> THB · Pro <b>32,900</b> THB · <a href="https://iclinic.idevapp.me/wp-login.php" target="_blank" rel="noopener">Try it free ↗</a></div>
+        <a href="i-clinic-pro/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>See I-Clinic Pro</a></div>
+      <div class="sc rv" style="--sg:#3561c4"><span class="tag ready">Ready to use · WordPress</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7z"/><path d="m8.5 8.5 7 7"/></svg></div>
+        <div class="nm">I-Drug</div><div class="for">System for pharmacies</div>
+        <h3>Every tablet, every lot, every expiry date</h3>
+        <p>A ready-to-use WordPress package: point of sale, drug stock by lot, drug labels, Kor.Yor. 9–13 registers, low-stock and expiry alerts, PromptPay QR payments.</p><div class="sc-price">From <b>19,900</b> THB</div>
+        <a href="plugins/#packages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>See packages and prices</a></div>
+      <div class="sc rv" style="--sg:#f47b20"><span class="tag">COMING SOON</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0zM12 3v4M8 4.5 9 7M16 4.5 15 7"/><path d="M5 20h14"/></svg></div>
+        <div class="nm">I-Order</div><div class="for">System for restaurants</div>
+        <h3>Customers order, the kitchen sees it at once</h3>
+        <p>Scan the QR code at the table to order, orders go straight to the kitchen, quick bills and sales totals at closing. Shorter queues and fewer wrong orders.</p>
+        <a href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%99%E0%B9%83%E0%B8%88%20I-Order%20%28%E0%B9%81%E0%B8%88%E0%B9%89%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B8%A7%29&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%20/%20%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%B4%E0%B8%81%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%AA%E0%B8%B2%E0%B8%82%E0%B8%B2%3A%0A%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%94%E0%B9%89%3A%0A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>Tell me when it launches</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- I-OFFICE -->
+<div class="band" id="ioffice">
+  <div class="wrap">
+    <img src="/img/ioffice-logo.png" alt="I-Office" width="146" height="64">
+    <h2>Organisation management for all your back-office work</h2>
+    <p class="lead" style="margin:0 auto">I-Office brings assets, maintenance, supplies, staff, attendance and office work into one system for hospitals, government agencies and companies, in the browser on computers and phones.</p>
+  </div>
+  <div class="strip">
+  <div class="wrap strip-grid">
+    <div class="strip-item"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></div><div><b>Installed on your premises</b><span>Your data stays with you</span></div></div>
+    <div class="strip-item"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div><div><b>Works on phones</b><span>Report repairs and count stock on site</span></div></div>
+    <div class="strip-item"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div><div><b>Two-step sign-in</b><span>Per-menu permissions and change history</span></div></div>
+    <div class="strip-item"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z"/></svg></div><div><b>Thai / English</b><span>On every screen</span></div></div>
+  </div>
+</div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Features</span>
+      <h2>All back-office work, connected in one system</h2>
+      <p class="lead">Repairs, PM, loans and stock-takes are linked to the same asset, and staff records, attendance and leave to the same user, so the whole history is on one page.</p>
+    </div>
+    <div class="features">
+      <div class="feat rv"><div class="ic c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div>
+        <h3>Asset register</h3><p>Asset codes by FSN category, numbered automatically, with GF (GFMIS) numbers, funding source, acquisition method, supplier and warranty</p></div>
+      <div class="feat rv"><div class="ic c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div>
+        <h3>Repair requests and tracking</h3><p>Report from a department or by scanning a QR code, assign a technician, follow the status, record the result and parts used, and print the repair form</p></div>
+      <div class="feat rv"><div class="ic c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 15l2 2 4-4"/></svg></div>
+        <h3>PM and calibration</h3><p>Plan monthly, quarterly or yearly maintenance with due-date reminders and a record of every check</p></div>
+      <div class="feat rv"><div class="ic c4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></div>
+        <h3>QR tag printing</h3><p>Design your own tags: sticker size, the details shown and the header colour. Scan a tag to report a repair or see the asset’s history.</p></div>
+      <div class="feat rv"><div class="ic c5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div>
+        <h3>Annual stock-take on a phone</h3><p>The committee scans tags or ticks the list, sees progress in real time and prints the report with electronic signatures</p></div>
+      <div class="feat rv"><div class="ic c6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
+        <h3>Depreciation and reports</h3><p>Set your own depreciation policy, view asset register and repair statistics reports, and export to Excel or CSV</p></div>
+      <div class="feat rv"><div class="ic c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10l-3-3M17 17H7l3 3"/></svg></div>
+        <h3>Loans and spare parts</h3><p>Equipment loans, material requisitions, parts received and in stock, with a reminder when stock falls below the reorder point</p></div>
+      <div class="feat rv"><div class="ic c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c3 0 4-6 6-6s1 6 3 6 3-4 5-4 2 2 4 2"/><path d="M3 21h18"/></svg></div>
+        <h3>Electronic signatures</h3><p>Users draw their signature once and sign repair forms, requisitions and reports without printing them</p></div>
+      <div class="feat rv"><div class="ic c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h3>Several branches in one system</h3><p>Keep data separate for head office, branches or sub-units, while central users see every branch</p></div>
+      <div class="feat rv"><div class="ic c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><path d="M12 6.5v3l2 1.5"/></svg></div>
+        <h3>GPS and face-scan attendance</h3><p>Clock in on a phone with location and a photo, or with ZKTeco face scanners. Each person gets their summary by email and LINE OA.</p></div>
+      <div class="feat rv"><div class="ic c4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></div>
+        <h3>Staff and leave</h3><p>Staff records, rosters, leave requests from a phone and approval up the chain of command, with remaining leave shown at once</p></div>
+      <div class="feat rv"><div class="ic c5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+        <h3>Office work</h3><p>Incoming and outgoing documents, vehicle requests and meeting room booking, with LINE OA and email alerts</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section id="showcase" class="show">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Real screens</span>
+      <h2>Easy for everyone, from the supplies office to technicians on site</h2>
+      <p class="lead">All screens are from the demo system with fictional data</p>
+    </div>
+
+    <div class="row rv">
+      <div class="txt">
+        <span class="eyebrow">Asset register</span>
+        <h3>Find any asset in seconds</h3>
+        <p>Search by asset number, GF number, name or serial, filter by department, type, status or funding source, and print tags or export from the same page.</p>
+        <ul class="bul">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Import your existing data from Excel / CSV; every row is checked and previewed before saving</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>A to-check list finds incomplete or unusual records</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="/img/assets.webp" alt="Asset register with filters" loading="lazy" width="1600" height="1000"></div>
+    </div>
+
+    <div class="row rev rv">
+      <div class="txt">
+        <span class="eyebrow">Repairs</span>
+        <h3>See every step of a repair</h3>
+        <p>Every repair request has a timeline, an owner, a due date and the parts used. You are warned when the same device keeps coming back.</p>
+        <ul class="bul">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Print repair forms, reports and parts requisitions with electronic signatures</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Dashboards for each section, and a "My jobs" page for technicians</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="/img/job.webp" alt="Repair request details" loading="lazy" width="1600" height="1000"></div>
+    </div>
+
+    <div class="row rv">
+      <div class="txt">
+        <span class="eyebrow">QR tags and phones</span>
+        <h3>One tag for repairs and stock-takes</h3>
+        <p>Print tags on A4 sticker sheets or a label printer. Scanning the QR code opens that asset’s page, where you can report a repair, view details or record the stock-take.</p>
+        <ul class="bul">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Choose the details, text size and header colour</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Scan with the phone camera, no app to install</li>
+        </ul>
+      </div>
+      <div class="duo">
+        <div class="labels"><img src="/img/labels.webp" alt="Sample asset tag with a QR code" loading="lazy" width="1530" height="540"></div>
+        <div class="phone"><img src="/img/m-inv.webp" alt="Annual stock-take screen on a phone" loading="lazy" width="480" height="1039"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSPACES -->
+<section>
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Clear separation between sections</span>
+      <h2>Each team sees only its own work</h2>
+      <p class="lead">Each section has its own menus and dashboard, and role permissions go down to individual menus</p>
+    </div>
+    <div class="ws">
+      <div class="rv" style="background:linear-gradient(140deg,#6a4ad6,#8d6cf0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v6a4 4 0 0 0 8 0V3M9 13v2a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="2"/></svg><h3>Medical equipment</h3><p>PM, calibration, risk level and repair history</p></div>
+      <div class="rv" style="background:linear-gradient(140deg,#1d3f8b,#3561c4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><h3>Computers</h3><p>IT maintenance plans and computer repairs</p></div>
+      <div class="rv" style="background:linear-gradient(140deg,#d9660f,#f59a3d)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg><h3>General maintenance</h3><p>Electrical, plumbing, air-conditioning and buildings, with a daily log</p></div>
+      <div class="rv" style="background:linear-gradient(140deg,#0b6e80,#12a37f)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg><h3>Supplies</h3><p>Register, receipts, disposals, depreciation and the annual stock-take</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section id="install" class="show">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Getting started</span>
+      <h2>Up and running in a day</h2>
+      <p class="lead">The install script sets up the database, automatic start-up and nightly backups</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>Install on your server</h3><p>One command, even on a server without internet</p></div>
+      <div class="step rv"><h3>Set up with the wizard</h3><p>Enter your organisation, branches, logo and maintenance / supplies units step by step</p></div>
+      <div class="step rv"><h3>Import existing data</h3><p>Download the Excel template, fill it in and upload it; it is checked before saving</p></div>
+      <div class="step rv"><h3>Print tags and start</h3><p>Stick QR tags on the equipment and every department can report repairs from a phone</p></div>
+    </div>
+    <div class="platforms">
+      <span>Windows 10/11 · Server 2016+</span><span>AlmaLinux / Rocky / RHEL</span><span>Ubuntu / Debian (Docker)</span><span>Node.js + PostgreSQL</span><span>Access from outside through Cloudflare Tunnel</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">I-Office licences</span>
+      <h2>Start free, grow when you’re ready</h2>
+      <p class="lead">Try the core system with no time limit. When you’re ready, choose the edition that fits your work or add only the modules you need. For hospitals, government and business.</p>
+    </div>
+    <div class="plans">
+      <div class="plan rv">
+        <h3>Trial edition</h3>
+        <div class="price">Free <small>no time limit</small></div>
+        <p class="sub">Try the core system or use it in a small organisation</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Asset register, QR tags, repairs, PM / calibration, MA contracts, stock-take, parts, stores, loans, meeting rooms</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Up to 300 assets · 1 branch · 20 users</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Demo system with sample data</li>
+          <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Only the installed version; no updates</li>
+        </ul>
+        <a class="btn btn-ghost" href="#contact">Request the installer</a>
+      </div>
+      <div class="plan pro rv">
+        <span class="tag">For production use</span>
+        <h3>Licence by edition</h3>
+        <div class="price">Contact us</div>
+        <p class="sub">Choose the edition that fits your work and add modules later</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Standard edition</b> Supplies and maintenance with unlimited assets, branches and users</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Office edition</b> Staff, leave, GPS and ZKTeco face-scan attendance with summaries by email and LINE OA, emergencies, document registry, vehicle requests</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Full edition</b> Every module, or just the ones you need</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>New versions for the life of the licence; administrators update or schedule updates from the web page</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>The system keeps working after the licence expires</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">Request a quotation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">I-Office FAQ</span>
+      <h2>Questions? Here are the answers</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Where is our data stored?</summary><p>All data stays on your own server, not on the developer’s cloud. The database is backed up automatically every night and kept for 30 days.</p></details>
+      <details><summary>What kind of server do we need?</summary><p>Windows 10/11, Windows Server 2016 or later, or Linux (AlmaLinux / Rocky / RHEL, or Docker). The system uses Node.js and PostgreSQL, which the install script sets up for you.</p></details>
+      <details><summary>Can we move our data from Excel or an old program?</summary><p>Yes. In the import menu, download the templates for departments, assets, users and parts, fill them in and upload them. Every row is checked and previewed before it is saved.</p></details>
+      <details><summary>Can we use it outside the office or on a phone?</summary><p>It works in any phone browser. For access from outside, set up a Cloudflare Tunnel with the script provided; no firewall ports need opening.</p></details>
+      <details><summary>What happens when the licence expires?</summary><p>Everything keeps working and all your data stays. You just can’t update to new versions until you renew.</p></details>
+      <details><summary>How does GPS attendance stop people clocking in for each other?</summary><p>A photo must be taken with the camera on the clock-in page every time; old or repeated photos are rejected. The location is checked against the clock-in point, and fake-location apps, jumping coordinates and wrong device clocks are detected. Suspicious entries are flagged for the supervisor.</p></details>
+      <details><summary>Can we see the other systems too?</summary><p>Yes: I-Work, I-SOS, I-Queue and I-Appointment. Ask for details or a demo by phone (095-638-0007), LINE or email, and tell us which system you are interested in and what your organisation does.</p></details>
+      <details><summary>How do we try I-Office?</summary><p>Email us for the installer and install it in Demo mode. It creates a sample hospital with fictional data and trial accounts for every role.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box rv">
+      <div>
+        <h2>Want to see it in action?</h2>
+        <p>Ask for the I-Office installer, a quotation or a demo of any system. Call, add us on LINE or email us with your organisation’s name and the system you’re interested in.</p>
+        <div class="line-qr"><img src="/img/line-qr.png" alt="QR code to add iDevApp on LINE" width="150" height="150" loading="lazy"><div><b>Scan to add us on LINE</b><span>or tap "Add on LINE" on your phone</span></div></div>
+      </div>
+      <div class="contact-card">
+        <small>Call</small>
+        <a class="mail" href="tel:0956380007">095-638-0007</a>
+        <div class="row2" style="margin:0 0 18px"><a class="btn btn-line" href="https://line.me/ti/p/gq9me8enag" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.4-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3Z"/></svg>Add on LINE</a><a class="btn btn-ghost-w" href="tel:0956380007">Call now</a></div>
+        <small>Email</small>
+        <a class="mail" href="mailto:idevapp2023@gmail.com">idevapp2023@gmail.com</a>
+        <a class="btn btn-primary" href="mailto:idevapp2023@gmail.com?subject=%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%96%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%82%E0%B8%AD%E0%B8%87%20iDevApp&amp;body=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%3A%0A%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%20/%20%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%97%E0%B8%A3%3A%0A%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AA%E0%B8%99%E0%B9%83%E0%B8%88%20%28I-Office%20/%20I-Work%20/%20I-SOS%20/%20I-Queue%20/%20I-Appointment%29%3A%0A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%A1%3A%0A">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Send us an email</a>
+        <div class="row2"><button class="btn copy" style="width:100%" onclick="copyMail(this)">Copy email</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top"><img src="/img/idevapp-logo.png" alt="iDevApp" width="41" height="36"></a>
+    <div>© <span id="yr">2026</span> iDevApp · I-Office · I-Work · I-SOS · I-Queue · I-Appointment · Coming soon: I-Clinic · I-Drug · I-Order</div>
+    <a href="plugins/">WordPress plugins</a> · <a href="tel:0956380007">Call 095-638-0007</a> · <a href="https://line.me/ti/p/gq9me8enag" target="_blank" rel="noopener">LINE</a> · <a href="mailto:idevapp2023@gmail.com">idevapp2023@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const hd = document.querySelector('header');
+addEventListener('scroll', () => hd.classList.toggle('scrolled', scrollY > 8), { passive: true });
+document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => document.getElementById('menu').classList.remove('open')));
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 }) : null;
+document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+function copyMail(b) {
+  const t = 'idevapp2023@gmail.com';
+  (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(() => { b.textContent = 'Copied ✓'; setTimeout(() => b.textContent = 'Copy email', 1800); }).catch(() => prompt('Email', t));
+}
+</script>
+</body>
+</html>
