@@ -20,7 +20,6 @@
 "พิมพ์คู่มือนี้": "Print this guide",
 "ตัวติดตั้ง · 1.0 MB": "Installer · 1.0 MB",
 "ดาวน์โหลดตัวติดตั้ง": "Download the installer",
-"1.0.0 (มี I-Clinic Pro 1.4.0)": "1.0.0 (includes I-Clinic Pro 1.4.0)",
 "Windows 10 / 11, Windows Server 2016 ขึ้นไป": "Windows 10 / 11, Windows Server 2016 or later",
 "GPLv2 หรือใหม่กว่า · ใส่ license key เพื่อเอาคำว่า TRIAL ออก": "GPLv2 or later · enter a licence key to remove the TRIAL mark",
 "เตรียม 6 อย่างนี้ให้พร้อม": "Have these 6 things ready",
@@ -238,5 +237,6 @@
 "คำถาม": "Question",
 "ปัญหาที่พบบ่อย": "Common problems",
 "กดปุ่ม": "Press",
-"แล้วพิมพ์": "and type"
+"แล้วพิมพ์": "and type",
+"1.0.1 (มี I-Clinic Pro 1.4.1)": "1.0.1 (includes I-Clinic Pro 1.4.1)"
 }

@@ -4,219 +4,219 @@
  "plugins": {
   "idev-appointments": {
    "name": "iDev Appointments",
-   "version": "1.5.0",
-   "package": "https://idevapp.me/updates/files/idev-appointments-1.5.0.zip",
+   "version": "1.5.1",
+   "package": "https://idevapp.me/updates/files/idev-appointments-1.5.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Online appointments with doctors and clinics: a link per doctor or clinic, time slots with a limit per slot, patients identified by HN (new patients register first), PDPA/GDPR consent, automatic or staff confirmation, e-mail confirmation and reminders, cancel or reschedule by patient or staff, and a portal where doctors see and confirm their own appointments.",
-   "changelog": "<ul><li><b>1.5.0:</b> ลำดับการจองแบบที่ 2 (บริการ → วัน → เวลา → แพทย์) แพทย์ดูนัดของตัวเองหรือทั้งคลินิกได้ แก้ HN ที่ตรวจแล้ว</li><li><b>1.4.0:</b> จองเป็นขั้น คลินิก/บริการ → แพทย์ → วัน → เวลา เลขบัตรประชาชน/พาสปอร์ต ที่ต่อช่วงแยกหรือใช้ร่วม เวลาพัก</li><li><b>1.3.0:</b> หน้าตรวจ HN สำหรับงานเวชระเบียน</li><li><b>1.2.4:</b> ปฏิทินรายเดือนพร้อมสถานะผู้ป่วย</li></ul>"
+   "changelog": "<ul><li><b>1.5.1:</b> วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. (ทุกที่ที่ WordPress แสดงวันที่ เช่น วันที่ข่าว รายการในหลังบ้าน เอกสาร)</li><li><b>1.5.0:</b> ลำดับการจองแบบที่ 2 (บริการ → วัน → เวลา → แพทย์) แพทย์ดูนัดของตัวเองหรือทั้งคลินิกได้ แก้ HN ที่ตรวจแล้ว</li><li><b>1.4.0:</b> จองเป็นขั้น คลินิก/บริการ → แพทย์ → วัน → เวลา เลขบัตรประชาชน/พาสปอร์ต ที่ต่อช่วงแยกหรือใช้ร่วม เวลาพัก</li><li><b>1.3.0:</b> หน้าตรวจ HN สำหรับงานเวชระเบียน</li><li><b>1.2.4:</b> ปฏิทินรายเดือนพร้อมสถานะผู้ป่วย</li></ul>"
   },
   "idev-bilingual": {
    "name": "iDev Bilingual – Thai / English",
-   "version": "1.0.1",
-   "package": "https://idevapp.me/updates/files/idev-bilingual-1.0.1.zip",
+   "version": "1.0.2",
+   "package": "https://idevapp.me/updates/files/idev-bilingual-1.0.2.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Switch the whole site between Thai and English: English title, excerpt and content for posts and pages, English menu labels, category names and site name, plus a TH/EN switcher. Works with any theme.",
-   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+   "changelog": "<ul><li>วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ.</li><li>อัปเดตอัตโนมัติจาก idevapp.me</li></ul>"
   },
   "idev-clinic-schedule": {
    "name": "iDev Clinic Schedule",
-   "version": "1.0.1",
-   "package": "https://idevapp.me/updates/files/idev-clinic-schedule-1.0.1.zip",
+   "version": "1.0.2",
+   "package": "https://idevapp.me/updates/files/idev-clinic-schedule-1.0.2.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Doctor and clinic schedules (weekly, monthly, yearly or one-off times) shown as month, week or day, with booking links, holidays, opening hours with a live \"open now\" status, and a doctor team grid with specialty tabs.",
-   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+   "changelog": "<ul><li>วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ.</li><li>อัปเดตอัตโนมัติจาก idevapp.me</li></ul>"
   },
   "idev-cookie-consent": {
    "name": "iDev Cookie Consent (PDPA / GDPR)",
-   "version": "1.0.1",
-   "package": "https://idevapp.me/updates/files/idev-cookie-consent-1.0.1.zip",
+   "version": "1.0.2",
+   "package": "https://idevapp.me/updates/files/idev-cookie-consent-1.0.2.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Cookie banner for Thai PDPA and GDPR: Accept / Reject / choose categories, asked again on every page until the visitor answers, consent log with CSV export, scripts and embeds that wait for consent, and Google Consent Mode v2. Thai / English.",
-   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+   "changelog": "<ul><li>วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ.</li><li>อัปเดตอัตโนมัติจาก idevapp.me</li></ul>"
   },
   "idev-maps": {
    "name": "iDev Maps & Directions",
-   "version": "1.0.1",
-   "package": "https://idevapp.me/updates/files/idev-maps-1.0.1.zip",
+   "version": "1.0.2",
+   "package": "https://idevapp.me/updates/files/idev-maps-1.0.2.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Google Maps without an API key: paste the \"Embed a map\" code, a maps link or an address. Several locations, a \"Directions\" button that opens the Google Maps app on phones, call button, and maps that wait for cookie consent.",
-   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+   "changelog": "<ul><li>วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ.</li><li>อัปเดตอัตโนมัติจาก idevapp.me</li></ul>"
   },
   "idev-news-ticker": {
    "name": "iDev News Ticker",
-   "version": "1.0.1",
-   "package": "https://idevapp.me/updates/files/idev-news-ticker-1.0.1.zip",
+   "version": "1.0.2",
+   "package": "https://idevapp.me/updates/files/idev-news-ticker-1.0.2.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Announcement bars at the top of the site: static or scrolling (slow / normal / fast), with start/end time, link and your colours. Pauses on hover and respects \"reduce motion\". Thai / English.",
-   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+   "changelog": "<ul><li>วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ.</li><li>อัปเดตอัตโนมัติจาก idevapp.me</li></ul>"
   },
   "idev-org-chart": {
    "name": "iDev Org Chart",
-   "version": "1.0.2",
-   "package": "https://idevapp.me/updates/files/idev-org-chart-1.0.2.zip",
+   "version": "1.0.3",
+   "package": "https://idevapp.me/updates/files/idev-org-chart-1.0.3.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Organisation charts for executives, departments and committees: photos, positions, colours, collapsible branches, top-down tree on computers and a clean list on phones. Thai / English.",
-   "changelog": "<ul><li><b>1.0.2:</b> กล่องบุคคลขยายให้ตำแหน่งยาวอยู่ในบรรทัดเดียว</li></ul>"
+   "changelog": "<ul><li><b>1.0.3:</b> วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. (ทุกที่ที่ WordPress แสดงวันที่ เช่น วันที่ข่าว รายการในหลังบ้าน เอกสาร)</li><li><b>1.0.2:</b> กล่องบุคคลขยายให้ตำแหน่งยาวอยู่ในบรรทัดเดียว</li></ul>"
   },
   "idev-patient-registration": {
    "name": "iDev Patient Registration",
-   "version": "1.3.0",
-   "package": "https://idevapp.me/updates/files/idev-patient-registration-1.3.0.zip",
+   "version": "1.3.1",
+   "package": "https://idevapp.me/updates/files/idev-patient-registration-1.3.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Online new-patient registration for hospitals and clinics: PDPA/GDPR consent, photo of the Thai ID card or passport (or typed in), LINE and WhatsApp, staff review, HN and a designable patient card with QR code sent by e-mail. Personal data is encrypted.",
-   "changelog": "<ul><li><b>1.3.0:</b> เจ้าหน้าที่ลงทะเบียนผู้ป่วย walk-in ที่เคาน์เตอร์ได้</li></ul>"
+   "changelog": "<ul><li><b>1.3.1:</b> วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. (ทุกที่ที่ WordPress แสดงวันที่ เช่น วันที่ข่าว รายการในหลังบ้าน เอกสาร)</li><li><b>1.3.0:</b> เจ้าหน้าที่ลงทะเบียนผู้ป่วย walk-in ที่เคาน์เตอร์ได้</li></ul>"
   },
   "idev-popup-notice": {
    "name": "iDev Popup Notice",
-   "version": "1.1.0",
-   "package": "https://idevapp.me/updates/files/idev-popup-notice-1.1.0.zip",
+   "version": "1.1.1",
+   "package": "https://idevapp.me/updates/files/idev-popup-notice-1.1.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Important-notice popups: as many as you need, each with start/end time, image, button and order. Shown one at a time; visitors who close one don't see it again for a few hours. Thai / English.",
-   "changelog": "<ul><li><b>1.1.0:</b> ออกแบบ Popup แบบ Word หัวข้อ ขนาดตัวอักษร สี รูปปรับขนาดได้ เลย์เอาต์สำเร็จรูปพร้อมตัวอย่างสด</li></ul>"
+   "changelog": "<ul><li><b>1.1.1:</b> วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. (ทุกที่ที่ WordPress แสดงวันที่ เช่น วันที่ข่าว รายการในหลังบ้าน เอกสาร)</li><li><b>1.1.0:</b> ออกแบบ Popup แบบ Word หัวข้อ ขนาดตัวอักษร สี รูปปรับขนาดได้ เลย์เอาต์สำเร็จรูปพร้อมตัวอย่างสด</li></ul>"
   },
   "idev-post-attachments": {
    "name": "iDev Post Attachments",
-   "version": "1.0.1",
-   "package": "https://idevapp.me/updates/files/idev-post-attachments-1.0.1.zip",
+   "version": "1.0.2",
+   "package": "https://idevapp.me/updates/files/idev-post-attachments-1.0.2.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Attach PDF, Word, Excel, PowerPoint and other files to any post or page. Drag to order, give each file a friendly name, show a tidy download list with file type and size, and count downloads.",
-   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+   "changelog": "<ul><li>วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ.</li><li>อัปเดตอัตโนมัติจาก idevapp.me</li></ul>"
   },
   "idev-store": {
    "name": "iDev Store",
-   "version": "1.3.0",
-   "package": "https://idevapp.me/updates/files/idev-store-1.3.0.zip",
+   "version": "1.3.1",
+   "package": "https://idevapp.me/updates/files/idev-store-1.3.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Back office for clinics, eye clinics / optical shops and pharmacies: stock with lots and expiry dates, point of sale and dispensing, drug labels and ขย. books, job orders (e.g. glasses) with prescriptions, pick-up appointments, receipts for 80 mm, A4/A5 or continuous-form printers, and PromptPay QR.",
-   "changelog": "<ul><li><b>1.3.0:</b> หน่วยรับเข้า (กล่อง) / หน่วยขาย (เม็ด) ต้นทุน 4 ตำแหน่ง พิมพ์บาร์โค้ด/QR กด Enter ไปช่องถัดไป</li><li>ออกแบบใบเสร็จ ใบรับเงิน รายงาน (คลาสสิก ทันสมัย ทางการ)</li><li>พิมพ์รายงานยอดขาย สินค้าขายดี มูลค่าสต็อก</li><li>แถบเมนูใหม่ในทุกหน้า</li></ul>"
+   "changelog": "<ul><li><b>1.3.1:</b> วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. (ทุกที่ที่ WordPress แสดงวันที่ เช่น วันที่ข่าว รายการในหลังบ้าน เอกสาร)</li><li><b>1.3.0:</b> หน่วยรับเข้า (กล่อง) / หน่วยขาย (เม็ด) ต้นทุน 4 ตำแหน่ง พิมพ์บาร์โค้ด/QR กด Enter ไปช่องถัดไป</li><li>ออกแบบใบเสร็จ ใบรับเงิน รายงาน (คลาสสิก ทันสมัย ทางการ)</li><li>พิมพ์รายงานยอดขาย สินค้าขายดี มูลค่าสต็อก</li><li>แถบเมนูใหม่ในทุกหน้า</li></ul>"
   },
   "idev-thai-holidays": {
    "name": "iDev Thai Holidays",
-   "version": "1.0.1",
-   "package": "https://idevapp.me/updates/files/idev-thai-holidays-1.0.1.zip",
+   "version": "1.0.2",
+   "package": "https://idevapp.me/updates/files/idev-thai-holidays-1.0.2.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Annual public holidays for Thailand, filled in automatically every year (fixed days + Google Calendar for lunar and substitution days), editable, with a \"closes the clinic\" flag used by iDev Clinic Schedule.",
-   "changelog": "<ul><li>อัปเดตอัตโนมัติจาก idevapp.me</li><li>หน้าตาหลังบ้านใหม่</li></ul>"
+   "changelog": "<ul><li>วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ.</li><li>อัปเดตอัตโนมัติจาก idevapp.me</li></ul>"
   },
   "idev-appointments-pro": {
    "name": "iDev Appointments Pro",
-   "version": "1.4.0",
-   "package": "https://idevapp.me/updates/files/idev-appointments-pro-1.4.0.zip",
+   "version": "1.4.1",
+   "package": "https://idevapp.me/updates/files/idev-appointments-pro-1.4.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Add-on for iDev Appointments: LINE and SMS reminders, waiting list that tells people when a time becomes free, branches, reports with no-show rates and export, and a connector that can send appointments to HOSxP.",
-   "changelog": "<ul><li><b>1.4.0:</b> รวม iDev Appointments 1.5.0 (ลำดับการจองแบบที่ 2 แพทย์ดูนัดทั้งคลินิก แก้ HN)</li><li><b>1.3.0:</b> รวม 1.4.0 (จองเป็นขั้น คลินิก/บริการ เลขบัตร ที่ต่อช่วงใช้ร่วม เวลาพัก)</li><li><b>1.2.0:</b> ตัวเชื่อม HOSxP ส่งจำนวนผู้ป่วยรอของแพทย์แต่ละคน และ HN ที่ตรวจแล้วไป HOSxP</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>WhatsApp: ปุ่มแชตสำหรับเจ้าหน้าที่ และส่งอัตโนมัติผ่าน Cloud API</li><li>ออกแบบอีเมลทั้ง 6 แบบ พร้อมแม่แบบ 3 แบบ ตัวอย่างสด และส่งทดสอบ</li><li>ออกแบบรายงานที่พิมพ์ หน้าภาพรวม และหน้าช่องทาง LINE · WhatsApp · SMS ใหม่</li></ul>"
+   "changelog": "<ul><li><b>1.4.1:</b> วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. (ทุกที่ที่ WordPress แสดงวันที่ เช่น วันที่ข่าว รายการในหลังบ้าน เอกสาร)</li><li><b>1.4.0:</b> รวม iDev Appointments 1.5.0 (ลำดับการจองแบบที่ 2 แพทย์ดูนัดทั้งคลินิก แก้ HN)</li><li><b>1.3.0:</b> รวม 1.4.0 (จองเป็นขั้น คลินิก/บริการ เลขบัตร ที่ต่อช่วงใช้ร่วม เวลาพัก)</li><li><b>1.2.0:</b> ตัวเชื่อม HOSxP ส่งจำนวนผู้ป่วยรอของแพทย์แต่ละคน และ HN ที่ตรวจแล้วไป HOSxP</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>WhatsApp: ปุ่มแชตสำหรับเจ้าหน้าที่ และส่งอัตโนมัติผ่าน Cloud API</li><li>ออกแบบอีเมลทั้ง 6 แบบ พร้อมแม่แบบ 3 แบบ ตัวอย่างสด และส่งทดสอบ</li><li>ออกแบบรายงานที่พิมพ์ หน้าภาพรวม และหน้าช่องทาง LINE · WhatsApp · SMS ใหม่</li></ul>"
   },
   "idev-patient-registration-pro": {
    "name": "iDev Patient Registration Pro",
-   "version": "1.2.0",
-   "package": "https://idevapp.me/updates/files/idev-patient-registration-pro-1.2.0.zip",
+   "version": "1.2.1",
+   "package": "https://idevapp.me/updates/files/idev-patient-registration-pro-1.2.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Add-on for iDev Patient Registration: HOSxP connector (find or create the HN automatically and send the patient card) and automatic reading of Thai ID cards and passports on the patient's phone.",
-   "changelog": "<ul><li><b>1.2.0:</b> รวม iDev Patient Registration 1.3.0 (ลงทะเบียน walk-in)</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>บัตรคนไข้: แบบใหม่ 4 แบบ และแบบสำเร็จรูป 9 แบบ</li><li>ออกแบบอีเมล \"ได้รับข้อมูล\" และ \"บัตรคนไข้\" พร้อมแม่แบบ</li></ul>"
+   "changelog": "<ul><li><b>1.2.1:</b> วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. (ทุกที่ที่ WordPress แสดงวันที่ เช่น วันที่ข่าว รายการในหลังบ้าน เอกสาร)</li><li><b>1.2.0:</b> รวม iDev Patient Registration 1.3.0 (ลงทะเบียน walk-in)</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>บัตรคนไข้: แบบใหม่ 4 แบบ และแบบสำเร็จรูป 9 แบบ</li><li>ออกแบบอีเมล \"ได้รับข้อมูล\" และ \"บัตรคนไข้\" พร้อมแม่แบบ</li></ul>"
   },
   "idev-cookie-consent-pro": {
    "name": "iDev Cookie Consent Pro",
-   "version": "1.1.1",
-   "package": "https://idevapp.me/updates/files/idev-cookie-consent-pro-1.1.1.zip",
+   "version": "1.1.2",
+   "package": "https://idevapp.me/updates/files/idev-cookie-consent-pro-1.1.2.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Add-on for iDev Cookie Consent (PDPA / GDPR): privacy request form and register with 30-day deadlines, consent receipts and evidence reports, policy version archive, cookie and script scanner, log retention.",
-   "changelog": "<ul><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>ออกแบบใบยืนยันความยินยอมและรายงาน (3 แบบ)</li></ul>"
+   "changelog": "<ul><li><b>1.1.2:</b> วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. (ทุกที่ที่ WordPress แสดงวันที่ เช่น วันที่ข่าว รายการในหลังบ้าน เอกสาร)</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ติดตั้งตัวเดียว: รุ่น Pro มีตัวฟรีอยู่ในตัว</li><li>ออกแบบใบยืนยันความยินยอมและรายงาน (3 แบบ)</li></ul>"
   },
   "i-clinic": {
    "name": "I-Clinic",
-   "version": "1.4.0",
-   "package": "https://idevapp.me/updates/files/i-clinic-1.4.0.zip",
+   "version": "1.4.1",
+   "package": "https://idevapp.me/updates/files/i-clinic-1.4.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Clinic system by iDevApp: examination room with queue, vital signs, doctor's notes, ICD-10 diagnosis, prescriptions, re-med, drug allergy alerts and patient history, online patient registration with ID card / passport and patient cards, online appointments with LINE / WhatsApp / SMS reminders, doctors' schedule, dispensing, stock by lot and expiry, receipts and PromptPay.",
-   "changelog": "<ul><li><b>1.4.0:</b> นัดหมาย 1.5.0 (จองเป็นขั้น ลำดับการจองแบบที่ 2 หน้าตรวจ HN) ลงทะเบียน walk-in ใช้ license กับเครื่องในคลินิก (ติดตั้งบน Windows) ได้</li><li><b>1.3.1:</b> แถบเมนูโหมดโปรแกรมสีต่อเนื่อง แสดงตำแหน่งผู้ใช้ถูกต้อง</li><li><b>1.3.0:</b> โหมดโปรแกรม: หลังบ้านเป็นหน้าตาโปรแกรมคลินิก หน้า login ใหม่ แต่ละคนเริ่มที่งานของตัวเอง</li><li><b>1.2.0:</b> ห้องแพทย์ (เรียกคิวถัดไป) ปุ่มตามขั้นตอน ใบรับรองแพทย์แบบทางการ + แบบตรวจสุขภาพ 2 ส่วน รับยาเข้าเป็นกล่อง ขายเป็นเม็ด พิมพ์บาร์โค้ด/QR รายการยาและค่าบริการ กด Enter ไปช่องถัดไป</li><li><b>ใหม่: ห้องตรวจและเวชระเบียน</b> คิววันนี้ ซักประวัติ/สัญญาณชีพ บันทึกการตรวจ วินิจฉัย ICD-10 สั่งยาจากสต็อก Re-med เตือนแพ้ยา ประวัติย้อนหลัง นัดติดตาม ใบรับรองแพทย์ รายงาน</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Clinic เป็นปลั๊กอินเดียว: ลงทะเบียน นัดหมาย ตารางแพทย์ ขาย/จ่ายยา สต็อก</li><li>หน้าแรกของระบบ ตัวเลขวันนี้ และรายการตั้งค่า</li></ul>"
+   "changelog": "<ul><li><b>1.4.1:</b> วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. (ทุกที่ที่ WordPress แสดงวันที่ เช่น วันที่ข่าว รายการในหลังบ้าน เอกสาร)</li><li><b>1.4.0:</b> นัดหมาย 1.5.0 (จองเป็นขั้น ลำดับการจองแบบที่ 2 หน้าตรวจ HN) ลงทะเบียน walk-in ใช้ license กับเครื่องในคลินิก (ติดตั้งบน Windows) ได้</li><li><b>1.3.1:</b> แถบเมนูโหมดโปรแกรมสีต่อเนื่อง แสดงตำแหน่งผู้ใช้ถูกต้อง</li><li><b>1.3.0:</b> โหมดโปรแกรม: หลังบ้านเป็นหน้าตาโปรแกรมคลินิก หน้า login ใหม่ แต่ละคนเริ่มที่งานของตัวเอง</li><li><b>1.2.0:</b> ห้องแพทย์ (เรียกคิวถัดไป) ปุ่มตามขั้นตอน ใบรับรองแพทย์แบบทางการ + แบบตรวจสุขภาพ 2 ส่วน รับยาเข้าเป็นกล่อง ขายเป็นเม็ด พิมพ์บาร์โค้ด/QR รายการยาและค่าบริการ กด Enter ไปช่องถัดไป</li><li><b>ใหม่: ห้องตรวจและเวชระเบียน</b> คิววันนี้ ซักประวัติ/สัญญาณชีพ บันทึกการตรวจ วินิจฉัย ICD-10 สั่งยาจากสต็อก Re-med เตือนแพ้ยา ประวัติย้อนหลัง นัดติดตาม ใบรับรองแพทย์ รายงาน</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Clinic เป็นปลั๊กอินเดียว: ลงทะเบียน นัดหมาย ตารางแพทย์ ขาย/จ่ายยา สต็อก</li><li>หน้าแรกของระบบ ตัวเลขวันนี้ และรายการตั้งค่า</li></ul>"
   },
   "i-clinic-pro": {
    "name": "I-Clinic Pro",
-   "version": "1.4.0",
-   "package": "https://idevapp.me/updates/files/i-clinic-pro-1.4.0.zip",
+   "version": "1.4.1",
+   "package": "https://idevapp.me/updates/files/i-clinic-pro-1.4.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Clinic and shop system by iDevApp with job orders (glasses, lenses, hearing aids, dental work): everything in I-Clinic plus job tickets with prescriptions, deposits and pick-up appointments, plus the examination room (queue, treatment records, re-med, drug allergies).",
-   "changelog": "<ul><li><b>1.4.0:</b> นัดหมาย 1.5.0 (จองเป็นขั้น ลำดับการจองแบบที่ 2 หน้าตรวจ HN) ลงทะเบียน walk-in และมีตัวติดตั้ง Windows: idevapp.me/i-clinic-pro/setup/</li><li><b>1.3.1:</b> แถบเมนูโหมดโปรแกรมสีต่อเนื่อง แสดงตำแหน่งผู้ใช้ถูกต้อง</li><li><b>1.3.0:</b> โหมดโปรแกรม: หลังบ้านเป็นหน้าตาโปรแกรมคลินิก หน้า login ใหม่ แต่ละคนเริ่มที่งานของตัวเอง</li><li><b>1.2.0:</b> ห้องแพทย์ ใบรับรองแพทย์แบบทางการ รับของเป็นกล่อง ขายเป็นชิ้น พิมพ์บาร์โค้ด/QR กด Enter ไปช่องถัดไป</li><li><b>ใหม่: ห้องตรวจและเวชระเบียน</b> (คิว บันทึกการตรวจ สั่งยา Re-med เตือนแพ้ยา ใบรับรองแพทย์)</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Clinic Pro เป็นปลั๊กอินเดียว รวมงานสั่งทำ มัดจำ และนัดรับของ</li></ul>"
+   "changelog": "<ul><li><b>1.4.1:</b> วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. (ทุกที่ที่ WordPress แสดงวันที่ เช่น วันที่ข่าว รายการในหลังบ้าน เอกสาร)</li><li><b>1.4.0:</b> นัดหมาย 1.5.0 (จองเป็นขั้น ลำดับการจองแบบที่ 2 หน้าตรวจ HN) ลงทะเบียน walk-in และมีตัวติดตั้ง Windows: idevapp.me/i-clinic-pro/setup/</li><li><b>1.3.1:</b> แถบเมนูโหมดโปรแกรมสีต่อเนื่อง แสดงตำแหน่งผู้ใช้ถูกต้อง</li><li><b>1.3.0:</b> โหมดโปรแกรม: หลังบ้านเป็นหน้าตาโปรแกรมคลินิก หน้า login ใหม่ แต่ละคนเริ่มที่งานของตัวเอง</li><li><b>1.2.0:</b> ห้องแพทย์ ใบรับรองแพทย์แบบทางการ รับของเป็นกล่อง ขายเป็นชิ้น พิมพ์บาร์โค้ด/QR กด Enter ไปช่องถัดไป</li><li><b>ใหม่: ห้องตรวจและเวชระเบียน</b> (คิว บันทึกการตรวจ สั่งยา Re-med เตือนแพ้ยา ใบรับรองแพทย์)</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Clinic Pro เป็นปลั๊กอินเดียว รวมงานสั่งทำ มัดจำ และนัดรับของ</li></ul>"
   },
   "i-drug": {
    "name": "I-Drug",
-   "version": "1.4.0",
-   "package": "https://idevapp.me/updates/files/i-drug-1.4.0.zip",
+   "version": "1.4.1",
+   "package": "https://idevapp.me/updates/files/i-drug-1.4.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "7.1",
    "homepage": "https://idevapp.me/plugins/",
    "date": "2026-11-06",
    "description": "Pharmacy system by iDevApp: point of sale with barcode, stock by lot and expiry, drug labels, ขย. 9–13 books, customer registration, appointments and receipts with PromptPay.",
-   "changelog": "<ul><li><b>1.4.0:</b> นัดหมาย 1.5.0 ลงทะเบียน walk-in และใช้ license กับเครื่องในร้าน (ติดตั้งบน Windows) ได้</li><li><b>1.3.1:</b> แถบเมนูโหมดโปรแกรมสีต่อเนื่อง แสดงตำแหน่งผู้ใช้ถูกต้อง</li><li><b>1.3.0:</b> โหมดโปรแกรม: หลังบ้านเป็นหน้าตาโปรแกรม หน้า login ใหม่</li><li><b>1.2.0:</b> รับยาเข้าเป็นกล่อง ขายเป็นเม็ด (ต้นทุนต่อเม็ดคำนวณให้) ราคาใส่สตางค์ได้ พิมพ์บาร์โค้ด/QR รายการยา กด Enter ไปช่องถัดไป</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Drug เป็นปลั๊กอินเดียว: ขายหน้าร้าน สต็อกแยกล็อต ฉลากยา ขย.9–13</li></ul>"
+   "changelog": "<ul><li><b>1.4.1:</b> วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. (ทุกที่ที่ WordPress แสดงวันที่ เช่น วันที่ข่าว รายการในหลังบ้าน เอกสาร)</li><li><b>1.4.0:</b> นัดหมาย 1.5.0 ลงทะเบียน walk-in และใช้ license กับเครื่องในร้าน (ติดตั้งบน Windows) ได้</li><li><b>1.3.1:</b> แถบเมนูโหมดโปรแกรมสีต่อเนื่อง แสดงตำแหน่งผู้ใช้ถูกต้อง</li><li><b>1.3.0:</b> โหมดโปรแกรม: หลังบ้านเป็นหน้าตาโปรแกรม หน้า login ใหม่</li><li><b>1.2.0:</b> รับยาเข้าเป็นกล่อง ขายเป็นเม็ด (ต้นทุนต่อเม็ดคำนวณให้) ราคาใส่สตางค์ได้ พิมพ์บาร์โค้ด/QR รายการยา กด Enter ไปช่องถัดไป</li><li>แก้ error เมื่ออัปโหลดทับขณะที่ปลั๊กอินตัวฟรี/ตัวย่อยรุ่นเก่ายังเปิดอยู่</li><li>ชุด I-Drug เป็นปลั๊กอินเดียว: ขายหน้าร้าน สต็อกแยกล็อต ฉลากยา ขย.9–13</li></ul>"
   }
  },
  "themes": {

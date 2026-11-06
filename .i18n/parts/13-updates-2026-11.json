@@ -31,5 +31,12 @@
 "เวอร์ชัน 1.1.0 · ฟรี": "Version 1.1.0 · Free",
 "เวอร์ชัน 1.0.2 · ฟรี": "Version 1.0.2 · Free",
 "เวอร์ชัน 1.0.1 · ฟรี · Pro 1,900 บาท": "Version 1.0.1 · Free · Pro 1,900 THB",
-"ตัวติดตั้ง Windows ↓": "Windows installer ↓"
+"ตัวติดตั้ง Windows ↓": "Windows installer ↓",
+"วันที่บนหน้าภาษาไทยแสดงเป็น พ.ศ. และชื่อเดือนภาษาไทย หน้าภาษาอังกฤษแสดงเป็น ค.ศ. ทุกที่ที่ WordPress แสดงวันที่": "Thai pages show dates with the Buddhist year (B.E.) and Thai month names; English pages show the Gregorian year, everywhere WordPress shows a date",
+"เวอร์ชัน 1.5.1 · ฟรี ไม่จำกัด · Pro 3,900 บาท": "Version 1.5.1 · Free, unlimited · Pro 3,900 THB",
+"เวอร์ชัน 1.3.1 · ฟรี ไม่จำกัด · Pro 2,900 บาท": "Version 1.3.1 · Free, unlimited · Pro 2,900 THB",
+"เวอร์ชัน 1.3.1 · ใน I-Clinic / I-Drug 19,900–32,900 บาท": "Version 1.3.1 · in I-Clinic / I-Drug 19,900–32,900 THB",
+"เวอร์ชัน 1.1.1 · ฟรี": "Version 1.1.1 · Free",
+"เวอร์ชัน 1.0.3 · ฟรี": "Version 1.0.3 · Free",
+"เวอร์ชัน 1.0.2 · ฟรี · Pro 1,900 บาท": "Version 1.0.2 · Free · Pro 1,900 THB"
 }
