@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install I-Clinic Pro on Windows, step by step | iDevApp</title>
+<meta name="description" content="Download the I-Clinic Pro installer for a bare Windows 10/11 computer. One double-click gives you WordPress with the clinic system, medical records, appointments and receipts, ready on the clinic network, with a step-by-step install guide.">
+<meta property="og:title" content="Install I-Clinic Pro on Windows, step by step">
+<meta property="og:description" content="A one-double-click installer for a clinic computer that has nothing on it yet. Takes 5–10 minutes.">
+<meta property="og:image" content="https://idevapp.me/i-clinic-pro/img/doctor.webp">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#0f3a46">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1f2633; --ink-2:#4a5266; --muted:#6b7385;
+  --orange:#f47b20; --orange-d:#d9660f; --teal:#0f766e; --teal-l:#e7f6f3; --deep:#0f2f3a;
+  --bg-2:#f5f8f9; --line:#e3e8ec; --r:18px; --shadow:0 1px 2px rgba(15,47,58,.06),0 18px 40px -16px rgba(15,47,58,.28);
+  --warn:#fff7e6; --warn-b:#f5c56b; --mono:Consolas,"Cascadia Mono","Courier New",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Anuphan",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--teal)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.25;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(25px,3.2vw,34px);font-weight:700}
+h3{font-size:20px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--orange-d);margin-bottom:10px}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:var(--orange)}
+.lead{color:var(--ink-2);font-size:18px;max-width:700px}
+section{padding:72px 0}
+.bg2{background:var(--bg-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none;transition:.18s;border:1.5px solid transparent;cursor:pointer;font-family:inherit;white-space:normal;text-align:center}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 10px 24px -10px rgba(244,123,32,.75)}
+.btn-primary:hover{background:var(--orange-d)}
+.btn-ghost{border-color:rgba(255,255,255,.45);color:#fff;background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn svg{width:19px;height:19px;flex:none}
+kbd{font-family:inherit;font-size:.88em;font-weight:600;background:#fff;border:1px solid #c9d1d9;border-bottom-width:2px;border-radius:6px;padding:1px 7px;white-space:nowrap;color:var(--ink)}
+code{font-family:var(--mono);font-size:.9em;background:#eef2f4;border-radius:5px;padding:1px 6px;word-break:break-all}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.6) blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;flex:none}
+.brand img{height:36px;width:auto}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--ink-2);font-weight:500;font-size:15px;white-space:nowrap}
+.nav ul a:hover{color:var(--teal)}
+.nav .btn{padding:9px 16px;font-size:15px}
+.nav .right{display:flex;align-items:center}
+@media (max-width:900px){.nav ul{display:none}}
+@media (max-width:420px){.nav .btn{display:none}}
+/* hero */
+.hero{background:radial-gradient(1000px 500px at 90% -20%,#1f8a7f55,transparent 60%),linear-gradient(160deg,#0b2730 0%,#0f3a46 50%,#0f766e 100%);color:#fff;padding:56px 0 64px}
+.crumb{font-size:14px;color:#a9d6d1;margin-bottom:14px}.crumb a{color:#d3ecea}
+.hero h1{font-size:clamp(30px,4.4vw,48px);font-weight:700;margin:0 0 14px}
+.hero .lead{color:#d3ecea}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
+.dl{background:#fff;color:var(--ink);border-radius:20px;padding:24px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.dl .file{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.dl .file svg{width:48px;height:48px;padding:10px;border-radius:12px;background:#fff1e6;color:var(--orange-d);flex:none}
+.dl .file b{display:block;font-size:17px;word-break:break-all}.dl .file span{color:var(--muted);font-size:14px}
+.dl .btn{width:100%;font-size:17px}
+.dl dl{margin:16px 0 0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:14px}
+.dl dt{color:var(--muted)}.dl dd{margin:0}
+.sha{display:flex;gap:6px;align-items:center;margin-top:12px;font-size:12.5px;color:var(--muted)}
+.sha code{font-size:11.5px;flex:1;min-width:0}
+.sha button{font:inherit;font-size:12.5px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:3px 9px;cursor:pointer;color:var(--ink-2);flex:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:5px 13px;font-size:14px}
+@media (max-width:880px){.hero-grid{grid-template-columns:1fr}}
+/* checklist */
+.need{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.need div{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.need b{display:block;font-size:16.5px;margin-bottom:2px}.need span{color:var(--ink-2);font-size:15px;line-height:1.55;display:block}
+.need svg{width:34px;height:34px;padding:7px;border-radius:10px;background:var(--teal-l);color:var(--teal);margin-bottom:8px}
+@media (max-width:860px){.need{grid-template-columns:1fr 1fr}}@media (max-width:540px){.need{grid-template-columns:1fr}}
+/* progress */
+.prog{position:sticky;top:64px;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.prog .in{display:flex;align-items:center;gap:14px;padding:10px 0;font-size:14.5px}
+.prog .bar{flex:1;height:8px;background:#e9eef1;border-radius:99px;overflow:hidden}
+.prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),#12a37f);transition:width .3s}
+.prog b{white-space:nowrap}
+.prog button{font:inherit;font-size:13.5px;border:0;background:none;color:var(--muted);cursor:pointer;text-decoration:underline;padding:0}
+/* steps */
+.steps{list-style:none;margin:36px 0 0;padding:0;counter-reset:s}
+.st{counter-increment:s;display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;margin-bottom:22px;scroll-margin-top:130px;position:relative}
+.st.done{border-color:#9fd8cc;background:#fbfefd}
+.st h3{display:flex;gap:12px;align-items:center;font-size:21px;margin-bottom:10px}
+.st h3::before{content:counter(s);flex:none;width:36px;height:36px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px}
+.st.done h3::before{content:"✓"}
+.st p{margin:0 0 12px;color:var(--ink-2)}
+.st ol,.st ul{margin:0 0 12px;padding-left:22px;color:var(--ink)}
+.st li{margin:4px 0}
+.st .time{font-size:13.5px;color:var(--muted);font-weight:600}
+.tick{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-weight:600;font-size:15px;cursor:pointer;user-select:none;color:var(--teal)}
+.tick input{width:20px;height:20px;accent-color:var(--teal);cursor:pointer}
+.note{background:var(--warn);border:1px solid var(--warn-b);border-radius:12px;padding:12px 14px;font-size:15px;margin:12px 0}
+.note.info{background:var(--teal-l);border-color:#a8dccf}
+.note>b:first-child{display:block;margin-bottom:2px}
+@media (max-width:880px){.st{grid-template-columns:1fr;gap:20px;padding:22px}}
+/* mock screens */
+.scr{border-radius:12px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #d5dce2;background:#fff;font-size:13.5px;line-height:1.5}
+.scr .tb{display:flex;align-items:center;gap:8px;background:#f3f5f7;border-bottom:1px solid #dde3e8;padding:7px 12px;font-size:12.5px;color:#4a5266}
+.scr .tb .x{margin-left:auto;letter-spacing:10px;color:#8a93a3}
+.scr .bd{padding:14px 16px}
+.scr.con{background:#0c1216;border-color:#0c1216}
+.scr.con .tb{background:#1d252b;border-color:#1d252b;color:#c9d3da}
+.scr.con .bd{font-family:var(--mono);font-size:12.5px;color:#c9d3da;white-space:pre-wrap;word-break:break-word;line-height:1.55}
+.c-c{color:#5fd4e6}.c-g{color:#7fe0a3}.c-y{color:#f5d26b}.c-w{color:#fff}.c-m{color:#7d8a96}
+.cap{font-size:13px;color:var(--muted);margin:8px 2px 0;text-align:center}
+.fe{display:flex;flex-direction:column;gap:2px}
+.fe .row{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px}
+.fe .row.sel{background:#dbeafe}
+.fe .ic{width:20px;height:20px;border-radius:4px;flex:none}
+.ic.zip{background:linear-gradient(135deg,#f5c56b,#e7a93a)}.ic.dir{background:linear-gradient(135deg,#ffd77a,#f3b63f)}.ic.cmd{background:#2b3138}.ic.txt{background:#fff;border:1px solid #c9d1d9}.ic.ps{background:#2c5aa0}
+.menu{margin:6px 0 0 34px;width:max-content;max-width:100%;border:1px solid #d5dce2;border-radius:8px;box-shadow:0 8px 20px -8px rgba(0,0,0,.25);background:#fff;padding:4px}
+.menu div{padding:5px 14px;border-radius:5px}.menu .hl{background:#e8f0fe;font-weight:600}
+.dlg .sec{border-top:1px solid #e3e8ec;margin-top:10px;padding-top:10px;font-size:13px}
+.cb{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+.cb i{width:16px;height:16px;border:2px solid #0f766e;border-radius:3px;background:#0f766e;position:relative}
+.cb i::after{content:"";position:absolute;left:3px;top:0;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.dlg .btns{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+.dlg .btns span{border:1px solid #c9d1d9;border-radius:6px;padding:4px 16px;background:#fff}
+.dlg .btns .p{background:#0067c0;border-color:#0067c0;color:#fff}
+.uac{background:#1e3a5f;color:#fff}
+.uac .bd{padding:18px}
+.uac b{font-size:15px;display:block;margin-bottom:10px}
+.uac .app{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.uac .app i{width:30px;height:30px;background:#2b3138;border-radius:6px;border:1px solid #4b5a6a}
+.uac .btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.uac .btns span{text-align:center;padding:6px;border-radius:6px;background:#2f4d73}
+.uac .btns .p{background:#4cc2ff;color:#0b1d30;font-weight:700}
+.np .bd{font-family:var(--mono);font-size:12.5px;white-space:pre-wrap;word-break:break-word}
+.np mark{background:#fff1a8;padding:0 2px}
+.br .url{flex:1;background:#fff;border:1px solid #dde3e8;border-radius:99px;padding:2px 12px;font-size:12px;color:#4a5266}
+.login{max-width:260px;margin:6px auto;text-align:center}
+.login .lg{font-weight:700;color:var(--teal);font-size:16px;margin-bottom:10px}
+.login .f{border:1px solid #c9d1d9;border-radius:6px;padding:6px 10px;text-align:left;margin-bottom:8px;color:#6b7385;font-size:12.5px}
+.login .go{background:#2271b1;color:#fff;border-radius:6px;padding:6px;font-weight:600}
+.lan{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:center}
+.lan .dev{width:44px;height:44px;border-radius:10px;background:var(--teal-l);color:var(--teal);display:flex;align-items:center;justify-content:center}
+.lan .dev svg{width:24px;height:24px}
+.lan code{font-size:12.5px}
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:15px;margin:6px 0 12px}
+.tbl th,.tbl td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-size:13.5px;color:var(--muted);font-weight:600;background:var(--bg-2)}
+.tbl td:first-child{font-weight:600;white-space:nowrap}
+@media (max-width:560px){.tbl td:first-child{white-space:normal}}
+.tw{overflow-x:auto}
+/* tools grid */
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
+.tool{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;gap:14px}
+.tool .ic{width:42px;height:42px;border-radius:10px;flex:none}
+.tool b{display:block;font-family:var(--mono);font-size:15px;margin-bottom:2px}
+.tool span{color:var(--ink-2);font-size:15px;line-height:1.55}
+@media (max-width:700px){.tools{grid-template-columns:1fr}}
+/* faq */
+.faq{max-width:860px;margin:30px auto 0}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:4px 20px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--teal);font-size:22px;line-height:1;flex:none}.faq details[open] summary::after{content:"–"}
+.faq details>div{margin:0 0 16px;color:var(--ink-2)}
+.faq details>div p{margin:0 0 8px}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+/* licence */
+.lic{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.lic div{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.lic h3{font-size:18px;margin-bottom:8px}.lic p{margin:0 0 8px;color:var(--ink-2);font-size:15.5px}
+@media (max-width:760px){.lic{grid-template-columns:1fr}}
+/* cta */
+.cta{background:linear-gradient(120deg,#0b2730,#0f766e);color:#fff;border-radius:26px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.cta h2{font-size:clamp(24px,3vw,32px)}.cta p{color:#cde8e4;margin:10px 0 20px}
+.cta .row{display:flex;gap:12px;flex-wrap:wrap}
+.cta .qr{background:#fff;border-radius:18px;padding:12px;text-align:center;color:var(--ink);font-size:13px;font-weight:600}
+.cta .qr img{width:140px}
+.btn-line{background:#06c755;color:#fff}.btn-line:hover{background:#05b04b}
+@media (max-width:760px){.cta{grid-template-columns:1fr;padding:28px}.cta .qr{justify-self:start}}
+footer{padding:32px 0;color:var(--muted);font-size:14.5px;border-top:1px solid var(--line);margin-top:72px}
+footer .foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.print{background:none;border:1px solid rgba(255,255,255,.45);color:#fff}
+@media print{
+  header,.prog,.tick,.cta,footer,.print,.dl .btn,.sha button{display:none!important}
+  .hero{background:#fff;color:#000;padding:0 0 20px}.hero .lead,.crumb,.chips span{color:#333}.chips span{border-color:#999}
+  section{padding:24px 0}.st{break-inside:avoid;box-shadow:none}
+  .faq details{break-inside:avoid}.faq details>div{display:block}
+  body{font-size:13pt}
+}
+</style>
+
+<link rel="alternate" hreflang="th" href="https://idevapp.me/i-clinic-pro/setup/">
+<link rel="alternate" hreflang="en" href="https://idevapp.me/en/i-clinic-pro/setup/">
+<link rel="alternate" hreflang="x-default" href="https://idevapp.me/i-clinic-pro/setup/">
+<style id="lang-sw-css">.lang-sw{display:inline-flex;border:1px solid #d6dce6;border-radius:999px;overflow:hidden;font:700 13px/1 inherit;margin:0 10px;flex:none}.lang-sw a{padding:7px 11px;color:#4b5563;text-decoration:none}.lang-sw a[aria-current]{background:#1d3f8b;color:#fff}.nav ul a{white-space:nowrap}.nav .brand{flex:none}html[lang=en] .nav ul{gap:20px}@media (max-width:1240px){.nav ul{gap:14px!important}.nav ul a{font-size:14px!important}}@media (max-width:640px){.lang-sw{margin:0 6px}.lang-sw a{padding:6px 9px}}</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../../"><img src="/img/idevapp-logo.png" alt="iDevApp" width="42" height="36"></a>
+    <ul>
+      <li><a href="#before">Before you start</a></li>
+      <li><a href="#steps">Install steps</a></li>
+      <li><a href="#tools">After installing</a></li>
+      <li><a href="#faq">Troubleshooting</a></li>
+      <li><a href="../">I-Clinic Pro</a></li>
+    </ul>
+    <div class="right"><a class="btn btn-primary" href="/i-clinic-pro/setup/files/I-Clinic-Pro-Setup-1.0.0.zip" download>Download</a></div>
+  <nav class="lang-sw" aria-label="Language / ภาษา"><a href="/i-clinic-pro/setup/" hreflang="th" lang="th">TH</a><a href="/en/i-clinic-pro/setup/" hreflang="en" lang="en" aria-current="true">EN</a></nav></div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="crumb"><a href="../">I-Clinic Pro</a> › Windows installer</div>
+      <h1>Install I-Clinic Pro on a Windows computer</h1>
+      <p class="lead">For a clinic computer that has nothing on it yet. Double-click once, answer 6 questions and wait about 5–10 minutes for a ready clinic system. Every computer in the clinic opens it in a web browser. No server know-how needed.</p>
+      <div class="chips"><span>Windows 10 / 11 (64-bit)</span><span>No MySQL to install</span><span>Runs on the clinic network, no web hosting needed</span><span>Nightly backup</span></div>
+      <p style="margin-top:22px"><button class="btn print" type="button" onclick="window.print()">Print this guide</button></p>
+    </div>
+    <div class="dl" id="download">
+      <div class="file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg><div><b>I-Clinic-Pro-Setup-1.0.0.zip</b><span>Installer · 1.0 MB</span></div></div>
+      <a class="btn btn-primary" href="/i-clinic-pro/setup/files/I-Clinic-Pro-Setup-1.0.0.zip" download>Download the installer</a>
+      <dl>
+        <dt>Version</dt><dd>1.0.0 (includes I-Clinic Pro 1.4.0)</dd>
+        <dt>For</dt><dd>Windows 10 / 11, Windows Server 2016 or later</dd>
+        <dt>License</dt><dd>GPLv2 or later · enter a licence key to remove the TRIAL mark</dd>
+      </dl>
+      <div class="sha"><span>SHA-256</span><code id="sha">e55a93387fcf626fa6321405b7a3f20a0ab43c628d4e982d3cbd298b792a3e7e</code><button type="button" data-copy="sha">Copy</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="before">
+  <div class="wrap">
+    <span class="eyebrow">Before you start</span>
+    <h2>Have these 6 things ready</h2>
+    <p class="lead">Use the computer that stays on during opening hours. It becomes the clinic's "server"; other computers and tablets use the system through it.</p>
+    <div class="need">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><b>Windows 10 / 11, 64-bit</b><span>4 GB RAM or more, at least 2 GB free on drive C:</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><b>An administrator account</b><span>Windows asks for permission when the setup starts; you must be able to click Yes</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></svg><b>Internet (first time only)</b><span>The installer downloads about 70 MB. After that the system works on the clinic network without internet.</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg><b>Clinic details</b><span>Clinic name, address, phone and PromptPay number (if any) for the receipts. You can change them later.</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><b>Administrator e-mail</b><span>Used to reset the password and to receive system notices</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6"/></svg><b>Close programs using port 80 (if any)</b><span>For example IIS, XAMPP or an old Skype. If you can't close them, the installer uses port 8080 instead.</span></div>
+    </div>
+    <div class="note info" style="margin-top:22px"><b>Tip: give this computer a fixed IP address</b>on the router (DHCP reservation), so tablets and other computers always find it at the same address. If that's not convenient, use the computer name instead of the IP.</div>
+  </div>
+</section>
+
+<div class="prog" aria-live="polite"><div class="wrap in"><b id="progTxt">Done 0 / 9 steps</b><div class="bar"><i id="progBar"></i></div><button type="button" id="progReset">Clear</button></div></div>
+
+<section class="bg2" id="steps">
+  <div class="wrap">
+    <span class="eyebrow">Install steps</span>
+    <h2>Install step by step</h2>
+    <p class="lead">Follow the steps in order. Tick "I've done this step" as you go; if you stop halfway, this page remembers your ticks in the browser you're reading it on. The pictures here are mock-ups, and the installer's own screens are in Thai (translated here). Real screens may differ slightly between Windows versions.</p>
+
+    <ol class="steps">
+      <li class="st" id="s1">
+        <div>
+          <h3>Download the installer</h3>
+          <p>Press <a href="#download">Download the installer</a> on the computer that will be the server. The file <code>I-Clinic-Pro-Setup-1.0.0.zip</code> will be in your <b>Downloads</b></p>
+          <p>If you download it on another computer, copy the file over on a USB drive.</p>
+          <span class="time">About 1 minute</span><br>
+          <label class="tick"><input type="checkbox" data-step="s1">I've done this step</label>
+        </div>
+        <div>
+          <div class="scr"><div class="tb">📁 Downloads<span class="x">— ▢ ✕</span></div><div class="bd fe">
+            <div class="row sel"><i class="ic zip"></i>I-Clinic-Pro-Setup-1.0.0.zip<span style="margin-left:auto;color:#6b7385">1,011 KB</span></div>
+          </div></div>
+        </div>
+      </li>
+
+      <li class="st" id="s2">
+        <div>
+          <h3>Unblock the file</h3>
+          <p>Windows marks the file as "from the internet". If you don't unblock it first, you'll get several warning windows during the setup.</p>
+          <ol>
+            <li>Right-click the zip file › <b>Properties</b>  </li>
+            <li>On the General tab, at the bottom, tick <b>Unblock</b>  </li>
+            <li>Click <kbd>OK</kbd></li>
+          </ol>
+          <div class="note info">If there is no Unblock box, the file isn't blocked. Go on to the next step.</div>
+          <label class="tick"><input type="checkbox" data-step="s2">I've done this step</label>
+        </div>
+        <div>
+          <div class="scr dlg"><div class="tb">I-Clinic-Pro-Setup-1.0.0.zip Properties<span class="x">✕</span></div><div class="bd">
+            <div><b>General</b> &nbsp;<span style="color:#6b7385">Security · Details</span></div>
+            <div style="margin-top:8px;color:#4a5266">Type: Compressed (zipped) Folder<br>Size: 1.00 MB</div>
+            <div class="sec">Security: This file came from another computer and might be blocked to help protect this computer.<div style="margin-top:6px"><span class="cb"><i></i>Unblock</span></div></div>
+            <div class="btns"><span class="p">OK</span><span>Cancel</span><span>Apply</span></div>
+          </div></div>
+          <p class="cap">Tick Unblock, then click OK</p>
+        </div>
+      </li>
+
+      <li class="st" id="s3">
+        <div>
+          <h3>Extract the files (Extract All)</h3>
+          <ol>
+            <li>Right-click the zip file › <b>Extract All…</b>  </li>
+            <li>Choose where to put them, e.g. <b>Desktop</b> and click <kbd>Extract</kbd></li>
+            <li>You get the folder <code>I-Clinic-Pro-Setup</code></li>
+          </ol>
+          <div class="note"><b>Don't double-click Setup.cmd inside the zip file</b>Extract the files first, otherwise the installer can't find the files it needs.</div>
+          <label class="tick"><input type="checkbox" data-step="s3">I've done this step</label>
+        </div>
+        <div>
+          <div class="scr"><div class="tb">📁 I-Clinic-Pro-Setup<span class="x">— ▢ ✕</span></div><div class="bd fe">
+            <div class="row"><i class="ic dir"></i>files</div>
+            <div class="row"><i class="ic dir"></i>launchers</div>
+            <div class="row"><i class="ic dir"></i>packages</div>
+            <div class="row"><i class="ic dir"></i>scripts</div>
+            <div class="row"><i class="ic txt"></i>LICENSE.txt</div>
+            <div class="row"><i class="ic txt"></i>README-TH.txt</div>
+            <div class="row sel"><i class="ic cmd"></i><b>Setup.cmd</b></div>
+            <div class="row"><i class="ic ps"></i>setup.ps1</div>
+          </div></div>
+          <p class="cap">The extracted files. The one to open is Setup.cmd</p>
+        </div>
+      </li>
+
+      <li class="st" id="s4">
+        <div>
+          <h3>Double-click Setup.cmd</h3>
+          <ol>
+            <li>Double-click <b>Setup.cmd</b></li>
+            <li>Windows asks "Do you want to allow this app to make changes to your device?" Click <kbd>Yes</kbd></li>
+            <li>A black window opens. This is the installer. <b>Don't close this window</b> until the setup has finished.</li>
+          </ol>
+          <div class="note"><b>If you see "Windows protected your PC"</b>Click <b>More info</b> and click <kbd>Run anyway</kbd> or, if the window is "Open File – Security Warning", click <kbd>Run</kbd> (this happens if you skipped step 2)</div>
+          <label class="tick"><input type="checkbox" data-step="s4">I've done this step</label>
+        </div>
+        <div>
+          <div class="scr uac"><div class="bd">
+            <b>User Account Control</b>
+            <div style="font-size:14px;margin-bottom:10px">Do you want to allow this app to make changes to your device?</div>
+            <div class="app"><i></i><div>Windows Command Processor<br><span style="font-size:12px;opacity:.75">Verified publisher: Microsoft Windows</span></div></div>
+            <div class="btns"><span class="p">Yes</span><span>No</span></div>
+          </div></div>
+          <p class="cap">Click Yes so the installer can install the programs</p>
+        </div>
+      </li>
+
+      <li class="st" id="s5">
+        <div>
+          <h3>Answer 6 questions</h3>
+          <p>Type the answer and press <kbd>Enter</kbd> for each one. Pressing Enter without typing uses the value in brackets <code>[ ]</code> Everything can be changed later in the admin.</p>
+          <div class="tw"><table class="tbl">
+            <tr><th>Question</th><th>Example answer</th></tr>
+            <tr><td>Clinic / shop name</td><td>Kind Doctor Clinic</td></tr>
+            <tr><td>Address</td><td>99 Example Rd, Mueang, Example Province (printed on receipts)</td></tr>
+            <tr><td>Phone</td><td>02-000-0000</td></tr>
+            <tr><td>PromptPay number</td><td>Mobile number or 13-digit ID; may be left empty. Used for payment QR codes.</td></tr>
+            <tr><td>Admin username</td><td>Latin letters or numbers, e.g. <code>admin</code> or <code>drjaidee</code></td></tr>
+            <tr><td>Admin e-mail</td><td>An e-mail address you actually use</td></tr>
+          </table></div>
+          <div class="note info">You don't set a password. The installer creates a strong one and saves it (step 7).</div>
+          <label class="tick"><input type="checkbox" data-step="s5">I've done this step</label>
+        </div>
+        <div>
+          <div class="scr con"><div class="tb">Administrator: Windows PowerShell</div><div class="bd"><span class="c-c">  ==================================================
+     I-Clinic Pro  -  clinic system setup (iDevApp)
+  ==================================================</span>
+
+<span class="c-c">&gt;&gt; Clinic details (press Enter to use the value in brackets; change later in the admin)</span>
+Clinic / shop name [My clinic]: <span class="c-w">Kind Doctor Clinic</span>
+Address (for receipts): <span class="c-w">99 Example Rd, Mueang</span>
+Phone: <span class="c-w">02-000-0000</span>
+PromptPay number (mobile or 13 digits, may be empty):
+Admin username [admin]: <span class="c-w">drjaidee</span>
+Admin e-mail [admin@clinic-pc.local]: <span class="c-w">dr@example.com</span>▌</div></div>
+          <p class="cap">Example answers (made-up details)</p>
+        </div>
+      </li>
+
+      <li class="st" id="s6">
+        <div>
+          <h3>Wait for the setup to finish</h3>
+          <p>The installer does everything by itself; you don't need to click anything. A green <span style="color:#12a37f;font-weight:700">OK</span> line means that step is done.</p>
+          <ul>
+            <li>Installs the Visual C++ Runtime, Apache, PHP 8.3 and WordPress in Thai</li>
+            <li>Installs I-Clinic Pro and its theme, and creates the booking, registration, doctor schedule, doctor and job status pages</li>
+            <li>Sets it up as a Windows service that starts every time the computer starts</li>
+            <li>Opens the Firewall so other computers in the clinic can connect</li>
+            <li>Sets up the automatic jobs and a nightly backup at 02:30</li>
+          </ul>
+          <div class="note"><b>If you see a red XX line</b>the installer stops and shows the name of its log file. See <a href="#faq">Troubleshooting</a> then run Setup.cmd again.</div>
+          <span class="time">About 5–10 minutes, depending on your internet speed</span><br>
+          <label class="tick"><input type="checkbox" data-step="s6">I've done this step</label>
+        </div>
+        <div>
+          <div class="scr con"><div class="tb">Administrator: Windows PowerShell</div><div class="bd"><span class="c-c">&gt;&gt; Getting the programs needed (internet needed the first time)</span>
+<span class="c-g">   OK  PHP: downloaded (php-8.3-Win32-vs16-x64-latest.zip)</span>
+<span class="c-m">   …</span>
+<span class="c-c">&gt;&gt; Installing Apache and PHP</span>
+<span class="c-g">   OK  PHP 8.3</span>
+<span class="c-g">   OK  Apache configured</span>
+<span class="c-c">&gt;&gt; Installing WordPress</span>
+<span class="c-g">   OK  Database and admin account created</span>
+<span class="c-g">   OK  Thai language set</span>
+<span class="c-c">&gt;&gt; Installing I-Clinic Pro and the theme</span>
+<span class="c-g">   OK  I-Clinic Pro</span>
+<span class="c-g">   OK  iDev App theme</span>
+<span class="c-c">&gt;&gt; Windows service (starts with the computer)</span>
+<span class="c-g">   OK  Website running on port 80</span>
+<span class="c-c">&gt;&gt; Firewall (lets other clinic computers connect)</span>
+<span class="c-g">   OK  Open on Private / Domain networks</span>
+<span class="c-c">&gt;&gt; Automatic jobs</span>
+<span class="c-g">   OK  E-mails / appointment reminders every 5 minutes</span>
+<span class="c-g">   OK  Nightly backup at 02:30 (kept 30 days)</span>
+
+<span class="c-g">  ==================================================
+     I-Clinic Pro is installed
+  ==================================================</span></div></div>
+          <p class="cap">Example of the setup screen (shortened)</p>
+        </div>
+      </li>
+
+      <li class="st" id="s7">
+        <div>
+          <h3>Keep the password safe</h3>
+          <p>When the setup is done, Notepad opens the file <code>C:\iClinic\ข้อมูลเข้าระบบ.txt</code> by itself (the name means "sign-in details"). It contains:</p>
+          <ul>
+            <li>The web addresses for this computer and the other clinic computers</li>
+            <li>The username and <b>admin password</b></li>
+            <li>The computer name, used for the licence</li>
+          </ul>
+          <p>Write the password down somewhere safe (e.g. a password manager). After that you may delete the file. Only administrators of this computer can open it.</p>
+          <label class="tick"><input type="checkbox" data-step="s7">I've done this step</label>
+        </div>
+        <div>
+          <div class="scr np"><div class="tb">ข้อมูลเข้าระบบ.txt - Notepad<span class="x">— ▢ ✕</span></div><div class="bd">I-Clinic Pro — sign-in details
+Installed: 2026-11-06 09:15
+
+This computer:        http://localhost/
+Other clinic devices: http://clinic-pc/
+                      http://192.168.1.20/
+
+Admin:     http://clinic-pc/wp-admin/
+User:      drjaidee
+Password:  <mark>••••••••••••••••</mark>
+
+I-Clinic Pro licence is issued to computer name: <mark>clinic-pc</mark></div></div>
+          <p class="cap">Example file (made-up details, translated)</p>
+        </div>
+      </li>
+
+      <li class="st" id="s8">
+        <div>
+          <h3>Sign in and do the first settings</h3>
+          <p>The browser opens the sign-in page by itself (or double-click the <b>I-Clinic Pro</b> icon on the desktop). Enter the username and password from step 7.</p>
+          <p>On the I-Clinic Pro home screen there is a <b>"Setup"</b> list. Work through it:</p>
+          <ol>
+            <li>Add the doctors, their licence numbers and consulting hours</li>
+            <li>Add your drugs and products</li>
+            <li>Check the receipt layout, clinic name and address</li>
+            <li>Add staff users (nurses, cashier, pharmacy) so everyone has their own account</li>
+          </ol>
+          <label class="tick"><input type="checkbox" data-step="s8">I've done this step</label>
+        </div>
+        <div>
+          <div class="scr br"><div class="tb"><span>◀ ▶ ⟳</span><span class="url">localhost/wp-login.php</span></div><div class="bd">
+            <div class="login"><div class="lg">Kind Doctor Clinic</div><div class="f">Username or e-mail</div><div class="f">Password</div><div class="go">Log in</div></div>
+          </div></div>
+          <p class="cap">Sign-in page (mock-up)</p>
+        </div>
+      </li>
+
+      <li class="st" id="s9">
+        <div>
+          <h3>Open it from other computers and tablets</h3>
+          <p>On another computer on the same Wi-Fi or LAN, open a browser and type the address from the file in step 7, e.g. <code>http://clinic-pc/</code> or <code>http://192.168.1.20/</code></p>
+          <div class="note"><b>Other computers can't open it?</b>On the server computer go to Settings › Network &amp; Internet › Wi-Fi or Ethernet › choose the network › set Network profile to <b>Private</b> then try again with the IP address.</div>
+          <p><b>Enter the licence:</b> Admin › <b>iDevApp</b> › <b>License</b> paste the key from iDevApp (issued for the computer name). Until then every feature works, but receipts and reports show TRIAL.</p>
+          <label class="tick"><input type="checkbox" data-step="s9">I've done this step</label>
+        </div>
+        <div>
+          <div class="scr"><div class="tb">In the clinic</div><div class="bd lan">
+            <div class="dev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><div><b>Server computer</b><br><code>http://localhost/</code></div>
+            <div class="dev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="12" rx="2"/><path d="M2 20h20"/></svg></div><div><b>Front desk / consulting room</b><br><code>http://clinic-pc/</code></div>
+            <div class="dev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></svg></div><div><b>Tablet / phone</b><br><code>http://192.168.1.20/</code></div>
+          </div></div>
+          <p class="cap">Every device uses the same data on the server computer</p>
+        </div>
+      </li>
+    </ol>
+    <div class="note info center" style="max-width:720px;margin:10px auto 0"><b>Done 🎉</b>The system is ready. Keep the server computer on during opening hours and set Windows not to go to Sleep.</div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <span class="eyebrow">After installing</span>
+    <h2>Tools in C:\iClinic</h2>
+    <p class="lead">Double-click to use. Each one asks for administrator permission first.</p>
+    <div class="tools">
+      <div class="tool"><i class="ic cmd"></i><div><b>Backup-now.cmd</b><span>Back up now (the system already backs up every night at 02:30 and keeps 30 days in the backup folder)</span></div></div>
+      <div class="tool"><i class="ic cmd"></i><div><b>Restore.cmd</b><span>Restore from a backup file. The data before restoring is kept so you can go back.</span></div></div>
+      <div class="tool"><i class="ic cmd"></i><div><b>Open-to-internet.cmd</b><span>Optional: let patients book or register from outside the clinic through a Cloudflare Tunnel (https). Needs a Cloudflare account.</span></div></div>
+      <div class="tool"><i class="ic cmd"></i><div><b>Uninstall.cmd</b><span>Uninstall. Patient data is not deleted unless you type the confirmation.</span></div></div>
+    </div>
+    <div class="tw" style="margin-top:28px"><table class="tbl">
+      <tr><th>Folder</th><th>What's in it</th></tr>
+      <tr><td><code>C:\iClinic\data</code></td><td>Database and encryption keys. <b>All patient data is here. Never delete it.</b></td></tr>
+      <tr><td><code>C:\iClinic\backup</code></td><td>Daily backups. Copy them off the computer (USB / NAS) regularly, or change the location in <code>iclinic.json</code> setting <code>"BackupDir"</code></td></tr>
+      <tr><td><code>C:\iClinic\www</code></td><td>The program (WordPress)</td></tr>
+      <tr><td><code>C:\iClinic\logs</code></td><td>Logs. Send these to support if something goes wrong.</td></tr>
+    </table></div>
+    <div class="note"><b>Always keep a backup off the computer</b>If the hard disk fails or the computer is lost, backups on the same computer are lost too.</div>
+  </div>
+</section>
+
+<section class="bg2" id="faq">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Troubleshooting</span><h2>Common problems</h2></div>
+    <div class="faq">
+      <details><summary>Setup.cmd closes straight away</summary><div><p>Check that you extracted the zip (step 3) and clicked Yes when Windows asked. If it still fails, right-click Setup.cmd › <b>Run as administrator</b></p></div></details>
+      <details><summary>It says "needs 64-bit Windows" or "needs Windows 10 or 11"</summary><div><p>This computer can't be used. Check at Settings › System › About: it must be a 64-bit operating system, Windows 10 or later.</p></div></details>
+      <details><summary>Apache download fails</summary><div><p>Sometimes the source site renames its files. Download it yourself from <a href="https://www.apachelounge.com/download/" target="_blank" rel="noopener">apachelounge.com/download</a> choose the file <code>httpd-2.4.x-win64-VS17.zip</code> put it in the <code>packages</code> folder of the installer and run Setup.cmd again.</p><p>Any other program that fails to download can be added the same way.</p></div></details>
+      <details><summary>It says port 80 / 8080 is in use</summary><div><p>Close that program (usually IIS, XAMPP or WAMP) and run Setup.cmd again. If you can't close it, choose a port yourself: open Command Prompt as Administrator in the installer folder and type <code>Setup.cmd -Port 8081</code></p></div></details>
+      <details><summary>It says "system already installed"</summary><div><p>I-Clinic Pro is already on this computer. Update it from the admin (Dashboard › Updates). To really reinstall, first run <code>C:\iClinic\Uninstall.cmd</code> (existing data is not deleted).</p></div></details>
+      <details><summary>Other computers or tablets can't open the site</summary><div><p>1) Set the server computer's network to <b>Private</b> 2) Try the IP address instead of the computer name 3) Check the tablet is on the same Wi-Fi, not a guest Wi-Fi 4) If your antivirus has its own firewall, allow port 80</p></div></details>
+      <details><summary>The site doesn't come up after a restart</summary><div><p>Press <kbd>Win</kbd>+<kbd>R</kbd> and type <code>services.msc</code> find "I-Clinic Pro (เว็บเซิร์ฟเวอร์)" and click Start. If it still fails, send the file <code>C:\iClinic\logs\apache-error.log</code> to support.</p></div></details>
+      <details><summary>Forgot the admin password</summary><div><p>Click "Lost your password?" on the sign-in page (e-mail must be set up), or open <code>C:\iClinic\ข้อมูลเข้าระบบ.txt</code> if you haven't deleted it, or contact support.</p></div></details>
+      <details><summary>The phone camera won't scan ID cards</summary><div><p>Browsers only allow the camera on https pages or localhost, so it doesn't work on a plain clinic network. Type the details or upload a photo instead, or open the site through Open-to-internet.cmd, which gives you https.</p></div></details>
+      <details><summary>Can I install another computer without internet?</summary><div><p>Yes. After the first install, the installer's <code>packages</code> folder holds every program it downloaded. Copy the whole <code>I-Clinic-Pro-Setup</code> folder to the other computer and run Setup.cmd.</p></div></details>
+      <details><summary>Moving the system to a new computer</summary><div><p>Install on the new computer with this installer, then use Restore.cmd with a backup from the old one. If the computer name changes, ask iDevApp for a new licence key.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section id="license">
+  <div class="wrap">
+    <span class="eyebrow">License</span>
+    <h2>Terms of use</h2>
+    <div class="lic">
+      <div><h3>The installer and I-Clinic Pro</h3><p>are free software under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" target="_blank" rel="noopener">GNU GPL version 2 or later</a> (see LICENSE.txt in the installer). Download, install and try them for free.</p><p>The programs the installer downloads (Apache, PHP, WordPress, WP-CLI) keep their own licences.</p></div>
+      <div><h3>Licence key from iDevApp</h3><p>turns on full use with no TRIAL mark on receipts and reports. The key is issued for the <b>computer name</b> of the installed computer, never expires, and is checked without internet.</p><p>For prices and installation service see the <a href="../#price">I-Clinic Pro page</a></p></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="contact">
+  <div class="cta">
+    <div>
+      <h2>Setup failed, or want our team to install it?</h2>
+      <p>Send a screenshot or the files in <code style="background:rgba(255,255,255,.15);color:#fff">C:\iClinic\logs</code> to us on LINE and we'll take a look (never send passwords in chat).</p>
+      <div class="row">
+        <a class="btn btn-line" href="https://line.me/ti/p/gq9me8enag" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.4-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3Z"/></svg>Add on LINE</a>
+        <a class="btn btn-primary" href="tel:0956380007">Call 095-638-0007</a>
+        <a class="btn btn-ghost" href="mailto:idevapp2023@gmail.com?subject=I-Clinic%20Pro%20Setup">Email</a>
+      </div>
+    </div>
+    <div class="qr"><img src="/img/line-qr.png" alt="LINE QR iDevApp" width="140" height="140">Scan to add us on LINE</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="../../"><img src="/img/idevapp-logo.png" alt="iDevApp" width="41" height="36"></a>
+    <div>© 2026 iDevApp · <a href="../">I-Clinic Pro</a> · <a href="../../plugins/#packages">All packages</a></div>
+    <div><a href="tel:0956380007">Call 095-638-0007</a> · <a href="https://line.me/ti/p/gq9me8enag" target="_blank" rel="noopener">LINE</a> · <a href="mailto:idevapp2023@gmail.com">idevapp2023@gmail.com</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var KEY='iclinic-setup-steps', boxes=document.querySelectorAll('[data-step]'), done={};
+  try{done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){done={}}
+  function paint(){var n=0;boxes.forEach(function(b){var on=!!done[b.dataset.step];b.checked=on;document.getElementById(b.dataset.step).classList.toggle('done',on);if(on)n++});
+    document.getElementById('progBar').style.width=(n/boxes.length*100)+'%';
+    document.getElementById('progTxt').textContent=document.documentElement.lang==='en'?('Done '+n+' / '+boxes.length+' steps'):('Done '+n+' / '+boxes.length+' steps')}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
+  boxes.forEach(function(b){b.addEventListener('change',function(){done[b.dataset.step]=b.checked;save();paint()})});
+  document.getElementById('progReset').addEventListener('click',function(){done={};save();paint()});
+  paint();
+  document.querySelectorAll('[data-copy]').forEach(function(btn){btn.addEventListener('click',function(){
+    var t=document.getElementById(btn.dataset.copy).textContent,old=btn.textContent;
+    function ok(){btn.textContent=document.documentElement.lang==='en'?'Copied':'Copied';setTimeout(function(){btn.textContent=old},1500)}
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok,function(){})}else{var r=document.createRange();r.selectNode(document.getElementById(btn.dataset.copy));getSelection().removeAllRanges();getSelection().addRange(r);ok()}
+  })});
+})();
+</script>
+</body>
+</html>
