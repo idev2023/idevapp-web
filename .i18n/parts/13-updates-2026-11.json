@@ -44,5 +44,7 @@
 "อ่านบัตรประชาชน: แยกชื่อกับนามสกุลตามช่องว่างบนบัตร ไม่ลงช่องผิด อ่านบรรทัดชื่อจากรูปขนาดเต็ม กล้องถ่ายภาพนิ่งความละเอียดสูงเมื่อมือถือรองรับ และถ่ายใหม่แล้วแทนค่าที่อ่านจากรูปก่อน": "Thai ID card: first and last name are split at the gap on the card so they land in the right fields, the name line is read from the full-size photo, the camera takes a full-resolution still when the phone allows it, and a new photo replaces details read from the previous one",
 "เวอร์ชัน 1.3.3 · ฟรี ไม่จำกัด · Pro 2,900 บาท": "Version 1.3.3 · Free, unlimited · Pro 2,900 THB",
 "อ่านบัตรประชาชน: อ่านได้แม้ถ่ายบัตรแนวตั้งหรือเอียง อ่านชื่อ-นามสกุลซ้ำโดยตัดคำว่า ชื่อตัวและชื่อสกุล ออก สระและวรรณยุกต์ครบ และรับเลขบัตรเฉพาะที่อ่านได้ในบรรทัดเดียว": "Thai ID card: reads a card photographed sideways or tilted, reads the name again without the label so vowels and tone marks are kept, and only accepts an ID number read on one line",
-"เวอร์ชัน 1.3.4 · ฟรี ไม่จำกัด · Pro 2,900 บาท": "Version 1.3.4 · Free, unlimited · Pro 2,900 THB"
+"เวอร์ชัน 1.3.4 · ฟรี ไม่จำกัด · Pro 2,900 บาท": "Version 1.3.4 · Free, unlimited · Pro 2,900 THB",
+"อ่านบัตรประชาชน: แยกชื่อ-นามสกุลถูกช่องแม้ตัวอ่านใส่ช่องว่างกลางคำ อ่านคำนำหน้าที่เพี้ยนได้ และอ่านชื่อภาษาอังกฤษได้แม้คำนำหน้าอ่านผิด": "Thai ID card: first and last name land in the right fields even when the reader puts spaces inside a word, a misread title is recognised, and the English name is read even when its title is misread",
+"เวอร์ชัน 1.3.5 · ฟรี ไม่จำกัด · Pro 2,900 บาท": "Version 1.3.5 · Free, unlimited · Pro 2,900 THB"
 }
