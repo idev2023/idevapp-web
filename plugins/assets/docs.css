@@ -228,3 +228,4 @@ table.ref.hw td:not(:first-child),table.ref.hw th:not(:first-child){text-align:c
 .foot-c a{color:inherit}
 @media (max-width:640px){.btn{white-space:normal;max-width:100%;text-align:center}}
 html[lang=en] table.ref td:first-child{white-space:normal;min-width:8em}
+.changes{padding-left:0;list-style:none}.changes>li{margin:0 0 14px}.changes>li>b{display:inline-block;background:#e7f6f3;color:#0f766e;border-radius:99px;padding:1px 12px;font-size:14px}.changes ul{margin:6px 0 0;padding-left:22px}
