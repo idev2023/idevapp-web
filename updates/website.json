@@ -1,0 +1,29 @@
+{
+ "generated": "2026-11-18",
+ "plugins": {
+  "idevapp-website": {
+   "name": "iDevApp Website",
+   "version": "1.0.0",
+   "package": "https://raw.githubusercontent.com/idev2023/idevapp-web/main/updates/files/idevapp-website-1.0.0.zip",
+   "requires": "6.2",
+   "requires_php": "7.4",
+   "tested": "6.8",
+   "date": "2026-11-18",
+   "changelog": "<ul><li>รวมทุกระบบเว็บไซต์เป็นปลั๊กอินเดียว เปิด / ปิดแต่ละโมดูลได้</li><li>ตัวช่วยตั้งค่าเว็บไซต์ ติดตั้งธีมแบบที่ 1 / แบบที่ 2 พร้อมตั้งค่าให้</li><li>ประกาศข่าว: ตั้งวัน-เวลาเผยแพร่ ซ่อนอัตโนมัติ อ่าน PDF มาเติมหัวข้อ ระบบอนุมัติ</li><li>อัปเดตอัตโนมัติจาก GitHub ภายใน 12 ชั่วโมง</li></ul>"
+  }
+ },
+ "themes": {
+  "idevapp-theme-1": {
+   "name": "iDevApp แบบที่ 1",
+   "version": "1.0.0",
+   "package": "https://raw.githubusercontent.com/idev2023/idevapp-web/main/updates/files/idevapp-theme-1-1.0.0.zip",
+   "date": "2026-11-18"
+  },
+  "idevapp-theme-2": {
+   "name": "iDevApp แบบที่ 2",
+   "version": "1.0.0",
+   "package": "https://raw.githubusercontent.com/idev2023/idevapp-web/main/updates/files/idevapp-theme-2-1.0.0.zip",
+   "date": "2026-11-18"
+  }
+ }
+}
