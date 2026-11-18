@@ -3,26 +3,26 @@
  "plugins": {
   "idevapp-website": {
    "name": "iDevApp Website",
-   "version": "1.0.0",
-   "package": "https://raw.githubusercontent.com/idev2023/idevapp-web/main/updates/files/idevapp-website-1.0.0.zip",
+   "version": "1.0.1",
+   "package": "https://raw.githubusercontent.com/idev2023/idevapp-web/main/updates/files/idevapp-website-1.0.1.zip",
    "requires": "6.2",
    "requires_php": "7.4",
    "tested": "6.8",
    "date": "2026-11-18",
-   "changelog": "<ul><li>รวมทุกระบบเว็บไซต์เป็นปลั๊กอินเดียว เปิด / ปิดแต่ละโมดูลได้</li><li>ตัวช่วยตั้งค่าเว็บไซต์ ติดตั้งธีมแบบที่ 1 / แบบที่ 2 พร้อมตั้งค่าให้</li><li>ประกาศข่าว: ตั้งวัน-เวลาเผยแพร่ ซ่อนอัตโนมัติ อ่าน PDF มาเติมหัวข้อ ระบบอนุมัติ</li><li>อัปเดตอัตโนมัติจาก GitHub ภายใน 12 ชั่วโมง</li></ul>"
+   "changelog": "<ul><li><b>1.0.1</b> ย้ายเว็บเดิม: วิเคราะห์โครงสร้างแล้วนำเข้าหน้า ข่าว รูป เอกสาร เมนู และข้อมูลติดต่อเป็นบล็อกที่แก้ได้ทันที</li><li>ตรวจความปลอดภัยตาม OWASP Top 10:2025 และ CVE พร้อมปุ่มแก้ไข จำกัดล็อกอินผิด และบันทึกเหตุการณ์</li><li>ติดตั้ง SSL: นำเข้า .crt / .key / .pfx ตรวจ จัดเรียง ติดตั้งผ่าน cPanel และเปลี่ยนเว็บเป็น HTTPS</li><li>สีหลักของเว็บ ตั้งได้ในตัวช่วยตั้งค่าและหน้าปรับแต่ง</li><li>ผังโรงพยาบาล 3 มิติ: เลือกสีหลังคาและสีผนังของแต่ละอาคาร</li><li>ธีมแบบที่ 1: ส่วน “บริการของเรา” (การ์ดบริการ) ในหน้าแรก</li></ul><ul><li>รวมทุกระบบเว็บไซต์เป็นปลั๊กอินเดียว เปิด / ปิดแต่ละโมดูลได้</li><li>ตัวช่วยตั้งค่าเว็บไซต์ ติดตั้งธีมแบบที่ 1 / แบบที่ 2 พร้อมตั้งค่าให้</li><li>ประกาศข่าว: ตั้งวัน-เวลาเผยแพร่ ซ่อนอัตโนมัติ อ่าน PDF มาเติมหัวข้อ ระบบอนุมัติ</li><li>อัปเดตอัตโนมัติจาก GitHub ภายใน 12 ชั่วโมง</li></ul>"
   }
  },
  "themes": {
   "idevapp-theme-1": {
    "name": "iDevApp แบบที่ 1",
-   "version": "1.0.0",
-   "package": "https://raw.githubusercontent.com/idev2023/idevapp-web/main/updates/files/idevapp-theme-1-1.0.0.zip",
+   "version": "1.0.1",
+   "package": "https://raw.githubusercontent.com/idev2023/idevapp-web/main/updates/files/idevapp-theme-1-1.0.1.zip",
    "date": "2026-11-18"
   },
   "idevapp-theme-2": {
    "name": "iDevApp แบบที่ 2",
-   "version": "1.0.0",
-   "package": "https://raw.githubusercontent.com/idev2023/idevapp-web/main/updates/files/idevapp-theme-2-1.0.0.zip",
+   "version": "1.0.1",
+   "package": "https://raw.githubusercontent.com/idev2023/idevapp-web/main/updates/files/idevapp-theme-2-1.0.1.zip",
    "date": "2026-11-18"
   }
  }
